@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Absolute Beginners Intro To Git</title>
+		<title>Absolute Beginners Intro To Aria</title>
 
 		<link rel="stylesheet" href="../dist/reset.css">
 		<link rel="stylesheet" href="../dist/reveal.css">
@@ -46,60 +46,17 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="nb-vslide">
-					<section class="nb-islide">
-						<h1>Intro to Git</h1>
-						<p>This tutorial is meant to take you from being not at all familiar with Git to being functional. When you first encounter Git, it's overwhelming, daunting, and a little scary.  This tutorial should help you get past that.</p>
+					<h1>Intro to Aria</h1>
+					<p>This tutorial is a basic intro to aria:  What it is, how to use it, and the top things to look for in an audit</p>
 						<p>This tutorial is my first presentation done with <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
-						<p>Oh, and all images can be opened in another window or tab by clicking on them.</p>
-					</section>
-					<section>
-						<h2 class="myh2">What This Covers</h2>
-						<ul>
-							<li>How Git differs from other central repository systems</li>
-							<li>Cloning, Branching, and Forking</li>
-							<li>The basic workflow on your computer</li>
-							<li>The basic workflow when you're part of an organization</li>
-							<li>The basic workflow when you're not part of an organization, or when the organization is too large.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>What This Doesn't Cover</h2>
-						<ul>
-							<li>How to sign up for a GitHub account</li>
-							<li>The differences between different platforms (GitHub, GitLab, etc.)</li>
-							<li>Git logs</li>
-							<li>This will not make you an expert.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>What This Assumes</h2>
-						<ul>
-							<li>Not very much</li>
-							<li>You're really starting out with Git.  This is my no means an in-depth tutorial.</li>
-							<!--
-							<li>You have a computer with access to some kind of command line that supports Git.  Built-in in Mac OS X and Linux.  Downloads are available on <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">SCM's Git Download page</a>.</li>
-							<li>There are GUI (non-command-line) Git interfaces, but I'll stick with the command line because it will be the same system to system, version to version.  And you can copy/paste commands.  You can't do that with graphical interactions.</li> -->
-							<li>That you know that a Repo is short for Repository.</li>
-							<li>That you know a Repo is a set of files that are tracked by the versioning system.</li>
-						</ul>
-					</section>
-					<!--
-					<section>
-						<h2>What You'll Need</h2>
-						<ul>
-							<li>A computer with an Internet connection</li>
-							<li>A text editor (I use <a href="https://www.vim.org/" target="_blank" rel="noopener noreferrer">vim</a>, or <a href="https://github.com/macvim-dev/macvim" target="_blank" rel="noopener noreferrer">MacVim</a>.)
-							<li>A GitHub or GitLab account.  (This tutorial will assume GitHub.)</li>
-							<li>You'll need to know that "repo" is short for "repository"</li>
-						</ul>
-					</section>
-					-->
+					<p>Oh, and all images can be opened in another window or tab by clicking on them.</p>
 				</section>
 				<section>
-					<h1>Git vs GitHub</h1>
+					<h1>What is Aria?</h1>
 					<ul>
-						<li>Git != GitHub != GitLab</li>
-						<li><strong>Git</strong> is the whole distributed system that handles histories, commits, merges, pulls, pushes, etc.</li>
+						<li>ARIA == Accessible Rich Internet Applications</li>
+						<li>It's intended to bridge the gap between what native HTML can do, and what users assistive technology need for an equivalent experience</li>
+						<li>It's a set of attributes that go in HTML elements.</li>
 						<li><strong>GitHub or GitLab</strong> are online web-based repository hosts.  GitHub and GitLab both use git.  There are others.</li>
 						<li><strong>GitLab</strong> is both a website (<a href="https://www.gitlab.com" target="_blank" rel="noreferrer noopener">GitLab.com</a>) and an application that can be installed elsewhere.  Your organization may have an implementation of GitLab.</li>
 						<li>This tutorial will use GitHub as the default web-based repository system.</li>
@@ -136,9 +93,6 @@
 						<div class="imageHolder">
 							<a href="images/decentralized.svg" target="_blank" title="Click to open in a new window"><img src="images/decentralized.svg" alt="A diagram showing the decentralized nature of old-school repository systems particularely how each instance knew if it was a copy or the main instance."></a>
 						</div>
-						<aside class="notes">
-							<p>See, we have an organization with a repo.  Two people want to contribute: Jane and Joe Schmoe. Jane is in the organization.  Joe is not.</p>
-						</aside>
 					</section>
 				</section>
 				<section>
@@ -162,7 +116,7 @@
 							<li>Everyone with access to <em>that</em> repo instance can see all its branches.</li>
 							<li>Branching creates a copy of all the tracked files at the time of branching.</li>
 							<li>As you edit files in the new branch, the files in the original branch remain unchanged from the time you created the new branch.</li>
-							<li>Anyone with access to that instance of that repo can create a new branch from the original (without your changes) or your new branch (with your changes up to the last commit on your branch); or edit the files in the original branch.</li>
+							<li>Anyone with access to that instance of that repo can create new branch from the original (without your changes) or your new branch (with your changes up to the last commit on your branch); or edit the files in the original branch.</li>
 						</ul>
 					</section>
 					<section>
@@ -176,8 +130,8 @@
 						<h3>Branching</h3>
 						<ul>
 							<li>Create a branch when you're going to start doing work (fixing a bug, adding a new feature).</li>
-							<li>Work should rarely, if ever, be done on the <code>main</code> branch.</li>
-							<li><code>$ git checkout -b branchName</code></li>
+							<li>Work should rarely, if ever, be don on the <code>main</code> branch.</li>
+							<li><code>$ git checkout -b branchName</code><br>or<br><code>$ git branch new_branch_name</code></li>
 						</ul>
 						<div class="imageHolder">
 							<a href="images/org-x-repo-a-2.svg" target="_blank" title="Click to open in a new window"><img src="images/org-x-repo-a-2.svg" alt="A new branch is created to fix a bug such as a typo."></a>
@@ -186,7 +140,7 @@
 					<section>
 						<h3>Branching</h3>
 						<ul>
-							<li>If you're part way through adding a feature, and need to fix a bug: create a branch from <code>main</code> that won't include any of the unfinished code in your new feature.</li>
+							<li>If another feature is to be added, or bug fixed, before the first branch can be re-merged, you can create a branch from the main that won't include any changes you made on your new branch.</li>
 							<li>As long as the changes on the different branches aren't in the same spot in the same file, Git should be smart enough to merge them without issue.</li>
 							<li>If there are changes to the same spot in the same file, then a merge conflict will arise, and will needed to be sorted out manually.  That's beyond the scope of this tutorial.</li>
 							<li><code>$ git checkout main</code><br><em>then</em><br><code>$ git branch other_new_branch_name</code></li>
@@ -202,8 +156,8 @@
 						<ul>
 							<li>Cloning creates a copy of the repo on your computer.</li>
 							<li>Downloads all files in the <code>main</code> branch, including config files.</li>
-							<li>Sets the cloned-from repo as the <code>origin</code> remote.</li>
-							<li>Use this (ie: cloning) when you first want to contribute to a repo.</li>
+							<li>Sets the cloned-from repo as the <code>origin</code> branch.</li>
+							<li>Use this when you first want to contribute to a repo.</li>
 							<li>Only use once on each computer.  Once you've cloned, the repo is there.  You have it.  From then on, to get the latest code, use <code>git pull</code> or <code>git rebase</code>.</li>
 							<li><code>$ git clone [git address]</code></li>
 						</ul>
@@ -322,7 +276,7 @@
 							<li>Your local copy has three parts:  The <strong>Index</strong> or <strong>Working Directory</strong>, <strong>Staging</strong>, and the <strong>repo</strong> itself.</li>
 							<li>When you're editing files locally, simply saving them has no effect on the repo itself.</li>
 							<li>When you add a new file into your folder, it still isn't part of the repo.  It's not being tracked.</li>
-							<li>All your edits, additions, and removals are all part of the "Working Directory" or the "Index".</li>
+							<li>All your edits, addtions, and removals are all part of the "Working Directory" or the "Index".</li>
 							<li>In order to get Git to start tracking new files and updated files you need to move them to "Staging".</li>
 							<li>Moving to staging can be done by <code>$ git add filename</code>, or to add all at once: <code>$ git add .</code> (inlcuding the ".").</li>
 							<li><strong><em>Then</em></strong>, once staged, files can be <em>committed</em> to the repo.</li>
@@ -381,10 +335,6 @@
 						<div class="imageHolder">
 							<a href="images/forked.svg" target="_blank" title="Click to open in a new window"><img src="images/forked.svg" alt="Repo-A with branches on Org X on GitHub, and Joe Schmoe's fork of the same thing on his GitHub account"></a>
 						</div>
-						<aside class="notes">
-							<p>Demo forking.</p>
-						</aside>
-
 					</section>
 					<section>
 						<h2>Workflow With A Forked Repo</h2>
@@ -393,8 +343,7 @@
 							<a href="images/cloned.svg" target="_blank" title="Click to open in a new window"><img src="images/cloned.svg" alt="Repo-A with branches on Org X on GitHub, Joe Schmoe's fork of the same thing on his GitHub account, and a copy on Joe's local computer"></a>
 						</div>
 						<aside class="notes">
-							<p>The next few steps are the same as for someone within the org.  They make their own branch and make changes, and commit.  It won't be shown in detail here.</p>
-							<p>Demo cloning, make a change, add, commit, but <strong>DO NOT PUSH</strong>.  Do that later.</p>
+							<p>The next few steps are the same as for someone within the org.  They make their own branch and make changes, and commit.</p>
 						</aside>
 					</section>
 					<section>
@@ -410,10 +359,6 @@
 						<div class="imageHolder">
 							<a href="images/project-workflow.svg" target="_blank" title="Click to open in a new window"><img src="images/project-workflow.svg" alt="Joe Schmoe's local repo with two remotes: origin on Joe's account on GitHub, and upstream, the original repo.  He'll pull from upstream, and push to origin."></a>
 						</div>
-						<aside class="notes">
-							<p>Okay, now demo pushing and submit a pull request.</p>
-						</aside>
-
 					</section>
 					<section>
 						<h2>Full Workflow With A Forked Branch</h2>
@@ -428,16 +373,14 @@
 						<dl>
 							<dt><code>git status</code></dt>
 							<dd>Tells you what branch you're on, what files are in your working directory, but not staging; staging but not the repo.  Sometimes gives you hints as to what to do next.</dd>
-							<!--
 							<dt><code>git branch [branch_name]</code></dt>
 							<dd>Creates a branch called "branch_name" in your local working directory of your local repo.
 							<br>
 							Example: <code>$ git branch myNewFeature</code></dd>
-							-->
 							<dt><code>git checkout [branch_name]</code></dt>
 							<dd>Sets your current working directory to be in the branch called "branch_name".
 							<br>
-							Example: <code>$ git checkout myNewFeature</code> puts you into the <code>myNewFeature</code> branch.  Now all changes you make won't affect any other branch in your repo until you merge the changes into them.</dd>
+							Example (continuing from above): <code>$ git checkout myNewFeature</code> puts you into the <code>myNewFeature</code> branch.  Now all changes you make won't affect any other branch in your repo until you merge the changes into them.</dd>
 						</dl>
 					</section>
 					<section>
@@ -469,15 +412,6 @@
 						<li>Git is daunting and overwhelming at first.  But once you learn it, you'll wonder how you ever lived without it.</li>
 						<li>If you get into trouble, check out <a href="https://dangitgit.com/en" target="_blank" rel="noreferrer noopener">Dangit, Git!?!</a>.</li>
 					</ul>
-					<p><a href=https://github.com/andrewnordlund/tutorials/" target="_blank" rel="noreferrer noopener">Contribute to this repo on GitHub</a></p>
-					<aside class="notes">
-						<p>If time permits:</p>
-						<ul>
-							<li>Demo forking, cloning, branching, committing, pushing, merge-requesting</li>
-							<li>Assign "Homework"</li>
-						</ul>
-					</aside>
-
 				</section>
 			</div>
 		</div>
