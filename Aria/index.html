@@ -50,10 +50,8 @@
 					<p>This tutorial is a basic intro to WAI-ARIA:</p>
 					<ul>
 						<li>What it is</li>
-						<li>When to use it</li>
-						<li>When not to use it</li>
+						<!-- <li>When to use it</li> -->!
 						<li>The Rules of ARIA</li>
-						<li>How to use it</li>
 						<li>Roles<ul>
 							<li>The 5? most important roles to know</li>
 						</ul></li>
@@ -62,16 +60,31 @@
 						</ul></li>
 						<li>Live Regions</li>
 					</ul>
-					<p>This tutorial is my first presentation done with <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
+					<div style="font-size: 50%; margin-top: 2em;">
+					<p>This tutorial uses <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
 					<p>Oh, and all images can be opened in another window or tab by clicking on them.</p>
+					</div>
 				</section>
 				<section>
 					<h1>What is Aria?</h1>
 					<ul>
 						<li>ARIA == Accessible Rich Internet Applications</li>
-						<li>It's intended to bridge the gap between what native HTML can do, and what users assistive technology need for an equivalent experience</li>
+						<li>A.K.A. WAI-ARIA.  WAI == Web Accessibiliy Initiative</li>
 						<li>It's a set of attributes that go in HTML elements.</li>
+						<li>It's intended to bridge the gap between what native HTML can do, and what users assistive technology need for an equivalent experience</li>
 					</ul>
+				</section>
+				<section>
+					<h1>The Five Rules of ARIA</h1>
+					<p>From <a href="https://www.w3.org/TR/using-aria/" target="_blank">Using ARIA</a> (W3C):</p>
+					<ol>
+						<li>If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.<br>Also often statedL<br>The First Rule of ARIA is Don't Use ARIA</li>
+						<li>Do not change native semantics, unless you really have to.</li>
+						<li>All interactive ARIA controls must be usable with the keyboard.</li>
+						<li>Do not use <code>role="presentation"</code> or <code>aria-hidden="true"</code> on a focusable element.</li>
+						<li>All interactive elements must have an accessible name.</a>
+					</ol>
+
 				</section>
 				<section>
 					<section>
