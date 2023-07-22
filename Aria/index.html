@@ -50,7 +50,7 @@
 					<p>This tutorial is a basic intro to WAI-ARIA:</p>
 					<ul>
 						<li>What it is</li>
-						<!-- <li>When to use it</li> -->!
+						<!-- <li>When to use it</li> -->
 						<li>The Rules of ARIA</li>
 						<li>Roles<ul>
 							<li>The 5? most important roles to know</li>
@@ -63,16 +63,38 @@
 					<div style="font-size: 50%; margin-top: 2em;">
 					<p>This tutorial uses <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
 					<p>Oh, and all images can be opened in another window or tab by clicking on them.</p>
+					<code data-trim data-noescape>&lt;a href="abc.html" role="button"&gt;Some text&lt;/a&gt;</code>
+					<p> will still <em>look</em> like a link, but to users of AT, it will effectively be a button, and they will expect that the <kbd>space bar</kbd> will activate it.</p>
 					</div>
 				</section>
 				<section>
-					<h1>What is Aria?</h1>
-					<ul>
-						<li>ARIA == Accessible Rich Internet Applications</li>
-						<li>A.K.A. WAI-ARIA.  WAI == Web Accessibiliy Initiative</li>
-						<li>It's a set of attributes that go in HTML elements.</li>
-						<li>It's intended to bridge the gap between what native HTML can do, and what users assistive technology need for an equivalent experience</li>
-					</ul>
+					<section>
+						<h1>What is Aria?</h1>
+						<ul>
+							<li>ARIA == Accessible Rich Internet Applications</li>
+							<li>A.K.A. WAI-ARIA.  WAI == Web Accessibiliy Initiative</li>
+							<li>It's a set of attributes that go in HTML elements.</li>
+							<li>It sets state, properties, and/or roles to HTML elements.</li>
+							<li>It's intended to bridge the gap between what native HTML can do, and what users assistive technology need for an equivalent experience</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Roles</h2>
+						<ul>
+							<li>Roles tell AT (Assisstive Technologies) how to interpret the thing.</li>
+							<li>The role does not affect the visual appearance of the thing.</li>
+							<li>Roles are set with the <code>role</code> attribute.</li>
+							<li>For example: <code>&lt;a href="abc.html" role="button"&gt;Some text&lt;/a&gt;</code> will still <em>look</em> like a link, but to users of AT, it will effectively be a button, and they will expect that the <kbd>space bar</kbd> will activate it.</li>
+							<li><strong>BUT</strong> simply adding the <code>role</code> attribute, the funcationlity will not be updated.  You need to update that with Javascript.</li>
+							<li>So if you do that, you need to ensure that the <code>click</code> event is fired on <code>keypress</code> when <kbd>Enter</kbd> is pressed, and on <code>keyup</code> when the <kbd>space bar</kbd> is pressed.</li>
+							<li>Wouldn't it just be easier to use a <code>&lt;button&gt;</code>?</li>
+					</section>
+					<section>
+						<h2>Properties</h2>
+					</section>
+					<section>
+						<h2>States</h2>
+					</section>
 				</section>
 				<section>
 					<h1>The Five Rules of ARIA</h1>
@@ -88,7 +110,7 @@
 				</section>
 				<section>
 					<section>
-						<h1>Old-School Repository Systems</h1>
+						<h1>The 5? Most Important Roles To Know</h1>
 						<ul>
 							<li>Every copy of the repo knew if it was a copy or the main</li>
 							<li>Only one person could work on a file at a time.</li>
@@ -445,6 +467,7 @@
 		<script src="../plugin/highlight/highlight.js"></script>
 		<script src="../plugin/notes/notes.js"></script>
 		<script src="../plugin/zoom/zoom.js"></script>
+
 
 		<script>
 			// More info about initialization & config:
