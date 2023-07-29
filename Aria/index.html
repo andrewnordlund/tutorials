@@ -8,17 +8,21 @@
 		<link rel="stylesheet" href="../dist/reset.css">
 		<link rel="stylesheet" href="../dist/reveal.css">
 		<link rel="stylesheet" href="../dist/theme/white.css">
+		<!-- <link rel="stylesheet" href="../dist/theme/black.css"> -->
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
 		<style>
 		div.slides > section {
 			/*border: thick blue solid;*/
+			max-width: 80%;
+			margin-left: 10%;
 		}
 		div.slides > section > section {
 			/*border: thick red solid;*/
 			max-height: 98vh;
 			overflow: scroll;
+			max-width: 90%;
 			-ms-overflow-style: none;  /* IE 10+ */
 			scrollbar-width: none;  /* Firefox */
 
@@ -40,6 +44,11 @@
 			text-align: left; 
 			padding-left: 1em;
 		}
+		/*
+		pre > code {
+			background-color: #505050 !important;
+		}
+		*/
 		</style>
 	</head>
 	<body>
@@ -53,9 +62,12 @@
 						<!-- <li>When to use it</li> -->
 						<li>The Rules of ARIA</li>
 						<li>Roles<ul>
-							<li>The 5? most important roles to know</li>
+							<li>The Landmark Roles</li>
+							<li>The 10? most important roles to know</li>
 						</ul></li>
 						<li>Properties and States<ul>
+							<li>Relationship Attributes</li>
+							<li>Widget Attributes</li>
 							<li>The 10? most important properties to know</li>
 						</ul></li>
 						<li>Live Regions</li>
@@ -63,8 +75,6 @@
 					<div style="font-size: 50%; margin-top: 2em;">
 					<p>This tutorial uses <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
 					<p>Oh, and all images can be opened in another window or tab by clicking on them.</p>
-					<code data-trim data-noescape>&lt;a href="abc.html" role="button"&gt;Some text&lt;/a&gt;</code>
-					<p> will still <em>look</em> like a link, but to users of AT, it will effectively be a button, and they will expect that the <kbd>space bar</kbd> will activate it.</p>
 					</div>
 				</section>
 				<section>
@@ -79,28 +89,81 @@
 						</ul>
 					</section>
 					<section>
+						<h1>What is Aria</h1>
+						<p>Think of Aria as a loaded nail gun:</p>
+						<ul>
+							<li>you should be very careful with it</li>
+							<li>you shouldn't use it without some kind of trianing</li>
+							<li>it's good for some jobs (re-shingling a roof / writing a custom widget); and</li>
+							<li>it's not good for other jobs (building a birdhouse / using anything other than a <code>&lt;button&gt;</code> to act like a <code>&lt;button&gt;</code>)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Myth</h2>
+						<p>Aria makes HTML accessible.</p>
+						<div class="fragment">
+							<h2>Fact</h2>
+							<p>HTML is already accessible - when used properly.  Aria helps out in areas where there is no equivalent HTML, or the HTML is not yet widely supported in user agents (ie: browsers).</p>
+						</div>
+					</section>
+					<section>
+						<h2>Myth</h2>
+						<p>Aria is replacing HTML.</p>
+						<div class="fragment">
+							<h2>Fact</h2>
+							<p>HTML is here to stay.</p>
+						</div>
+					</section>
+					<section>
+						<h2>Myth</h2>
+						<p>Adding Aria to your site makes it accessible.</p>
+						<div class="fragment">
+							<h2>Fact</h2>
+							<p>Adding Aria to your site - done properly - can enhance its accessibility.  Done improperly can make it much worse.</p>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Important Concepts</h1>
+						<p>Roles, States, and Properties.</p>
+					</section>
+					<section>
 						<h2>Roles</h2>
 						<ul>
 							<li>Roles tell AT (Assisstive Technologies) how to interpret the thing.</li>
-							<li>The role does not affect the visual appearance of the thing.</li>
+							<li>The role does not affect the visual appearance of the thing - do that with CSS.</li>
 							<li>Roles are set with the <code>role</code> attribute.</li>
-							<li>For example: <code>&lt;a href="abc.html" role="button"&gt;Some text&lt;/a&gt;</code> will still <em>look</em> like a link, but to users of AT, it will effectively be a button, and they will expect that the <kbd>space bar</kbd> will activate it.</li>
-							<li><strong>BUT</strong> simply adding the <code>role</code> attribute, the funcationlity will not be updated.  You need to update that with Javascript.</li>
-							<li>So if you do that, you need to ensure that the <code>click</code> event is fired on <code>keypress</code> when <kbd>Enter</kbd> is pressed, and on <code>keyup</code> when the <kbd>space bar</kbd> is pressed.</li>
-							<li>Wouldn't it just be easier to use a <code>&lt;button&gt;</code>?</li>
+						</ul>
+						<p>For example: <code>&lt;a href="abc.html" role="button"&gt;Some text&lt;/a&gt;</code> will still <em>look</em> like a link, but to users of AT, it will effectively be a button, and they will expect that the <kbd>space bar</kbd> will activate it.</p>
+						<p>Simply adding the <code>role</code> attribute won't change the functionality. You need to update that with Javascript.</p>
+						<p>Ensure that the <code>click</code> event is fired on <code>keypress</code> when <kbd>Enter</kbd> is pressed, and on <code>keyup</code> when the <kbd>space bar</kbd> is pressed.</p>
+						<p><strong>Wouldn't it just be easier to use a <code>&lt;button&gt;</code>?</strong></p>
 					</section>
 					<section>
 						<h2>Properties</h2>
+						<ul>
+							<li>tells AT something about the element it's on, or defines a relationship to another element</li>
+							<li>is usually static once applied</li>
+							<li>is an attribute that starts with <code>aria-*</code>.</li>
+						</ul>
+						<p>For example:  <code>&lt;input ... <b>aria-describedby="xyzElement"</b>&gt;</code>.
 					</section>
 					<section>
 						<h2>States</h2>
+						<ul>
+							<li>Gives informationa about a widget or element in time.</li>
+							<li>is likely to change over time</li>
+							<li>is an attribute that starts with <code>aria-*</code>.</li>
+						</ul>
+						<p>For example: <code>&lt;p <b>aria-hidden="true"</b>&gt;This text is not available to the accessibility tree.&lt;/p&gt;</code></p>
 					</section>
 				</section>
 				<section>
 					<h1>The Five Rules of ARIA</h1>
 					<p>From <a href="https://www.w3.org/TR/using-aria/" target="_blank">Using ARIA</a> (W3C):</p>
 					<ol>
-						<li>If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.<br>Also often statedL<br>The First Rule of ARIA is Don't Use ARIA</li>
+						<li>If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.<br>Also often stated:<br><strong>The First Rule of ARIA is Don't Use ARIA</strong></li>
 						<li>Do not change native semantics, unless you really have to.</li>
 						<li>All interactive ARIA controls must be usable with the keyboard.</li>
 						<li>Do not use <code>role="presentation"</code> or <code>aria-hidden="true"</code> on a focusable element.</li>
@@ -110,29 +173,121 @@
 				</section>
 				<section>
 					<section>
-						<h1>The 5? Most Important Roles To Know</h1>
-						<ul>
-							<li>Every copy of the repo knew if it was a copy or the main</li>
-							<li>Only one person could work on a file at a time.</li>
-							<li>They were conceptually simpler and didn't require tutorials like this one.</td>
-						</ul>
-					</section>
-					<section>
-						<h2>Old-School Repository Systems</h2>
-						<div class="imageHolder">
-							<a href="images/old-school.png" target="_blank" title="Click to open in a new window"><img src="images/old-school.png" alt="A diagram showing the decentralized nature of old-school repository systems particularely how each instance knew if it was a copy or the main instance."></a>
-						</div>
+						<h1>The 10 Most Important Roles To Know</h1>
+						<dl>
+							<dt><code>role="none"</code> / <code>role="presentation"</code>  (they're the same thing)</dt>
+							<dd>removes semantic meaning from the element, and all child elements depending on this element.  (Ex: adding <code>role="none"</code> to a <code>&lt;table&gt;</code> also removes the roles of its <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> elements, but not any <code>&lt;button&gt;</code> descendant elements.)</dd>
+							</dd>
+
+							<dt><code>role="application"</code></dt>
+							<dd><ul>
+								<li><q cite="https://www.w3.org/TR/wai-aria/#application">A structure containing one or more focusable elements requiring user input, such as keyboard or gesture events, that do not follow a standard interaction pattern supported by a widget role.</q></li>
+								<li>Tells AT to pass all keystrokes through</li>
+								<li>Javascript will be needed to handle keystrokes</li>
+								<li>Should almost never be used.  Maybe on a game or a complex app or widget.</li>
+							</ul></dd>
+							
+							<dt><code>role="group"</code></dt>
+							<dd><ul>
+								<li>The equivalent to <code>&lt;fieldset&gt;</code>.</li>
+								<li>Should be used with <code>aria-label</code> or <code>aria-labelledby</code> for the <code>&lt;legend&gt;</code>
+							</ul></dd>
+
+							<dt><code>role="heading"</code></dt>
+							<dd><ul>
+								<li>Tells AT the element is a <code>&lt;H#&gt;</code> heading.</li>
+								<li>Must be accompanied by <code>aria-level="x"<code>.</li>
+							</ul></dd>
+
+							<dt><code>role="list"</code></dt>
+							<dd><ul>
+								<li>It's a list</li>
+								<li>If an HTML list has <code>list-style: none;</code>, VoiceOver will not treat it as a list, unless <code>role="list"</code> is in the list element.</li>
+							</ul></dd>
+							<dt><code>role="menu"</code>, <code>role="menubar"</code>, and <code>role="menuitem"</code></dt>
+							<dd><ul>
+								<li>gotta investigate and write more.</li>
+							</ul></dd>
+
+							<dt><code>role="link"</code></dt>
+							<dd><ul>
+								<li>Tells AT it's a link.</li>
+								<li>Clicking it should go somewhere</li>
+								<li>Needs to be tabbable</li>
+							</ul></dd>
+
+							<dt><code>role="img"</code></dt>
+							<dd><ul>
+								<li>Tells AT it's an image</li>
+								<li>Alternate text can be provided with <code>aria-label</code>, <code>aria-labelledby</code>, or other accessible name ways</li>
+							</ul></dd>
+							
+							<dt><code>role="button"</code></dt>
+							<dd><ul>
+								<li>Don't forget to check for the <kbd>Spacebar</kbd> to activate</li>
+							</ul></dd>
+
+							<dt><code>role="switch"</code></dt>
+							<dd><ul>
+								<li>Like a checkbox, but different</li>
+							</ul></dd>
+						</dl>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h1>Git</h1>
-						<ul>
-							<li>Each copy could be either the main or a copy.</li>
-							<li>Each copy has references to "remotes", which are just other instances of that repository.</li>
+						<h1>The 5 ARIA Properties You Need To Know</h1>
+						<dl>
+							<dt><code>aria-label="text goes here"</code></dt>
+							<dd><ul>
+								<li>Gives the element an accessible name</li>
+								<li>Should not be used on elements without a role</li>
+							</ul></dd>
+
+							<dt><code>aria-labelledby="a space-delimited list of IDs of HTML elements on the page"</code></dt>
+							<dd><ul>
+								<li>Uses the text of another element to give this element an accessible name</li>
+								<li>Should not be used on an element without a role</li>
+							</ul></dd>
+
+							
+							<dt><code>aria-describedby="a space-delimited list of IDs of HTML elements on the page"</code></dt>
+							<dd><ul>
+								<li>Uses the text of another element to give this element an accessible description</li>
+								<li>Ensure the element also has an accessible name.</li>
+								<li>Should not be used on an element without a role.</li>
+							</ul></dd>
+
+							<dt><code>aria-level="x"</code></dt>
+							<dd><ul>
+								<li>Where "x" is an integer between 0 and 8 inclusive.</li>
+								<li>Some AT won't acknowledge a level higher than 5.  So don't go higher than 6.</li>
+								<li>Must be used with <code>role="heading"</code>.</li>
+							</ul></dd>
+
+							<dt><code>role="required"</code></dt>
+							<dd><ul>
+								<li>Research this further</li>
+							</ul></dd>
+								
+						</dl>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>The 5 ARIA States You Need To Know</h1>
+						<dl>
+							<dt><code>aria-checked="true|false"</code></dt>
+							<dd><ul>
+								<li>To be used with checkboxes</li>
+							</ul></dd>
+
+							<dt><code>aria-expanded="true|false"</code><dt>
+							<dd><ul>
+								<li>To be used with a control (usually a button of some sort)</li>
 							<li>The main repository is agreed upon by convention; usually at GitHub, GitLab, etc.  But doesn't have to be.</li>
 							<li>Several people can work on the same file at the same time.</li>
-						</ul>
+						</dl>
 					</section>
 					<section>
 						<h2>Git</h2>
@@ -475,6 +630,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				history: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
