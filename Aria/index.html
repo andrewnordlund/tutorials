@@ -174,66 +174,82 @@
 				<section>
 					<section>
 						<h1>The 10 Most Important Roles To Know</h1>
-						<dl>
-							<dt><code>role="none"</code> / <code>role="presentation"</code>  (they're the same thing)</dt>
-							<dd>removes semantic meaning from the element, and all child elements depending on this element.  (Ex: adding <code>role="none"</code> to a <code>&lt;table&gt;</code> also removes the roles of its <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> elements, but not any <code>&lt;button&gt;</code> descendant elements.)</dd>
-							</dd>
-
-							<dt><code>role="application"</code></dt>
-							<dd><ul>
-								<li><q cite="https://www.w3.org/TR/wai-aria/#application">A structure containing one or more focusable elements requiring user input, such as keyboard or gesture events, that do not follow a standard interaction pattern supported by a widget role.</q></li>
-								<li>Tells AT to pass all keystrokes through</li>
-								<li>Javascript will be needed to handle keystrokes</li>
-								<li>Should almost never be used.  Maybe on a game or a complex app or widget.</li>
-							</ul></dd>
-							
-							<dt><code>role="group"</code></dt>
-							<dd><ul>
-								<li>The equivalent to <code>&lt;fieldset&gt;</code>.</li>
-								<li>Should be used with <code>aria-label</code> or <code>aria-labelledby</code> for the <code>&lt;legend&gt;</code>
-							</ul></dd>
-
-							<dt><code>role="heading"</code></dt>
-							<dd><ul>
-								<li>Tells AT the element is a <code>&lt;H#&gt;</code> heading.</li>
-								<li>Must be accompanied by <code>aria-level="x"<code>.</li>
-							</ul></dd>
-
-							<dt><code>role="list"</code></dt>
-							<dd><ul>
-								<li>It's a list</li>
-								<li>If an HTML list has <code>list-style: none;</code>, VoiceOver will not treat it as a list, unless <code>role="list"</code> is in the list element.</li>
-							</ul></dd>
-							<dt><code>role="menu"</code>, <code>role="menubar"</code>, and <code>role="menuitem"</code></dt>
-							<dd><ul>
-								<li>gotta investigate and write more.</li>
-							</ul></dd>
-
-							<dt><code>role="link"</code></dt>
-							<dd><ul>
-								<li>Tells AT it's a link.</li>
-								<li>Clicking it should go somewhere</li>
-								<li>Needs to be tabbable</li>
-							</ul></dd>
-
-							<dt><code>role="img"</code></dt>
-							<dd><ul>
-								<li>Tells AT it's an image</li>
-								<li>Alternate text can be provided with <code>aria-label</code>, <code>aria-labelledby</code>, or other accessible name ways</li>
-							</ul></dd>
-							
-							<dt><code>role="button"</code></dt>
-							<dd><ul>
-								<li>Don't forget to check for the <kbd>Spacebar</kbd> to activate</li>
-							</ul></dd>
-
-							<dt><code>role="switch"</code></dt>
-							<dd><ul>
-								<li>Like a checkbox, but different</li>
-							</ul></dd>
-						</dl>
+						<p>Not including landmark roles.</p>
+					</section>
+					<section>
+						<h2><code>role="none"</code> / <code>role="presentation"</code>  (they're the same thing)</h2>
+						<p>removes semantic meaning from the element, and all child elements depending on this element.  (Ex: adding <code>role="none"</code> to a <code>&lt;table&gt;</code> also removes the roles of its <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> elements, but not any <code>&lt;button&gt;</code> descendant elements.)</p>
+						<img src="same_picture_role_presentation_none.jpg" alt="Pam from the office looking at two pictures; one that says role=presentation and anotehr than says role=none.  She says that they're the same image.">
+					</section>
+					<section>
+						<h2><code>role="application"</code></h2>
+						<ul>
+							<li><q cite="https://www.w3.org/TR/wai-aria/#application">A structure containing one or more focusable elements requiring user input, such as keyboard or gesture events, that do not follow a standard interaction pattern supported by a widget role.</q></li>
+							<li>Tells AT to pass all keystrokes through</li>
+							<li>Javascript will be needed to handle keystrokes</li>
+							<li>Should almost never be used.  Maybe on a game or a complex app or widget.</li>
+						</ul>
+					</section>
+					<section>	
+						<h2><code>role="group"</code></h2>
+						<ul>
+							<li>The equivalent to <code>&lt;fieldset&gt;</code>.</li>
+							<li>Should be used with <code>aria-label</code> or <code>aria-labelledby</code> for the <code>&lt;legend&gt;</code>
+						</ul>
+					</section>
+					<section>
+						<h2><code>role="heading"</code></h2>
+						<ul>
+							<li>Tells AT the element is a <code>&lt;H#&gt;</code> heading.</li>
+							<li>Must be accompanied by <code>aria-level="x"</code>.</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>role="list"</code></h2>
+						<dd><ul>
+							<li>It's a list</li>
+							<li>If an HTML list has <code>list-style: none;</code>, VoiceOver will not treat it as a list, unless <code>role="list"</code> is in the list element.</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>role="menu"</code>, <code>role="menubar"</code>, and <code>role="menuitem"</code></h2>
+						<ul>
+							<li>gotta investigate and write more.</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>role="link"</code></h2>
+						<dd><ul>
+							<li>Tells AT it's a link.</li>
+							<li>Clicking it should go somewhere</li>
+							<li>Needs to be tabbable</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>role="img"</code></h2>
+						<ul>
+							<li>Tells AT it's an image</li>
+							<li>Alternate text can be provided with <code>aria-label</code>, <code>aria-labelledby</code>, or other accessible name ways</li>
+						</ul>
+					</section>
+					<section>	
+						<h2><code>role="button"</code></h2>
+						<ul>
+							<li>Don't forget to check for the <kbd>Spacebar</kbd> to activate</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>role="switch"</code></h2>
+						<dd><ul>
+							<li>Like a checkbox, but different</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>role="document"</code></h2>
+						<p>Or is this a landmark role?</p>
 					</section>
 				</section>
+				<!-- 
 				<section>
 					<section>
 						<h1>The 5 ARIA Properties You Need To Know</h1>
@@ -284,10 +300,29 @@
 
 							<dt><code>aria-expanded="true|false"</code><dt>
 							<dd><ul>
-								<li>To be used with a control (usually a button of some sort)</li>
-							<li>The main repository is agreed upon by convention; usually at GitHub, GitLab, etc.  But doesn't have to be.</li>
-							<li>Several people can work on the same file at the same time.</li>
+								<li>To be used with a control (usually a button of some sort) that expands/collapses something.</li>
+								<li>The <code>aria-expanded</code> attribute needs to be on the element that <em>controls</em> the expansion/collapsion, <em>not</em> the element that expands/collapses.</li>
+							</ul></dd>
+
+							<dt><code>aria-hidden="true|false"</code></dt>
+							<dd><ul>
+								<li>Removes the element from the accessibility tree</li>
+								<li>But it's still visible.</li>
+								<li>Ex: on an <code>&lt;svg&gt;</code> when either the alternate text is irrelevant (ie: a decorative image) or the alternate text is already given elsewhere.</li>
+							</ul></dd>
+
+							<dt><code>aria-current="page|step|..."</code></dt>
+							<dd><ul>
+								<li><code>"page"</code> used in a list of links tells the SR that the current page is the one you're on.  (ex: "<code>&lt;a href="thisPage.html" <b>aria-current="page"</b>&gt;</code>.)  - Note:  check if it can go in the &lt;a&gt;</li>
+								<li><code>"step"</code> when a list of steps in a process is shown, and you're on a current step.  (insert diagram here)</li>
+							</ul></dd>
+
+							<dt><code>aria-pressed="true|false|mixed"</code></dt>
+							<dd><ul>
+								<li>Turns a button into a toggle</li>
+								<li>
 						</dl>
+
 					</section>
 					<section>
 						<h2>Git</h2>
@@ -614,6 +649,7 @@
 						<li>If you get into trouble, check out <a href="https://dangitgit.com/en" target="_blank" rel="noreferrer noopener">Dangit, Git!?!</a>.</li>
 					</ul>
 				</section>
+				-->
 			</div>
 		</div>
 
