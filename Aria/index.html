@@ -48,6 +48,13 @@
 		pre > code {
 			background-color: #505050 !important;
 		}
+		div.slides > section {
+			counter-reset: my-counter;
+		}
+		div.slides section section.count h2::before {
+			counter-increment: my-counter;
+			content: counter(my-counter);
+		}
 		*/
 		</style>
 	</head>
@@ -176,12 +183,12 @@
 						<h1>The 10 Most Important Roles To Know</h1>
 						<p>Not including landmark roles.</p>
 					</section>
-					<section>
-						<h2><code>role="none"</code> / <code>role="presentation"</code>  (they're the same thing)</h2>
-						<p>removes semantic meaning from the element, and all child elements depending on this element.  (Ex: adding <code>role="none"</code> to a <code>&lt;table&gt;</code> also removes the roles of its <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> elements, but not any <code>&lt;button&gt;</code> descendant elements.)</p>
+					<section class="count">
+						<h2><code>role="none"</code> / <code>role="presentation"</code></h2>
 						<img src="same_picture_role_presentation_none.jpg" alt="Pam from the office looking at two pictures; one that says role=presentation and anotehr than says role=none.  She says that they're the same image.">
+						<p>removes semantic meaning from the element, and all child elements depending on this element.  (Ex: adding <code>role="none"</code> to a <code>&lt;table&gt;</code> also removes the roles of its <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> elements, but not any <code>&lt;button&gt;</code> descendant elements.)</p>
 					</section>
-					<section>
+					<section class="count">
 						<h2><code>role="application"</code></h2>
 						<ul>
 							<li><q cite="https://www.w3.org/TR/wai-aria/#application">A structure containing one or more focusable elements requiring user input, such as keyboard or gesture events, that do not follow a standard interaction pattern supported by a widget role.</q></li>
@@ -190,34 +197,28 @@
 							<li>Should almost never be used.  Maybe on a game or a complex app or widget.</li>
 						</ul>
 					</section>
-					<section>	
-						<h2><code>role="group"</code></h2>
-						<ul>
-							<li>The equivalent to <code>&lt;fieldset&gt;</code>.</li>
-							<li>Should be used with <code>aria-label</code> or <code>aria-labelledby</code> for the <code>&lt;legend&gt;</code>
-						</ul>
-					</section>
-					<section>
+					<section class="count">
 						<h2><code>role="heading"</code></h2>
 						<ul>
 							<li>Tells AT the element is a <code>&lt;H#&gt;</code> heading.</li>
 							<li>Must be accompanied by <code>aria-level="x"</code>.</li>
 						</ul>
 					</section>
-					<section>
+					<section class="count">	
+						<h2><code>role="group"</code></h2>
+						<ul>
+							<li>The equivalent to <code>&lt;fieldset&gt;</code>.</li>
+							<li>Should be used with <code>aria-label</code> or <code>aria-labelledby</code> for the <code>&lt;legend&gt;</code>
+						</ul>
+					</section>
+					<section class="count">
 						<h2><code>role="list"</code></h2>
 						<dd><ul>
 							<li>It's a list</li>
 							<li>If an HTML list has <code>list-style: none;</code>, VoiceOver will not treat it as a list, unless <code>role="list"</code> is in the list element.</li>
 						</ul>
 					</section>
-					<section>
-						<h2><code>role="menu"</code>, <code>role="menubar"</code>, and <code>role="menuitem"</code></h2>
-						<ul>
-							<li>gotta investigate and write more.</li>
-						</ul>
-					</section>
-					<section>
+					<section class="count">
 						<h2><code>role="link"</code></h2>
 						<dd><ul>
 							<li>Tells AT it's a link.</li>
@@ -225,68 +226,81 @@
 							<li>Needs to be tabbable</li>
 						</ul>
 					</section>
-					<section>
+					<section class="count">
 						<h2><code>role="img"</code></h2>
 						<ul>
 							<li>Tells AT it's an image</li>
 							<li>Alternate text can be provided with <code>aria-label</code>, <code>aria-labelledby</code>, or other accessible name ways</li>
 						</ul>
 					</section>
-					<section>	
+					<section class="count">	
 						<h2><code>role="button"</code></h2>
 						<ul>
 							<li>Don't forget to check for the <kbd>Spacebar</kbd> to activate</li>
+							<li>Event fires on <code>keypress</code> with the <kbd>Enter</kbd> key, and on <code>keyup</code> for the <kbd>spacebar</kbd>
 						</ul>
 					</section>
-					<section>
+					<section class="count">
 						<h2><code>role="switch"</code></h2>
 						<dd><ul>
 							<li>Like a checkbox, but different</li>
+							<li>A checkbox is either checked or unchecked</li>
+							<li>A switch is either on or off</li>
 						</ul>
 					</section>
-					<section>
+					<section class="count">
 						<h2><code>role="document"</code></h2>
 						<p>Or is this a landmark role?</p>
 					</section>
+					<!--
+					<section class="count">
+						<h2><code>role="menu"</code>, <code>role="menubar"</code>, and <code>role="menuitem"</code></h2>
+						<ul>
+							<li>gotta investigate and write more.</li>
+						</ul>
+					</section>
+					-->
 				</section>
-				<!-- 
 				<section>
-					<section>
+					<section class="count">
 						<h1>The 5 ARIA Properties You Need To Know</h1>
-						<dl>
-							<dt><code>aria-label="text goes here"</code></dt>
-							<dd><ul>
-								<li>Gives the element an accessible name</li>
-								<li>Should not be used on elements without a role</li>
-							</ul></dd>
-
-							<dt><code>aria-labelledby="a space-delimited list of IDs of HTML elements on the page"</code></dt>
-							<dd><ul>
-								<li>Uses the text of another element to give this element an accessible name</li>
-								<li>Should not be used on an element without a role</li>
-							</ul></dd>
-
-							
-							<dt><code>aria-describedby="a space-delimited list of IDs of HTML elements on the page"</code></dt>
-							<dd><ul>
-								<li>Uses the text of another element to give this element an accessible description</li>
-								<li>Ensure the element also has an accessible name.</li>
-								<li>Should not be used on an element without a role.</li>
-							</ul></dd>
-
-							<dt><code>aria-level="x"</code></dt>
-							<dd><ul>
-								<li>Where "x" is an integer between 0 and 8 inclusive.</li>
-								<li>Some AT won't acknowledge a level higher than 5.  So don't go higher than 6.</li>
-								<li>Must be used with <code>role="heading"</code>.</li>
-							</ul></dd>
-
-							<dt><code>role="required"</code></dt>
-							<dd><ul>
-								<li>Research this further</li>
-							</ul></dd>
-								
-						</dl>
+						<h2><code>aria-label="accessible name here"</code></h2>
+						<ul>
+							<li>Gives the element an accessible name</li>
+							<li>Should not be used on elements without a role</li>
+						</ul>
+					</section>
+					<section class="count">
+						<h2><code>aria-labelledby="a space-delimited list of IDs of HTML elements on the page"</code></h2>
+						<ul>
+							<li>Uses the text of another element to give this element an accessible name</li>
+							<li>Should not be used on an element without a role</li>
+						</ul>
+					</section>
+					<section class="count">
+						<h2><code>aria-describedby="a space-delimited list of IDs of HTML elements on the page"</code></h2>
+						<ul>
+							<li>Uses the text of another element to give this element an accessible description</li>
+							<li>Ensure the element also has an accessible name.</li>
+							<li>Should not be used on an element without a role.</li>
+						</ul>
+					</section>
+					<section class="count">
+						<h2><code>aria-level="x"</code></h2>
+						<ul>
+							<li>Where "x" is an integer between 0 and 8 inclusive.</li>
+							<li>Some AT won't acknowledge a level higher than 6.  So don't go higher than 6.</li>
+							<li>Must be used with <code>role="heading"</code>.</li>
+							<li>Can be used on <code>role="row"</code> in a <code>role="treegrid"</code>.</li>
+						</ul>
+					</section>
+					<section class="count">
+						<h2><code>role="required"</code></h2>
+						<ul>
+							<li>The <code>required</code> attribute will cause a browser to do some valiation.</li>
+							<li>Whereas the <code>aria-required="true"</code> will not.  But it will tell AT that it's a required field.</li>
+							<li>Therefore if the accessible name (or description) includes the word "required", then it's best to leave <code>aria-required</code> out to avoid redunant repetition.</li>
+						</ul>
 					</section>
 				</section>
 				<section>
@@ -324,12 +338,14 @@
 						</dl>
 
 					</section>
+				<!-- 
 					<section>
 						<h2>Git</h2>
 						<div class="imageHolder">
 							<a href="images/decentralized.svg" target="_blank" title="Click to open in a new window"><img src="images/decentralized.svg" alt="A diagram showing the decentralized nature of old-school repository systems particularely how each instance knew if it was a copy or the main instance."></a>
 						</div>
 					</section>
+					-->
 				</section>
 				<section>
 					<h1>Commits</h1>
