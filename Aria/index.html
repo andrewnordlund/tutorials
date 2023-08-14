@@ -402,11 +402,12 @@
 					<section>
 						<h1>Live Regions</h1>
 						<ul>
-							<li>Provides screen readers with new, time sensitive content without stealing focus, or changing context.</li>
+							<li>Provides screen readers with changed content without stealing focus, or changing context.</li>
 							<li>Messages should be kept short</li>
 							<li>Can be defined with either the <code>role</code>, or <code>aria-live</code> attribute</li>
 							<li>Remember that using <code>role</code> overrides the inherent role of its element.<br>Ex:  <code>&lt;h2 role="status"&gt;</code> is no longer a level 2 heading.  It's a status message.</li>
 							<li>Rule-of-thumb: Screen readers read when the contents of the live region when the contents change; not when they're simply unhidden.</li>
+							<li>Most of the time <code>aria-live</code> should be used instead of a live <code>role</code>.</li>
 						</ul>
 					</section>
 					<section>
@@ -421,13 +422,19 @@
 					</section>
 					<section>
 						<h2>Live Roles</h2>
-						<p>To give an element a live role:  <code>role="status|alert|log|progressbar|marquee|time"</code>
+						<ul>
+							<li>To give an element a live role:  <code>role="status|alert|log|progressbar|marquee|timer"</code></li>
+							<li>the <code>role</code> attribute has to be on the element before the text content is changed.</li>
+							<li>The current support for <code>role="progressbar|marquee|timer"</code></li>
+							<li><code>role="alert|status|log"</code> is mostly supported (<a href="https://a11ysupport.io/">Accessibility Support</a>)</li>
+
 					</section>
 					<section>
 						<h2>Live Region Attributes To Know</h2>
 						<ul>
 							<li><code>aria-atomic="true|false"</code> tells a screen reader to either just read out any changes, or read the entire live region when a change occurs.  (The default is <code>false</code>)</li>
 							<li><code>aria-relevant="additions|removals|text|all"</code>. (The default is <code>text</code>.)</li>
+							<li>If it will take time between when changes to a live region starts to change and when it finishes changing, add <code>aria-busy="true"</code> so as the live region is changing, then set it to <code>aria-busy="false"</code> so screen readers won't read out changes until all changes are made.</li>
 						</ul>
 					</section>
 					<section>
@@ -450,9 +457,20 @@
 						function liveMsg ($msg) {
 							let $msgCentre = getElementById("msgCentre");
 							$msgCentre.textContent = $msg;
-						} // End of
+						} // End of liveMsg
 						</code>
 					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Top ARIA Widgets To Know</h1>
+						<ul>
+							<li>Tabbed interface</li>
+							<li>Menus</li>
+							<li>Grid</li>
+							<li>Tree</li>
+						</ul>
+
 				</section>
 				<!-- 
 					<section>
@@ -461,7 +479,6 @@
 							<a href="images/decentralized.svg" target="_blank" title="Click to open in a new window"><img src="images/decentralized.svg" alt="A diagram showing the decentralized nature of old-school repository systems particularely how each instance knew if it was a copy or the main instance."></a>
 						</div>
 					</section>
-					-- >
 				</section>
 				<section>
 					<h1>Commits</h1>
