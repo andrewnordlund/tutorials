@@ -267,7 +267,7 @@
 						<h2><code>aria-label="accessible name here"</code></h2>
 						<ul>
 							<li>Gives the element an accessible name</li>
-							<li>Should not be used on elements without a role</li>
+							<li>Should not be used on elements without a role (ex: <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>)</li>
 						</ul>
 					</section>
 					<section class="count">
@@ -295,6 +295,14 @@
 						</ul>
 					</section>
 					<section class="count">
+						<h2><code>aria-haspopup="false|true|menu|listbox|tree|grid|dialog"</code></h2>
+						<ul>
+							<li>Used when a control (usually a button of some sort) reveals hidden content when activated</li>
+							<li><code>aria-haspopup="true"</code> == <code>aria-haspopup="menu"</code></li>
+						</ul>
+					</section>
+					<!--
+					<section class="count">
 						<h2><code>role="required"</code></h2>
 						<ul>
 							<li>The <code>required</code> attribute will cause a browser to do some valiation.</li>
@@ -302,42 +310,150 @@
 							<li>Therefore if the accessible name (or description) includes the word "required", then it's best to leave <code>aria-required</code> out to avoid redunant repetition.</li>
 						</ul>
 					</section>
+					-->
 				</section>
 				<section>
 					<section>
-						<h1>The 5 ARIA States You Need To Know</h1>
-						<dl>
-							<dt><code>aria-checked="true|false"</code></dt>
-							<dd><ul>
-								<li>To be used with checkboxes</li>
-							</ul></dd>
-
-							<dt><code>aria-expanded="true|false"</code><dt>
-							<dd><ul>
+						<h1>The 4 ARIA States You Need To Know</h1>
+						<h2><code>aria-expanded="true|false"</code></h2>
+							<ul>
 								<li>To be used with a control (usually a button of some sort) that expands/collapses something.</li>
 								<li>The <code>aria-expanded</code> attribute needs to be on the element that <em>controls</em> the expansion/collapsion, <em>not</em> the element that expands/collapses.</li>
-							</ul></dd>
-
-							<dt><code>aria-hidden="true|false"</code></dt>
-							<dd><ul>
+							</ul>
+					</section>
+					<section class="count">
+							<h2><code>aria-hidden="true|false"</code></h2>
+							<ul>
 								<li>Removes the element from the accessibility tree</li>
 								<li>But it's still visible.</li>
 								<li>Ex: on an <code>&lt;svg&gt;</code> when either the alternate text is irrelevant (ie: a decorative image) or the alternate text is already given elsewhere.</li>
-							</ul></dd>
-
-							<dt><code>aria-current="page|step|..."</code></dt>
-							<dd><ul>
-								<li><code>"page"</code> used in a list of links tells the SR that the current page is the one you're on.  (ex: "<code>&lt;a href="thisPage.html" <b>aria-current="page"</b>&gt;</code>.)  - Note:  check if it can go in the &lt;a&gt;</li>
-								<li><code>"step"</code> when a list of steps in a process is shown, and you're on a current step.  (insert diagram here)</li>
-							</ul></dd>
-
-							<dt><code>aria-pressed="true|false|mixed"</code></dt>
-							<dd><ul>
-								<li>Turns a button into a toggle</li>
-								<li>
-						</dl>
-
+							</ul>
 					</section>
+					<section class="count">
+						<h2><code>aria-current="false|true|page|step|location|date|time"</code></h2>
+						<ul>
+							<li><q cite="https://www.w3.org/TR/wai-aria-1.1/#aria-current">used when an element within a set of related elements is visually styled to indicate it is the current item in the set.</q></li>
+							<li><code>"false"</code> indicates the thing is not the current item in a set.</li>
+							<li><code>"true"</code> indicates the thing is the current item in a set.</li>
+							<li><code>"page"</code> used in a list of links tells the SR that the current page is the one you're on.  (ex: "<code>&lt;a href="thisPage.html" <b>aria-current="page"</b>&gt;</code>.)  - Note:  check if it can go in the &lt;a&gt;</li>
+							<li><code>"step"</code> when a list of steps in a process is shown, and you're on a current step.  (insert diagram here)</li>
+							<li><code>"location"</code> used in an environment or context, like in a flow chart</li>
+							<li><code>"date"</code> used in a collection of dates</li>
+							<li><code>"time"</code> used in a collection of times</li>
+						</ul>
+					</section>
+					<section class="count">
+						<h2><code>aria-pressed="true|false|mixed"</code></h2>
+						<ul>
+							<li>Turns a button into a toggle</li>
+								<li><code>"mixed"</code> is for when the toggle changes the value of more than one thing which may have different values</li>
+							</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Landmark Roles</h1>
+						<table>
+							<thead>
+								<tr>
+									<th scope="col">HTML</th>
+									<th scope="col">Role equivalent</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>&lt;header&gt;</code></td>
+									<td><code>role="banner"</code></td>
+								</tr>
+								<tr>
+									<td><code>&lt;main&gt;</code></td>
+									<td><code>role="main"</code></td>
+								</tr>
+								<tr>
+									<td><code>&lt;footer&gt;</code></td>
+									<td><code>role="contentinfo"</code></td>
+								</tr>
+								<tr>
+									<td><code>&lt;nav&gt;</code></td>
+									<td><code>role="navigation"</code></td>
+								</tr>
+								<tr>
+									<td><code>&lt;aside&gt;</code></td>
+									<td><code>role="complementary"</code></td>
+								</tr>
+
+								<tr>
+									<td><code>&lt;section&gt;</code></td>
+									<td><code>role="region"</code></td>
+								</tr>
+								<tr>
+									<td><code>&lt;form&gt;</code></td>
+									<td><code>role="form"</code></td>
+								</tr>
+								<tr>
+									<td>(none)</td>
+									<td><code>role="search"</code></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Live Regions</h1>
+						<ul>
+							<li>Provides screen readers with new, time sensitive content without stealing focus, or changing context.</li>
+							<li>Messages should be kept short</li>
+							<li>Can be defined with either the <code>role</code>, or <code>aria-live</code> attribute</li>
+							<li>Remember that using <code>role</code> overrides the inherent role of its element.<br>Ex:  <code>&lt;h2 role="status"&gt;</code> is no longer a level 2 heading.  It's a status message.</li>
+							<li>Rule-of-thumb: Screen readers read when the contents of the live region when the contents change; not when they're simply unhidden.</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-live</code> values</h2>
+						<ul>
+							<li><code>aria-live</code> can be "polite", "assertive", or "off"</li>
+							<li>"polite" tells a scren reader "finish what you're saying.  Then read this out."</li>
+							<li>"assertive"  tells a screen reader "this is time sensitive. Drop what you're saying, and read this out right now."</li>
+							<li>"off" tells a screen reader to not read out any changes.</li>
+							<li>The vast majority of time, use "polite".</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Live Roles</h2>
+						<p>To give an element a live role:  <code>role="status|alert|log|progressbar|marquee|time"</code>
+					</section>
+					<section>
+						<h2>Live Region Attributes To Know</h2>
+						<ul>
+							<li><code>aria-atomic="true|false"</code> tells a screen reader to either just read out any changes, or read the entire live region when a change occurs.  (The default is <code>false</code>)</li>
+							<li><code>aria-relevant="additions|removals|text|all"</code>. (The default is <code>text</code>.)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>How To Implement</h2>
+						<p>On your site template, have a <code>&lt;div&gt;</code> at the bottom of the DOM that's hidden from screen readers and use Javascript to update content whenever you need to.</p>
+						<p>Example:</p>
+						<h3>HTML</h3>
+						<code>
+								...
+								&lt;/footer&gt;
+							&lt;div class="sr-only" aria-live="polite" id="msgCentre"&gt;&lt;/div&gt;
+							&lt;/body&gt;
+						&lt;/html&gt;
+						</code>
+					</section>
+					<section>
+						<h2>How To Implement</h2>
+						<h3>Javascript</h3>
+						<code>
+						function liveMsg ($msg) {
+							let $msgCentre = getElementById("msgCentre");
+							$msgCentre.textContent = $msg;
+						} // End of
+						</code>
+					</section>
+				</section>
 				<!-- 
 					<section>
 						<h2>Git</h2>
@@ -345,7 +461,7 @@
 							<a href="images/decentralized.svg" target="_blank" title="Click to open in a new window"><img src="images/decentralized.svg" alt="A diagram showing the decentralized nature of old-school repository systems particularely how each instance knew if it was a copy or the main instance."></a>
 						</div>
 					</section>
-					-->
+					-- >
 				</section>
 				<section>
 					<h1>Commits</h1>
