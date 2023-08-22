@@ -463,14 +463,67 @@
 				</section>
 				<section>
 					<section>
-						<h1>Top ARIA Widgets To Know</h1>
+						<h1>ARIA Widgets</h1>
+						<ul>
+							<li>ARIA widgets are interactive components that are usually more complex than what HTML offers.</li>
+							<li>Usually mimicing an interface common on desktop apps</li>
+							<li>They're built using existing HTML with certain ARIA attributes, with JavaScript to provide functionality.</li>
+							<li>There are many widgets, and some details can be found at the <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noreferrer noopener">ARIA Authoring Practices Guide (APG)</a> and the <a href="https://www.w3.org/TR/wai-aria-1.2/" target="_blank" rel="noopener noreferrer">ARIA 1.2 spec</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Top 5 ARIA Widgets To Know</h2>
+						<p>There are lots, but here are some common ones for which HTML counterparts don't exist:</p>
 						<ul>
 							<li>Tabbed interface</li>
 							<li>Menus</li>
 							<li>Grid</li>
 							<li>Tree</li>
+							<li>Dialog</li>
 						</ul>
+					</section>
+					<section class="count">
+						<h2>Tabbed Interface</h2>
+						<ul>
+							<li>For when a page has sections of content, only one of which should be shown at a time.</li>
+							<li>The sections of content are designated with <code>role="tabpanel"</code> and they're selected with interactive elements designated with <code>role="tab"</code> which are listed in something designated with <code>role="tablist"</code>.</li>
+							<li>On mobile devices, there often isn't enough horizontal room to show all tabs, so often on mobile devices, the tabbed interface is replaced with an accorian widget (a series of discosure widgets where only one is open at a time).</li>
+							<li>The <kbd>Left</kbd> and <kbd>Right</kbd> arrow keys chnage selection, and optionally exposes that tabpanel.</li>
+							<li>When focus is before the tablist, <kbd>Tab</kbd> takes you to the tap that's currently selected.  When a tab is selected <kbd>Tab</kbd> takes you to the first focusable element after the tablist, possibly the tabpanel itself.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tabbed Interface</h2>
+						<a href="tabs.jpg" target="_blank" rel="noopener noreferrer"><img src="tabs.jpg" alt="A simple tabbed interface showing the tabs, tablist, and a tabpanel.  Click to enlarge."></a>
+					</section>
+					<section class="count">
+						<h2>Menus</h2>
+						<ul>
+							<li>Used for actions to be performed within a page.</li>
+							<li>Not for navigation.</li>
+							<li>Example:  
 
+						</ul>
+					</section>
+					<section class="count">
+						<h2>Grid</h2>
+						<ul>
+							<li>Like a <code>&lt;table&gt;</code> but navigable with a keyboard, if only to highlight selected cells</li>
+						</ul>
+					</section>
+					<section class="count">
+						<h2>Tree</h2>
+						<ul>
+							<li>Like a file system's directory structure, or the tag tree in a PDF authoring tool like Adobe Acrobat</li>
+						</ul>
+					</section>
+					<section class="count">
+						<h2>Dialog</h2>
+						<ul>
+							<li>In 2023 support for the native <code>&lt;dialog&gt;</code> element has gained wider support.  But you may see ARIA diaglog widgets around.</li>
+							
+						</ul>
+					</section>
 				</section>
 				<!-- 
 					<section>
