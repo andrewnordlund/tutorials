@@ -499,22 +499,55 @@
 					<section class="count">
 						<h2>Menus</h2>
 						<ul>
-							<li>Used for actions to be performed within a page.</li>
-							<li>Not for navigation.</li>
-							<li>Example:  
+							<li>Used for actions to be performed within a page.  Not for navigation.</li>
+							<li>From <a href="https://www.w3.org/TR/wai-aria-1.2/#menu" rel="noopener noreferrer">W3C WAI-ARIA 1.2</a>:  <q>A menu is often a list of common actions or functions that the user can invoke. The menu role is appropriate when a list of menu items is presented in a manner similar to a menu on a desktop application.</q></li>
+							<li>Example:  From Google Spreadsheets:<br><a href="menu.jpg" target="_blank" rel="noopener noreferrer"><img src="menu.jpg" alt="A simple menu showing the menu, menubar, and menuitems.  Click to enlarge."></a>
+
 
 						</ul>
 					</section>
 					<section class="count">
 						<h2>Grid</h2>
 						<ul>
-							<li>Like a <code>&lt;table&gt;</code> but navigable with a keyboard, if only to highlight selected cells</li>
+							<li>From <a href="https://www.w3.org/TR/wai-aria-1.2/#grid" rel="noopener noreferrer">W3C WAI-ARIA 1.2</a>: <q>a collection of one or more rows with one or more cells where some or all cells in the grid are focusable by using methods of two-dimensional navigation, such as directional arrow keys.</q></li>
+							<li>ie: the grid is traversable with the keyboard, but cells don't need to be interactive.</li>
+							<li>Could be like a <code>&lt;table&gt;</code>, but doesn't have to be.  It is based on the concept of a <code>&lt;table&gt;</code></li>
+							<li>Elements with <code>role="grid"</code> have descendant elements with <code>role="row"</code> or <code>role="rowgroup"</code>.</li>
+							<li>Elements with <code>role="gridcell|rowheader|columnheader"</code> must have an ancestor element with <code>role="row"</code>.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Grid</h2>
+						<a href="grid.jpg" target="_blank" rel="noopener noreferrer"><img src="grid.jpg" alt="A grid with gridrows, gridcells and my keyboard focus indicator.  Click to enlarge."></a>
+					</section>
+					<section>
+						<h2>Grid</h2>
+						<a href="gridcode.jpg" target="_blank" rel="noopener noreferrer"><img src="gridcode.jpg" alt="The HTML code of an HTML table with role=grid and td's have tabindex=-1 to receive focus programmatically, but the interactive element with my focus has tabindex=0.  Click to enlarge." style="width: 150%; height: 150%;"></a>
+						<ul>
+							<li>Note the lack of <code>role</code> attributes in the <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> elements.  That's because they have the correct implicit roles.</li>
 						</ul>
 					</section>
 					<section class="count">
 						<h2>Tree</h2>
 						<ul>
-							<li>Like a file system's directory structure, or the tag tree in a PDF authoring tool like Adobe Acrobat</li>
+							<li>From <a href="https://www.w3.org/TR/wai-aria-1.2/#tree" rel="noopener noreferrer">W3C WAI-ARIA 1.2</a>: <q>A widget that allows the user to select one or more items from a hierarchically organized collection.</q></li>
+
+							<li>Like a file system's directory structure, or the tag tree in a PDF authoring tool like Adobe Acrobat or Foxit Pro</li>
+							<li>Traversable with a keyboard</li>
+							<li>A tree has nodes with <code>role="treeitem"</code>.  The tree "root" has <code>role="tree"</code>.</li>
+							<ii>A node can either have children (in which case it's called a "Parent Node"), or not (in which case it's called an "End Node".)</li>
+							<li>If a parent node's children are visible, it's said to be an "Open Node" (with <code>aria-expanded="true"</code>).  Else, it's a "Closed Node" (with <code>aria-expanded="false"</code>).</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tree</h2>
+						<a href="tree.jpg" target="_blank" rel="noopener noreferrer"><img src="tree.jpg" alt="A tree with a root node, parent nodes, child nodes, open and closed nodes, end nodes, and my keyboard focus indicator.  Click to enlarge."></a>
+					</section>
+					<section>
+						<h2>Tree</h2>
+						<a href="treecode.jpg" target="_blank" rel="noopener noreferrer"><img src="treecode.jpg" alt="The HTML code of an unordered list with role=tree and li's have role=none, whose a elements have role=treeitem and tabindex=-1 to receive focus programmatically, but the interactive element with my focus has tabindex=0.  Click to enlarge." style="width: 150%; height: 150%;"></a>
+						<ul>
+							<li>Note the <code>role="group"</code>s on the inner <code>&lt;ul&gt;</code>s rather than an inner role="tree".</li>
 						</ul>
 					</section>
 					<section class="count">
