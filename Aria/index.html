@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Absolute Beginners Intro To Aria</title>
+		<title>Absolute Beginners Intro To WAI-Aria</title>
 
 		<link rel="stylesheet" href="../dist/reset.css">
 		<link rel="stylesheet" href="../dist/reveal.css">
@@ -62,7 +62,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="nb-vslide">
-					<h1>Intro to Aria</h1>
+					<h1>Intro to WAI-Aria</h1>
 					<p>This tutorial is a basic intro to WAI-ARIA:</p>
 					<ul>
 						<li>What it is</li>
@@ -70,14 +70,13 @@
 						<li>The Rules of ARIA</li>
 						<li>Roles<ul>
 							<li>The Landmark Roles</li>
-							<li>The 10? most important roles to know</li>
+							<li>The 10 most important roles to know</li>
 						</ul></li>
 						<li>Properties and States<ul>
-							<li>Relationship Attributes</li>
-							<li>Widget Attributes</li>
-							<li>The 10? most important properties to know</li>
+							<li>The top 5 properties &amp; 4 states to know</li>
 						</ul></li>
 						<li>Live Regions</li>
+						<li>ARIA Widgets</li>
 					</ul>
 					<div style="font-size: 50%; margin-top: 2em;">
 					<p>This tutorial uses <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
@@ -110,7 +109,7 @@
 						<p>Aria makes HTML accessible.</p>
 						<div class="fragment">
 							<h2>Fact</h2>
-							<p>HTML is already accessible - when used properly.  Aria helps out in areas where there is no equivalent HTML, or the HTML is not yet widely supported in user agents (ie: browsers).</p>
+							<p>HTML is already accessible - when used properly.  Aria helps in areas where there is no equivalent HTML, or the HTML is not yet widely supported in browsers.</p>
 						</div>
 					</section>
 					<section>
@@ -160,8 +159,8 @@
 						<h2>States</h2>
 						<ul>
 							<li>Gives informationa about a widget or element in time.</li>
-							<li>is likely to change over time</li>
-							<li>is an attribute that starts with <code>aria-*</code>.</li>
+							<li>The value is likely to change over time</li>
+							<li>Is an attribute that starts with <code>aria-*</code>.</li>
 						</ul>
 						<p>For example: <code>&lt;p <b>aria-hidden="true"</b>&gt;This text is not available to the accessibility tree.&lt;/p&gt;</code></p>
 					</section>
@@ -185,7 +184,7 @@
 					</section>
 					<section class="count">
 						<h2><code>role="none"</code> / <code>role="presentation"</code></h2>
-						<img src="same_picture_role_presentation_none.jpg" alt="Pam from the office looking at two pictures; one that says role=presentation and anotehr than says role=none.  She says that they're the same image.">
+						<!-- <img src="same_picture_role_presentation_none.jpg" alt="Pam from the office looking at two pictures; one that says role=presentation and anotehr than says role=none.  She says that they're the same image."> -->
 						<p>removes semantic meaning from the element, and all child elements depending on this element.  (Ex: adding <code>role="none"</code> to a <code>&lt;table&gt;</code> also removes the roles of its <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> elements, but not any <code>&lt;button&gt;</code> descendant elements.)</p>
 					</section>
 					<section class="count">
@@ -209,7 +208,8 @@
 						<h2><code>role="heading"</code></h2>
 						<ul>
 							<li>Tells AT the element is a <code>&lt;H#&gt;</code> heading.</li>
-							<li>Must be accompanied by <code>aria-level="x"</code>.</li>
+							<li>Must be accompanied by <code>aria-level="x" where 1 &lt;= x &lt;= 8</code>.</li>
+							<li>Example:  <code>&lt;div role="heading" aria-level="2"&gt;</code> is equivalent to <code>&lt;h2&gt;</code>.</li>
 						</ul>
 					</section>
 					<section class="count">	
@@ -218,6 +218,15 @@
 							<li>The equivalent to <code>&lt;fieldset&gt;</code>.</li>
 							<li>Should be used with <code>aria-label</code> or <code>aria-labelledby</code> for the <code>&lt;legend&gt;</code></li>
 						</ul>
+						<p>Example:</p>
+<pre><code>&lt;div role="group" aria-labelledby="groupLbl"&gt;
+	&lt;h2 id="groupLbl"&gt;Contact Info&lt;/h2&gt;
+
+	&lt;label for="name"&gt;Name:&lt;/label&gt;
+	&lt;input id="name"&gt;
+	...
+&lt;/div&gt;
+</code></pre>
 					</section>
 					<section class="count">
 						<h2><code>role="list"</code></h2>
@@ -334,17 +343,27 @@
 							</ul>
 					</section>
 					<section class="count">
-						<h2><code>aria-current="false|true|page|step|location|date|time"</code></h2>
+						<h2 style="font-size: 90%;"><code>aria-current="false|true|page|step|location|date|time"</code></h2>
 						<ul>
 							<li><q cite="https://www.w3.org/TR/wai-aria-1.1/#aria-current">used when an element within a set of related elements is visually styled to indicate it is the current item in the set.</q></li>
 							<li><code>"false"</code> indicates the thing is not the current item in a set.</li>
 							<li><code>"true"</code> indicates the thing is the current item in a set.</li>
-							<li><code>"page"</code> used in a list of links tells the SR that the current page is the one you're on.  (ex: "<code>&lt;a href="thisPage.html" <b>aria-current="page"</b>&gt;</code>.)  - Note:  check if it can go in the &lt;a&gt;</li>
-							<li><code>"step"</code> when a list of steps in a process is shown, and you're on a current step.  (insert diagram here)</li>
+							<li><code>"page"</code> used in a list of links tells the SR that the current page is the one you're on.  (ex: "<code>&lt;a href="thisPage.html" <b>aria-current="page"</b>&gt;</code>.)</li>
+							<li><code>"step"</code> when a list of steps in a process is shown, and you're on a current step.</li>
 							<li><code>"location"</code> used in an environment or context, like in a flow chart</li>
 							<li><code>"date"</code> used in a collection of dates</li>
 							<li><code>"time"</code> used in a collection of times</li>
 						</ul>
+					</section>
+					<section>
+						<h2>aria-current="step" Example</h2>
+						<p>From the Canada Job Bank user registration process:</p>
+						<a href="ariastep.jpg" target="_blank" rel="noopener noreferrer"><img src="ariastep.jpg" alt="A 4 part process with each having a circle and text indicating the number and name of the step. An annotation showing where aria-current=step would go.  Click to enlarge."></a>
+					</section>
+					<section>
+						<h2>aria-current="step" Example</h2>
+						<p>From the Canada Job Bank user registration process:</p>
+						<a href="ariastepcode.jpg" target="_blank" rel="noopener noreferrer"><img src="ariastepcode.jpg" alt="The HTML code showing the aria-current=step in a multi-step process.  Click to enlarge."></a>
 					</section>
 					<section class="count">
 						<h2><code>aria-pressed="true|false|mixed"</code></h2>
@@ -407,7 +426,7 @@
 						<h1>Live Regions</h1>
 						<ul>
 							<li>Provides screen readers with changed content without stealing focus, or changing context.</li>
-							<li>Messages should be kept short</li>
+							<li>Messages should be short</li>
 							<li>Can be defined with either the <code>role</code>, or <code>aria-live</code> attribute</li>
 							<li>Remember that using <code>role</code> overrides the inherent role of its element.<br>Ex:  <code>&lt;h2 role="status"&gt;</code> is no longer a level 2 heading.  It's a status message.</li>
 							<li>Rule-of-thumb: Screen readers read when the contents of the live region when the contents change; not when they're simply unhidden.</li>
@@ -446,23 +465,23 @@
 						<p>On your site template, have a <code>&lt;div&gt;</code> at the bottom of the DOM that's hidden from screen readers and use Javascript to update content whenever you need to.</p>
 						<p>Example:</p>
 						<h3>HTML</h3>
-						<code>
-								...
-								&lt;/footer&gt;
-							&lt;div class="sr-only" aria-live="polite" id="msgCentre"&gt;&lt;/div&gt;
-							&lt;/body&gt;
-						&lt;/html&gt;
-						</code>
+						<pre><code>
+		...
+		&lt;/footer&gt;
+		&lt;div class="sr-only" aria-live="polite" id="msgCentre"&gt;&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
 					</section>
 					<section>
 						<h2>How To Implement</h2>
 						<h3>Javascript</h3>
-						<code>
-						function liveMsg ($msg) {
-							let $msgCentre = getElementById("msgCentre");
-							$msgCentre.textContent = $msg;
-						} // End of liveMsg
-						</code>
+						<pre><code>
+function liveMsg ($msg) {
+	let $msgCentre = getElementById("msgCentre");
+	$msgCentre.textContent = $msg;
+} // End of liveMsg
+						</code></pre>
 					</section>
 				</section>
 				<section>
@@ -473,7 +492,7 @@
 							<li>Usually mimicing an interface common on desktop apps</li>
 							<li>They're built using existing HTML with certain ARIA attributes, with JavaScript to provide functionality.</li>
 							<li>There are many widgets, and some details can be found at the <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noreferrer noopener">ARIA Authoring Practices Guide (APG)</a> and the <a href="https://www.w3.org/TR/wai-aria-1.2/" target="_blank" rel="noopener noreferrer">ARIA 1.2 spec</a></li>
-							<li>Note that the ARIA 1.2 spec contains normative information (ie: required for conformance) and the APG contains examples how how the widgets may be implemented in some contexts.</li>
+							<li>Note that the ARIA 1.2 spec contains normative information (ie: required for conformance) and the APG contains examples how how the widgets may be implemented in some contexts (ie:  non-normative, or informational).</li>
 						</ul>
 					</section>
 					<section>
@@ -492,9 +511,14 @@
 						<ul>
 							<li>For when a page has sections of content, only one of which should be shown at a time.</li>
 							<li>The sections of content are designated with <code>role="tabpanel"</code> and they're selected with interactive elements designated with <code>role="tab"</code> which are listed in something designated with <code>role="tablist"</code>.</li>
-							<li>On mobile devices, there often isn't enough horizontal room to show all tabs, so often on mobile devices, the tabbed interface is replaced with an accorian widget (a series of discosure widgets where only one is open at a time).</li>
-							<li>The <kbd>Left</kbd> and <kbd>Right</kbd> arrow keys chnage selection, and optionally exposes that tabpanel.</li>
-							<li>When focus is before the tablist, <kbd>Tab</kbd> takes you to the tap that's currently selected.  When a tab is selected <kbd>Tab</kbd> takes you to the first focusable element after the tablist, possibly the tabpanel itself.</li>
+							<li>On mobile devices, there often isn't enough horizontal room to show all tabs, so often on mobile devices, the tabbed interface is replaced with an accordian widget (a series of disclosure widgets where only one is open at a time).</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tabbed Interface Keystrokes</h2>
+						<ul>
+							<li>The <kbd>Left</kbd> and <kbd>Right</kbd> arrow keys change selection, and optionally exposes that tabpanel.</li>
+							<li>When focus is before the tablist, <kbd>Tab</kbd> takes you to the tab that's currently selected.  When a tab is selected <kbd>Tab</kbd> takes you to the first focusable element after the tablist, possibly the tabpanel itself.</li>
 						</ul>
 					</section>
 					<section>
@@ -540,7 +564,7 @@
 							<li>Like a file system's directory structure, or the tag tree in a PDF authoring tool like Adobe Acrobat or Foxit Pro</li>
 							<li>Traversable with a keyboard</li>
 							<li>A tree has nodes with <code>role="treeitem"</code>.  The tree "root" has <code>role="tree"</code>.</li>
-							<ii>A node can either have children (in which case it's called a "Parent Node"), or not (in which case it's called an "End Node".)</li>
+							<li>A node can either have children (in which case it's called a "Parent Node"), or not (in which case it's called an "End Node".)</li>
 							<li>If a parent node's children are visible, it's said to be an "Open Node" (with <code>aria-expanded="true"</code>).  Else, it's a "Closed Node" (with <code>aria-expanded="false"</code>).</li>
 						</ul>
 					</section>
@@ -559,8 +583,8 @@
 						<h2>Dialog</h2>
 						<ul>
 							<li>From <a href="https://www.w3.org/TR/wai-aria-1.2/#dialog" rel="noopener noreferrer">W3C WAI-ARIA 1.2</a>: <q>A dialog is a descendant window of the primary window of a web application. For HTML pages, the primary application window is the entire web document, i.e., the body element.</q></li>
-							<li>In 2023 support for the native <code>&lt;dialog&gt;</code> element has gained wider support.  But you may see ARIA diaglog widgets around.</li>
-							<li>A Dialog box must have an accessible name, usually defined by either <code>aria-label</code> or <code>aria-labelledby</code>.</li>
+							<li>In 2023 support for the native <code>&lt;dialog&gt;</code> element has gained wide support.  But you may see ARIA diaglog widgets around.</li>
+							<li>A dialog box must have an accessible name, usually defined by either <code>aria-label</code> or <code>aria-labelledby</code>.</li>
 							<li>If the element that has <code>role="dialog"</code> also has <code>aira-modal="true"</code>, that tells AT that everything else should be ignored.  This is very bad if the rest is still in the focus order.</li>
 							<li><code>aria-modal="true"</code> replaces the old method of setting the non-dialog parts of the page to <code>aria-hidden="true"</code>.  In those pages, the dialog shouldn't be a descendant of any element with <code>aria-hidden="true"</code></li>
 							
@@ -581,12 +605,29 @@
 							<li>See the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" target="_blank" rel="noreferred noopener">ARIA Authoring Practices Guide (APG) Patterns Page</a> for more</li>
 							<li>Reminder that those patterns are non-normative; ie: they're not <em>required</em> for conformance.</li>
 						</ul>
-						<img src="aria-patterns.jpg" alt="A screenshot of the ARIA Authoring Practices Patterns page showing a links to a few patterns such as Alert, Buttons, Breadcrumbs.">
+						<img src="ariapatterns.jpg" alt="A screenshot of the ARIA Authoring Practices Patterns page showing a links to a few patterns such as Alert, Buttons, Breadcrumbs.">
 						
 					</section>
 				</section>
 				<section>
+					<h1>In Conclusion</h1>
+					<ul>
+						<li>We've barely scratched the surface</li>
+						<li>This should give you a good start to WAI-ARIA</li>
+						<li>When writing an ARIA widget please refer to the <a href="https://www.w3.org/TR/wai-aria-1.2/" target="_blank" rel="noopener noreferrer">ARIA 1.2 spec</a>, and <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" target="_blank" rel="noreferred noopener">ARIA Authoring Practices Guide (APG) Patterns Page</a>.</li>
+					</ul>
+				</section>
+				<section>
 					<h1>Questions</h1>
+				</section>
+				<section>
+					<h1>Homework</h1>
+					<ul>
+						<li>Fork the <a href="https://github.com/andrewnordlund/aria-intro-tutorial" target="_blank" rel="noopener noreferrer">Aria Intro Tutorial</a> Repo at GitHub.</li>
+						<li>Each directory has an HTML file to be viewed in a browser.  Insructions are near the top of each page.</li>
+						<li>Set up GitHub Pages for your fork.</li>
+						<li>When you've completed the assignments, publish your fork to your GitHub Pages and give the URL to your facilitator to check it over.</li>
+					</ul>
 				</section>
 			</div>
 		</div>
