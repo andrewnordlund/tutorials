@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Absolute Beginners Intro To WAI-Aria</title>
+		<title>Absolute Beginners Intro To WAI-ARIA</title>
 
 		<link rel="stylesheet" href="../dist/reset.css">
 		<link rel="stylesheet" href="../dist/reveal.css">
@@ -62,7 +62,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="nb-vslide">
-					<h1>Intro to WAI-Aria</h1>
+					<h1>Intro to WAI-ARIA</h1>
 					<p>This tutorial is a basic intro to WAI-ARIA:</p>
 					<ul>
 						<li>What it is</li>
@@ -85,7 +85,7 @@
 				</section>
 				<section>
 					<section>
-						<h1>What is Aria?</h1>
+						<h1>What is ARIA?</h1>
 						<ul>
 							<li>ARIA == Accessible Rich Internet Applications</li>
 							<li>A.K.A. WAI-ARIA.  WAI == Web Accessibiliy Initiative</li>
@@ -95,26 +95,26 @@
 						</ul>
 					</section>
 					<section>
-						<h1>What is Aria</h1>
-						<p>Think of Aria as a loaded nail gun:</p>
+						<h1>What is ARIA</h1>
+						<p>Think of ARIA as a loaded nail gun:</p>
 						<ul>
 							<li>you should be very careful with it</li>
-							<li>you shouldn't use it without some kind of trianing</li>
+							<li>you shouldn't use it without some kind of training</li>
 							<li>it's good for some jobs (re-shingling a roof / writing a custom widget); and</li>
-							<li>it's not good for other jobs (building a birdhouse / using anything other than a <code>&lt;button&gt;</code> to act like a <code>&lt;button&gt;</code>)</li>
+							<li>it's not good for other jobs (building a birdhouse / building a <code>&lt;button&gt;</code> with any other HTML element)</li>
 						</ul>
 					</section>
 					<section>
 						<h2>Myth</h2>
-						<p>Aria makes HTML accessible.</p>
+						<p>ARIA makes HTML accessible.</p>
 						<div class="fragment">
 							<h2>Fact</h2>
-							<p>HTML is already accessible - when used properly.  Aria helps in areas where there is no equivalent HTML, or the HTML is not yet widely supported in browsers.</p>
+							<p>HTML is already accessible - when used properly.  ARIA helps in areas where there is no equivalent HTML, or the HTML is not yet widely supported in browsers.</p>
 						</div>
 					</section>
 					<section>
 						<h2>Myth</h2>
-						<p>Aria is replacing HTML.</p>
+						<p>ARIA is replacing HTML.</p>
 						<div class="fragment">
 							<h2>Fact</h2>
 							<p>HTML is here to stay.</p>
@@ -122,10 +122,10 @@
 					</section>
 					<section>
 						<h2>Myth</h2>
-						<p>Adding Aria to your site makes it accessible.</p>
+						<p>Adding ARIA to your site makes it accessible.</p>
 						<div class="fragment">
 							<h2>Fact</h2>
-							<p>Adding Aria to your site - done properly - can enhance its accessibility.  Done improperly can make it much worse.</p>
+							<p>Adding ARIA to your site - done properly - can enhance its accessibility.  Done improperly can make it much worse.</p>
 						</div>
 					</section>
 				</section>
@@ -158,7 +158,7 @@
 					<section>
 						<h2>States</h2>
 						<ul>
-							<li>Gives informationa about a widget or element in time.</li>
+							<li>Gives information about a widget or element in time.</li>
 							<li>The value is likely to change over time</li>
 							<li>Is an attribute that starts with <code>aria-*</code>.</li>
 						</ul>
@@ -215,7 +215,7 @@
 					<section class="count">	
 						<h2><code>role="group"</code></h2>
 						<ul>
-							<li>The equivalent to <code>&lt;fieldset&gt;</code>.</li>
+							<li>Equivalent to <code>&lt;fieldset&gt;</code>.</li>
 							<li>Should be used with <code>aria-label</code> or <code>aria-labelledby</code> for the <code>&lt;legend&gt;</code></li>
 						</ul>
 						<p>Example:</p>
@@ -290,6 +290,42 @@
 							<li>Should not be used on an element without a role</li>
 						</ul>
 					</section>
+					<section>
+						<h2>Notes about <code>aria-label</code> and <code>aria-labelledby</code></h2>
+						<ul>
+							<li>ARIA takes precedence over HTML</li>
+							<li>An element's Accessible Name is how assistive technology identifies an element.  It's what a screen reader reads out for that element.</li>
+							<li>Therefore if an HTML element has a native way of defining its Accessible Name, and it has an <code>aria-label</code> or <code>aria-labelledby</code>, then the ARIA-defined accessible name takes precedence.</li>
+							<li><code>aria-labelledby</code> takes precedence over <code>aria-label</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Examples of Accessible Name Precedence</h2>
+						<p>In the following code example the Accessible Name for the input is "<strong>First Name</strong>".
+<pre><code>&lt;h3 id="yourName"&gt;Your Name&lt;/h3&gt;
+
+&lt;label for="fname"&gt;First Name&lt;/label&gt;
+&lt;input id="fname"&gt;
+</code></pre>
+					</section>
+					<section>
+						<h2>Examples of Accessible Name Precedence</h2>
+						<p>In the following code example the Accessible Name for the input is "<strong>Given Name</strong>".
+<pre><code>&lt;h3 id="yourName"&gt;Your Name&lt;/h3&gt;
+
+&lt;label for="fname"&gt;First Name&lt;/label&gt;
+&lt;input id="fname" aria-label="Given Name"&gt;
+</code></pre>
+					</section>
+					<section>
+						<h2>Examples of Accessible Name Precedence</h2>
+						<p>In the following code example the Accessible Name for the input is "<strong>Your Name</strong>".
+<pre><code>&lt;h3 id="yourName"&gt;Your Name&lt;/h3&gt;
+
+&lt;label for="fname"&gt;First Name&lt;/label&gt;
+&lt;input id="fname" aria-label="Given name" aria-labelledby="yourName"&gt;
+</code></pre>
+					</section>
 					<section class="count">
 						<h2><code>aria-describedby="a space-delimited list of IDs of HTML elements on the page"</code></h2>
 						<ul>
@@ -348,7 +384,7 @@
 							<li><q cite="https://www.w3.org/TR/wai-aria-1.1/#aria-current">used when an element within a set of related elements is visually styled to indicate it is the current item in the set.</q></li>
 							<li><code>"false"</code> indicates the thing is not the current item in a set.</li>
 							<li><code>"true"</code> indicates the thing is the current item in a set.</li>
-							<li><code>"page"</code> used in a list of links tells the SR that the current page is the one you're on.  (ex: "<code>&lt;a href="thisPage.html" <b>aria-current="page"</b>&gt;</code>.)</li>
+							<li><code>"page"</code> used in a list of links tells the Screen Reader that the current page is the one you're on.  (ex: "<code>&lt;a href="thisPage.html" <b>aria-current="page"</b>&gt;</code>.)</li>
 							<li><code>"step"</code> when a list of steps in a process is shown, and you're on a current step.</li>
 							<li><code>"location"</code> used in an environment or context, like in a flow chart</li>
 							<li><code>"date"</code> used in a collection of dates</li>
@@ -429,7 +465,7 @@
 							<li>Messages should be short</li>
 							<li>Can be defined with either the <code>role</code>, or <code>aria-live</code> attribute</li>
 							<li>Remember that using <code>role</code> overrides the inherent role of its element.<br>Ex:  <code>&lt;h2 role="status"&gt;</code> is no longer a level 2 heading.  It's a status message.</li>
-							<li>Rule-of-thumb: Screen readers read when the contents of the live region when the contents change; not when they're simply unhidden.</li>
+							<li><strong>Rule-of-thumb</strong>: Screen readers read when the contents of the live region when the contents change; not when they're simply unhidden.</li>
 							<li>Most of the time <code>aria-live</code> should be used instead of a live <code>role</code>.</li>
 						</ul>
 					</section>
@@ -623,7 +659,7 @@ function liveMsg ($msg) {
 				<section>
 					<h1>Homework</h1>
 					<ul>
-						<li>Fork the <a href="https://github.com/andrewnordlund/aria-intro-tutorial" target="_blank" rel="noopener noreferrer">Aria Intro Tutorial</a> Repo at GitHub.</li>
+						<li>Fork the <a href="https://github.com/andrewnordlund/aria-intro-tutorial" target="_blank" rel="noopener noreferrer">ARIA Intro Tutorial</a> Repo at GitHub.</li>
 						<li>Each directory has an HTML file to be viewed in a browser.  Insructions are near the top of each page.</li>
 						<li>Set up GitHub Pages for your fork.</li>
 						<li>When you've completed the assignments, publish your fork to your GitHub Pages and give the URL to your facilitator to check it over.</li>
