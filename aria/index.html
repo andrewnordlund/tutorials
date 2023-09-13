@@ -137,8 +137,8 @@
 					<section>
 						<h2>Roles</h2>
 						<ul>
-							<li>Roles tell AT (Assisstive Technologies) how to interpret the thing.</li>
-							<li>The role does not affect the visual appearance of the thing - do that with CSS.</li>
+							<li>Roles tell AT (Assisstive Technologies) how to interpret the element.</li>
+							<li>The role does not affect the visual appearance of the element - do that with CSS.</li>
 							<li>Roles are set with the <code>role</code> attribute.</li>
 						</ul>
 						<p>For example: <code>&lt;a href="abc.html" role="button"&gt;Some text&lt;/a&gt;</code> will still <em>look</em> like a link, but to users of AT, it will effectively be a button, and they will expect that the <kbd>space bar</kbd> will activate it.</p>
@@ -282,6 +282,8 @@
 							<li>Gives the element an accessible name</li>
 							<li>Should not be used on elements without a role (ex: <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>)</li>
 						</ul>
+						<p>In the following code example, the link text (ie: it's Accessible Name) is "<strong>The Nordburg Website</strong>".</p>
+<pre><code><a href="https://www.nordburg.ca" aria-label="The Nordburg Website">Nordburg Homepage</a></code></pre>
 					</section>
 					<section class="count">
 						<h2><code>aria-labelledby="a space-delimited list of IDs of HTML elements on the page"</code></h2>
@@ -289,6 +291,13 @@
 							<li>Uses the text of another element to give this element an accessible name</li>
 							<li>Should not be used on an element without a role</li>
 						</ul>
+						<p>In the following code example, the Accessible Name for the input is "<strong>Contact Information First Name</strong>".</p>
+<pre><code>&lt;h2 id="contactInfo"&gt;Contact Information&lt;/h2&gt;
+
+&lt;h3 id="fName"&gt;First Name&lt;/h3&gt;
+
+&lt;input id="fname" aria-labelledby="contactInfo fName"&gt;
+</code></pre>
 					</section>
 					<section>
 						<h2>Notes about <code>aria-label</code> and <code>aria-labelledby</code></h2>
@@ -301,7 +310,7 @@
 					</section>
 					<section>
 						<h2>Examples of Accessible Name Precedence</h2>
-						<p>In the following code example the Accessible Name for the input is "<strong>First Name</strong>".
+						<p>In the following code example, the Accessible Name for the input is "<strong>First Name</strong>".
 <pre><code>&lt;h3 id="yourName"&gt;Your Name&lt;/h3&gt;
 
 &lt;label for="fname"&gt;First Name&lt;/label&gt;
@@ -310,7 +319,7 @@
 					</section>
 					<section>
 						<h2>Examples of Accessible Name Precedence</h2>
-						<p>In the following code example the Accessible Name for the input is "<strong>Given Name</strong>".
+						<p>In the following code example, the Accessible Name for the input is "<strong>Given Name</strong>".
 <pre><code>&lt;h3 id="yourName"&gt;Your Name&lt;/h3&gt;
 
 &lt;label for="fname"&gt;First Name&lt;/label&gt;
@@ -319,7 +328,7 @@
 					</section>
 					<section>
 						<h2>Examples of Accessible Name Precedence</h2>
-						<p>In the following code example the Accessible Name for the input is "<strong>Your Name</strong>".
+						<p>In the following code example, the Accessible Name for the input is "<strong>Your Name</strong>".
 <pre><code>&lt;h3 id="yourName"&gt;Your Name&lt;/h3&gt;
 
 &lt;label for="fname"&gt;First Name&lt;/label&gt;
