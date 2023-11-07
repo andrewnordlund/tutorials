@@ -628,9 +628,9 @@ function liveMsg ($msg) {
 						<h2>Dialog</h2>
 						<ul>
 							<li>From <a href="https://www.w3.org/TR/wai-aria-1.2/#dialog" rel="noopener noreferrer">W3C WAI-ARIA 1.2</a>: <q>A dialog is a descendant window of the primary window of a web application. For HTML pages, the primary application window is the entire web document, i.e., the body element.</q></li>
-							<li>In 2023 support for the native <code>&lt;dialog&gt;</code> element has gained wide support.  But you may see ARIA diaglog widgets around.</li>
+							<li>In 2023, the native <code>&lt;dialog&gt;</code> element has gained wide support.  But you may still see ARIA diaglog widgets around.</li>
 							<li>A dialog box must have an accessible name, usually defined by either <code>aria-label</code> or <code>aria-labelledby</code>.</li>
-							<li>If the element that has <code>role="dialog"</code> also has <code>aira-modal="true"</code>, that tells AT that everything else should be ignored.  This is very bad if the rest is still in the focus order.</li>
+							<li>If the element that has <code>role="dialog"</code> also has <code>aria-modal="true"</code>, that tells AT that everything else should be ignored.  This is very bad if the rest is still in the focus order.</li>
 							<li><code>aria-modal="true"</code> replaces the old method of setting the non-dialog parts of the page to <code>aria-hidden="true"</code>.  In those pages, the dialog shouldn't be a descendant of any element with <code>aria-hidden="true"</code></li>
 							
 						</ul>
