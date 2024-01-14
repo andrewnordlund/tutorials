@@ -85,19 +85,59 @@
 						</ol>
 					</section>
 					<section>
-						<h2>Install WET Manually</h2>
+						<h2>Install WET Manually (Non-GoC)</h2>
 						<ol>
 							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html">WET Download Page</a></li>
-							<li>Click the "Download" button on the appropriate version (Regular WET or GCWeb).</li>
-							<li>In the Assets section: click on the wet-boew-<strong>dist</strong>-#.#.##.zip</li>
-							<li>Unzip the file locally.</li>
+							<li>Click the "Download" button for "Web Experience Toolkit (WET)".</li>
+							<li>In the Assets section: click on the wet-boew-<strong>dist</strong>-#.#.##.zip. This will download the zip file.</li>
+							<li>Copy and unzip the file somewhere handy on your computer.</li>
+							<li>This will create a new folder with a lot of files you may not need, including the WET website itself.  Here's what you may need. Copy these files/directories to where you need them (ie: your web site's base folder):
+								<ul>
+									<li><code>/theme-wet-boew/</code>  This is where the CSS files and some icons live.</li>
+									<li><code>/wet-boew/</code>  This is where the Javascript, some other CSS (for polyfills), etc. live</li>
+								</ul></li>
+							<li>Copy appropriate template files from <code>/theme/</code>. If you want an English page with a section menu (ie: a left-nav menu) copy <code>content-secmenu-en.html</code> to your project folder and update the content to your own.</li>
+							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files from the unzipped WET directory to where they ought to be.</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Install WET Manually (GCWeb)</h2>
+						<ol>
+							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html">WET Download Page</a></li>
+							<li>Click the "Download" button "Canada.ca (GCWeb).</li>
+							<li>In the Assets section: click on the wet-boew-<strong>dist</strong>-#.#.##-gcweb.zip.  This will download the zip file.</li>
+							<li>Copy and unzip the file somewhere handy on your computer.</li>
 							<li>This will create a new folder with a lot of files you may not need, including the WET website itself.  Here's what you may need.  Copy these files/directories to where you need them:
 								<ul>
-									<li><strong>/theme-wet-boew/</strong>  This is where the CSS files and some icons live.</li>
-									<li><strong>/wet-boew/</strong>  This is where the Javascript, some other CSS (for polyfills), etc. live</li>
+									<li><code>/GCWeb/</code>  This is where the CSS files and some icons live.</li>
+									<li><code>/wet-boew/</code>  This is where the Javascript, some other CSS (for polyfills), etc. live</li>
 								</ul></li>
-							<li>Copy appropriate template files from <strong>/theme/</strong>. If you want an English page with a section menu (ie: a left-nav menu) copy <strong>content-secmenu-en.html</strong> to your project folder and update the content to your own.</li>
-							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files.</li>
+							<li>Copy <code>/gcweb-theme/static-header-footer/bootstrap-3.html</code> to your website directory as a template file.</li>
+							<li>Update references to WET CSS and Javascript files to where you copied them.</li>
+							<li>Copy and paste this template file for each page you need.</li>
+							<li>Update the content to your own.</li>
+							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files from the unzipped WET directory to where they ought to be.</li>
+						</ol>
+					</section>
+					<section>
+						<p>Find more detailed instructions on the <a href="https://wet-boew.github.io/GCWeb/docs/implementing-en.html">Quick implementation guide - GCWeb theme</a> page.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>CDTS - Centrally Deployed Template Solutions</h2>
+						<p><strong>Only for Government of Canada websites.</strong></p>
+						<p>From the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/index-en.html">CDTS Website</a>:</p>
+						<blockquote>The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.</blockquote>
+						<p>The CDTS hosts WET and theme files elsewhere. Site owners start with a page template with 2 or 3 <code>&lt;script&gt;</code> elements, some site/page-specific content in some pre-defined JSON variables; and the rest is taken care of for you.  You just have to deal with your content.</p>
+						<p>You can lock into a specific version, or the latest, ie: "run".</p>
+					</section>
+					<section>
+						<h2>How to implement CDTS on your site</h2>
+						<p>There are too many factors and intricacies to list in this tutorial.  But in short:</p>
+						<ol>
+							<li>You will need back-up static WET files in case the CDTS host is unreachable, or the user has Javascript turned off, or if it fails somehow.  (See instructions earlier in this tutorial for details on how.)</li>
+							<li>For the rest, start with the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html">CDTS Implementation Guide</a>.</li>
 						</ol>
 					</section>
 				</section>
