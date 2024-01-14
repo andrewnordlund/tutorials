@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Intro to WET and the CDTS</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+		<style>
+		div.slides > section {
+			/*border: thick blue solid;*/
+		}
+		div.slides > section > section {
+			/*border: thick red solid;*/
+			max-height: 98vh;
+			overflow: scroll;
+			-ms-overflow-style: none;  /* IE 10+ */
+			scrollbar-width: none;  /* Firefox */
+
+		}
+		div.slides > section > section::-webkit-scrollbar { 
+		    display: none;  /* Safari and Chrome */
+		}
+
+		p { 
+			text-align: left; 
+			padding-left: 1em;
+		}
+		.big {
+			font-size: 300%;
+			font-weight: 700;
+			margin: 30% auto;
+			text-align: center;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="nb-vslide">
+					<section class="nb-islide">
+						<h1>Intro to WET and the CDTS</h1>
+						<p>We'll learn about:</p>
+						<ol>
+							<li>WET</li>
+							<li>The CDTS</li>
+							<li>The Canada.ca theme</li>
+							<li>How they all work together</li>
+							<li>How to use them</li>
+							<li>How to check for them on a website</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>WET</h2>
+						<p>From the <a href="https://wet-boew.github.io/wet-boew/index-en.html">WET (Web Experience Toolkit) website</a>:</p>
+						<ul>
+							<li>An award-winning front-end framework for building websites that are accessible, usable, interoperable, mobile friendly and multilingual</li>
+							<li>A collection of flexible and themeable templates and reusable components</li>
+							<li>A collaborative open source project led by the Government of Canada</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Why Use WET?</h2>
+						<ul>
+							<li>Accessibility. All the heavy-lifting in that area has been taken care of for you.</li>
+							<li>Consistency accross GoC sites (Internet and Intranet)</li>
+							<li>A whole bunch of pre-made widgets for you to use without having to re-invent the wheel</li>
+							<li>It's open source.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>How to Install WET</h2>
+						<p>There are two ways to install WET:</p>
+						<ol>
+							<li>Manually (for anyone)</li>
+							<li>Using the CDTS (for GoC)</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Install WET Manually</h2>
+						<ol>
+							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html">WET Download Page</a></li>
+							<li>Click the "Download" button on the appropriate version (Regular WET or GCWeb).</li>
+							<li>In the Assets section: click on the wet-boew-<strong>dist</strong>-#.#.##.zip</li>
+							<li>Unzip the file locally.</li>
+							<li>This will create a new folder with a lot of files you may not need, including the WET website itself.  Here's what you may need.  Copy these files/directories to where you need them:
+								<ul>
+									<li><strong>/theme-wet-boew/</strong>  This is where the CSS files and some icons live.</li>
+									<li><strong>/wet-boew/</strong>  This is where the Javascript, some other CSS (for polyfills), etc. live</li>
+								</ul></li>
+							<li>Copy appropriate template files from <strong>/theme/</strong>. If you want an English page with a section menu (ie: a left-nav menu) copy <strong>content-secmenu-en.html</strong> to your project folder and update the content to your own.</li>
+							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files.</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<p class="big">Questions?</p>
+				</section>
+				<section>
+					<h2>Resources</h2>
+					<h3>WET</h3>
+					<ul>
+						<li><a href="https://wet-boew.github.io/wet-boew/index-en.html">WET (Web Experience Toolkit) website</a></a>
+					</ul>
+					<h3>CDTS</h3>
+					<h3>Canada.ca Style Guide</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/zoom/zoom.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+			Reveal.configure({disableLayout: true});
+		</script>
+	</body>
+</html>
