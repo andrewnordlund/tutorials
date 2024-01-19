@@ -130,15 +130,140 @@
 						<p>From the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/index-en.html">CDTS Website</a>:</p>
 						<blockquote>The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.</blockquote>
 						<p>The CDTS hosts WET and theme files elsewhere. Site owners start with a page template with 2 or 3 <code>&lt;script&gt;</code> elements, some site/page-specific content in some pre-defined JSON variables; and the rest is taken care of for you.  You just have to deal with your content.</p>
-						<p>You can lock into a specific version, or the latest, ie: "run".</p>
+						<p>You can use a specific version, or the latest, ie: "run".</p>
 					</section>
 					<section>
 						<h2>How to implement CDTS on your site</h2>
 						<p>There are too many factors and intricacies to list in this tutorial.  But in short:</p>
 						<ol>
 							<li>You will need back-up static WET files in case the CDTS host is unreachable, or the user has Javascript turned off, or if it fails somehow.  (See instructions earlier in this tutorial for details on how.)</li>
-							<li>For the rest, start with the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html">CDTS Implementation Guide</a>.</li>
+							<li>Put references to WET CSS and Javascript files inside <code>&lt;noscript&gt;</code> tags.</li>
+							<li>Call the CDTS with these lines in the <code>&lt;head&gt;</code>:
+<pre><code>&lt;!-- Load closure template scripts --&gt;
+&lt;script src="https://www.canada.ca/etc/designs/canada/cdts/{theme}/v{version_with_underscores}/cdts/compiled/soyutils.js"&gt;&lt;/script&gt;
+&lt;script src="https://www.canada.ca/etc/designs/canada/cdts/{theme}/v{version_with_underscores}/cdts/compiled/wet-en.js"&gt;&lt;/script&gt;
+</code></pre>
+<br>Example:</br>
+<pre><code>&lt;!-- Load closure template scripts --&gt;
+&lt;script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/compiled/soyutils.js"&gt;&lt;/script&gt;
+&lt;script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/compiled/wet-en.js"&gt;&lt;/script&gt;
+</pre></code>
+							<li>Define the following sections in your template: Head, top, pre-footer, footer, footer file, and optionally a section menu.</li>
+							<!-- <li>For the rest, start with the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html">CDTS Implementation Guide</a>.</li> -->
 						</ol>
+					</section>
+					<section>
+						<h2>The Outline of a Page</h2>
+						<img src="Cdts-page-template.png" alt="An empty GoC page showing the sections: head, top, content, pre-footer, footer, and footer files in that order.">
+						<p>Specifics in each section are defined in JSON objects.
+					</section>
+					<section>
+						<h2>The <code>&lt;head&gt;</code> Section</h2>
+						<ul>
+							<li>Provide references to static fallback files</li>
+							<li>Set the Adobe Analtics settings</li>
+						</ul>
+<pre><code>&lt;noscript&gt;
+	&lt;!-- Write closure fall-back static file --&gt;
+	&lt;!-- /ROOT/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/static/refTop.html --&gt;
+	&lt;!--#include virtual="/app/cls/WET/gcweb/v4_0_28/cdts/static/refTop.html" --&gt;
+&lt;/noscript&gt;
+&lt;!-- Write closure template --&gt;
+&lt;script&gt;
+	document.write(wet.builder.refTop({
+		"webAnalytics" : [{
+			"environment" : "staging",
+			"version" : 1
+		}]
+	}));
+&lt;/script&gt;</code></pre>
+					</section>
+					<section>
+						<h2>The Top Section</h2>
+						<ul>
+							<li>Add a <code>&lt;div id="def-top"&gt;</code>. This is everything above the <code>&lt;main&gt;</code></li>
+							<li>Add a <code>wet.builder.top</code> for breadcrumbs, the language link, etc.</li>
+						</ul>
+						<p>Example:</p>
+						<pre><code>&lt;div id="def-top"&gt;
+	&lt;!-- Write closure fall-back static file --&gt;
+	&lt;!-- /ROOT/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/static/top-en.html --&gt;
+	&lt;!--#include virtual="/app/cls/WET/gcweb/v4_0_28/cdts/static/top-en.html" --&gt;
+&lt;/div&gt;
+&lt;!-- Write closure template --&gt;
+&lt;script&gt;
+	var defTop = document.getElementById("def-top");
+	defTop.outerHTML = wet.builder.top({
+		"lngLinks": [{
+			"lang": "fr",
+			"href": "content-fr.html",
+			"text": "Français"
+		}]
+	});
+&lt;/script&gt;</code></pre>
+					</section>
+					<section>
+						<h2>The Pre-Footer Section</h2>
+						<ul>
+							<li>Add a <code>&lt;div id="def-prefooter"&gt;</code>. This is everything below the main content and the <code>&lt;/main&gt;</code> tag.</li>
+							<li>Add a <code>wet.builder.prefooter</code> for feedback links, data modified, screen identifier, etc.</li>
+						</ul>
+						<p>Example:</p>
+						<pre><code>&lt;div id="def-preFooter"&gt;
+	&lt;!-- Write closure fall-back static file --&gt;
+	&lt;!-- /ROOT/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/static/preFooter-en.html --&gt;
+	&lt;!--#include virtual="/app/cls/WET/gcweb/v4_0_28/cdts/static/preFooter-en.html" --&gt;
+&lt;/div&gt;
+&lt;!-- Write closure template --&gt;
+&lt;script&gt;
+	var defPreFooter = document.getElementById("def-preFooter");
+	defPreFooter.outerHTML = wet.builder.preFooter({
+		"dateModified": "2017-06-05"
+	});
+&lt;/script&gt;
+&lt;/main&gt;</code></pre>
+					</section>
+					<section>
+						<h2>The Footer Section</h2>
+						<ul>
+							<li>Add a <code>&lt;div id="def-footer"&gt;</code>. This is everything below the <code>&lt;/main&gt;</code> content and the <code>&lt;/main&gt;</code> tag.</li>
+							<li>Add a <code>wet.builder.footer</code> for a contact link, features (Intranet), subtheme (Intranet), etc.</li>
+						</ul>
+						<p>Example:</p>
+<pre><code>&lt;div id="def-footer"&gt;
+	&lt;!-- Write closure fall-back static file --&gt;
+	&lt;!-- /ROOT/app/cls/WET/gcweb/v4_0_29/cdts/static/footer-en.html --&gt;
+	&lt;!--#include virtual="/app/cls/WET/gcweb/v4_0_29/cdts/static/footer-en.html" --&gt;
+&lt;/div&gt;
+&lt;!-- Write closure template --&gt;
+&lt;script&gt;
+	var defFooter = document.getElementById("def-footer");
+	defFooter.outerHTML = wet.builder.footer({
+	});
+&lt;/script&gt;</code></pre>
+					</section>
+					<section>
+						<h2>The Footer Files Section</h2>
+						<ul>
+							<li>This is just a Javascript section defining certain variables mostly dealing with leaving a secured site, and some environmental information.</li>
+						</ul>
+						<p>Example</p>
+<pre><code>&lt;!-- Write closure template --&gt;
+&lt;script&gt;
+	document.write(wet.builder.refFooter({
+		"webAnalytics": true
+	}));
+&lt;/script&gt;</code></pre>
+					</section>
+					<section>
+						<h2>Optional Left-Nav Menu</h2>
+						<ul>
+							<li>A.K.A.: A Secondary Menu</li>
+							<li>Add <code>"topSecMenu": true</code> in the <code>wet.builder.top</code> section</li>
+							<li>Add an unclosed <code>&lt;div class="container"&gt;</code> and <code>&lt;div class="row"&gt;</code> just before the <code>&lt;main&gt;</code></li>
+							<li>Immediately after the <code>&lt;/main&gt;</code>
+
+						</ul>
 					</section>
 				</section>
 				<section>
