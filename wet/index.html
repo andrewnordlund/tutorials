@@ -301,16 +301,114 @@
 					</section>
 				</section>
 				<section>
+					<section>
+						<h2>How To Use WET Components</h2>
+						<p>There are two parts to this:</p>
+						<ol>
+							<li>The <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a> - mostly for how to get static content to look a certain way</li>
+							<li>The <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a> - mostly for how to get dynamic content to work a certain way</li>
+						</ol>
+						<p>Bookmark those pages and refer to them often to see what WET offers, and how to use it.
+						<p>Most WET components are implemented by adding classes to HTML elements. A lot of the classes come from Bootstrap.</p>
+						
+					</section>
+					<section>
+						<h2>Some WET Styling Examples</h2>
+						<ul>
+							<li>Remember that <code>&lt;h#&gt;</code> headings are to describe and head content; not to make big, bold test.  Use CSS for that.</li>
+							<li>To make something look like an <code>&lt;h2&gt;</code> without altering its semantics, use <code>class="h2"</code> (ex: <code>&lt;div class="h2"&gt;</code> will be big and bold, but won't come up in a list of headings for screen reader users.</li>
+							<li>To expose text to screen readers, but hide it from sight, use <code>class="wb-inv"</code>.</li>
+						</ul>
+						<p>See the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a> for more information.</p>
+					</section>
+					<section>
+						<h2>Some WET Widget Examples</h2>
+						<p>A lot of WET widgets require more than one class and/or more than one element with more than one class; and maybe even some <code>data-*</code> attributes.  So, full examples won't be shown in this tutorial, but can be seen in the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a>.</p>
+						<ul>
+							<li>A very important one: <a href="https://wet-boew.github.io/v4.0-ci/demos/formvalid/formvalid-en.html">Form Validation</a>.
+								<ul>
+									<li>Can be hard to get right for accessibility purposes; WET does a lot of the work for you.</li>
+									<li>Always do back-end form validation for security purposes</li>
+								</ul>
+							</li>
+							<li>For lists and tables: <a href="https://wet-boew.github.io/v4.0-ci/demos/filter/filter-en.html">Filters</a></li>
+							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/session-timeout/session-timeout-en.html">Session Timeout Widget</a></li>
+							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/footnotes/footnotes-en.html">Footnotes</a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>How to Check For WET/CDTS</h2>
+					<ul>
+						<li>For WET, use the <a href="https://www.nordburg.ca/ext/home.php#wwvf-weSect">WET Widget Version Finder (WWVF)</a> Firefox Extension
+							<ul>
+								<li><a href="https://github.com/wet-boew/wetboew-version-finder-firefox-extension">GitHub Repo</a></li>
+							</ul>
+						</li>
+						<li>For CDTS, use the <a href="https://www.nordburg.ca/ext/home.php#cdtsVersionFinderSect">CDTS Version Finder</a> Firefox Extension (only on GoC network)
+							<ul>
+								<li><a href="https://gccode.ssc-spc.gc.ca/iitb-dgiit/nw-ws/cdts-version-finder">GCCode Repo</a></li>
+							</ul>
+						</li>
+						<li>These will tell you which version of WET/CDTS a site uses (if any).
+							<ul>
+								<li>(Note: Due to changes in how versions are dealt with, the WWVF may indicate WET 3.x is being used in some places, when WET 4 is being used.)</li>
+							</ul>
+						</li>
+						<li>When looking at a webpage, use View Source (not the Inspector) to see if CDTS sections are implemented properly, and WET classes are used properly.</li>
+						<li>WET classes start with <code>wb-</code> (for <b>W</b>ET-<b>B</b>OEW)</li>
+						<li>If you notice a bug in WET, check the <a href="https://wet-boew.github.io/wet-boew/docs/bugs-en.html">Filing a bug or an issue</a> page.</li>
+						<li>CDTS Issues can be filed on the <a href="https://github.com/wet-boew/cdts-sgdc/issues">CDTS issues GitHub repo</a></li>
+					</ul>
+				</section>
+				<section>
 					<p class="big">Questions?</p>
 				</section>
 				<section>
-					<h2>Resources</h2>
-					<h3>WET</h3>
-					<ul>
-						<li><a href="https://wet-boew.github.io/wet-boew/index-en.html">WET (Web Experience Toolkit) website</a></a>
-					</ul>
-					<h3>CDTS</h3>
-					<h3>Canada.ca Style Guide</h3>
+					<section>
+						<h2>Resources</h2>
+						<h3>WET</h3>
+						<ul>
+							<li><a href="https://wet-boew.github.io/wet-boew/index-en.html">WET (Web Experience Toolkit) website</a></li>
+							<li><a href="https://github.com/wet-boew/wet-boew/issues">Issues on WET GitHub repo</a></li>
+							<li><a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a></li>
+							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a></li>
+							<li><a href="https://www.nordburg.ca/ext/home.php#wwvf-weSect">WET Widget Version Finder (WWVF) Firefox Extension</a>
+								<ul>
+									<li><a href="https://github.com/wet-boew/wetboew-version-finder-firefox-extension">GitHub Repo</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Resources</h2>
+						<h3>CDTS</h3>
+						<ul>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/index-en.html">CDTS Homepage</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html">Internet Implementation Guide</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/intranet-en.html">Intranet Implementation Guide</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/templates-en.html">.NET / Java Templates</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/faq-en.html">CDTS FAQs</a></li>
+							<li><a href="https://github.com/wet-boew/cdts-sgdc/">CDTS GitHub repo</a></li>
+							<li><a href="https://gccode.ssc-spc.gc.ca/GOCWebTemplates/DotNetTemplates">CDTS GCCode Repo</a> (On GC Network only)</li>
+							<li><a href="https://www.nordburg.ca/ext/home.php#cdtsVersionFinderSect">CDTS Version Finder Firefox Extension</a>
+								<ul>
+									<li><a href="https://gccode.ssc-spc.gc.ca/iitb-dgiit/nw-ws/cdts-version-finder">GCCode Repo</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Resources</h2>
+						<h3>Canada.ca/GCWeb Theme</h3>
+						<ul>
+							<li><a href="https://design.canada.ca/style-guide/">Canada.ca Content Style Guide</a></li>
+							<li><a href="https://wet-boew.github.io/GCWeb/docs/implementing-en.html">GCWeb Theme Quick Implementation Guide</a></li>
+							<li><a href="https://design.canada.ca/">Canada.ca Design System</a></li>
+							<li><a href="https://design.canada.ca/architecture/canada-content-information-architecture-specification.html">Canada.ca Content and Information Architecture Specification (C&IA Spec)</a></li>
+							<li><a href="https://wet-boew.github.io/GCWeb/index-en.html">GCWeb, the WET-BOEW Canada.ca Theme</a></li>
+						</ul>
+					</section>
 				</section>
 			</div>
 		</div>
