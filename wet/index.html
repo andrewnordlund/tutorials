@@ -261,9 +261,43 @@
 							<li>A.K.A.: A Secondary Menu</li>
 							<li>Add <code>"topSecMenu": true</code> in the <code>wet.builder.top</code> section</li>
 							<li>Add an unclosed <code>&lt;div class="container"&gt;</code> and <code>&lt;div class="row"&gt;</code> just before the <code>&lt;main&gt;</code></li>
-							<li>Immediately after the <code>&lt;/main&gt;</code>
+							<li>Immediately after the <code>&lt;/main&gt;</code> add a <code>&lt;nav id="wb-sec"&gt;</code> element with fall-back static files in it</li>
+							<li>Add the Javascript to define the contents of the secondary menu</li>
+							<li>Add two <code>&lt;/div&gt;</code> to close the two that were added above the <code>&lt;main&gt;</code></li>
 
 						</ul>
+					</section>
+					<section>
+						<h2>Optional Left-Nav Menu (continued)</h2>
+						<p>Example:</p>
+<pre><code>&lt;nav class="wb-sec col-md-3 col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec" role="navigation"&gt;
+	&lt;!-- Write closure fall-back static file --&gt;
+	&lt;!-- /ROOT/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/static/secMenu-en.html --&gt;
+	&lt;!--#include virtual="/app/cls/WET/gcweb/v4_0_28/cdts/static/secMenu-en.html" --&gt;
+&lt;/nav&gt;
+&lt;!-- Write closure template --&gt;
+&lt;script&gt;
+	var secondarymenu = document.getElementById("wb-sec");
+	secondarymenu.innerHTML = wet.builder.secmenu({
+		"sections": [{
+			"sectionName": "[Topic - Local navigation]",
+			"menuLinks": [{
+				"href": "#",
+				"text": "Link 1",
+				"subLinks": [{
+					"subhref": "#11a",
+					"subtext": "Link 1.1 a)"
+				}, {
+					"subhref": "#11b",
+					"subtext": "Link 1.1 b)"
+				}]
+			}, {
+				"href": "#",
+				"text": "Link 2"
+			}]
+		});
+&lt;/script&gt;</code></pre>
+
 					</section>
 				</section>
 				<section>
