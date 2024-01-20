@@ -50,8 +50,6 @@
 						<ol>
 							<li>WET</li>
 							<li>The CDTS</li>
-							<li>The Canada.ca theme</li>
-							<li>How they all work together</li>
 							<li>How to use them</li>
 							<li>How to check for them on a website</li>
 						</ol>
@@ -99,12 +97,12 @@
 							<li>Copy appropriate template files from <code>/theme/</code>. If you want an English page with a section menu (ie: a left-nav menu) copy <code>content-secmenu-en.html</code> to your project folder and update the content to your own.</li>
 							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files from the unzipped WET directory to where they ought to be.</li>
 						</ol>
+						<p>See <a href="https://www.nordburg.ca/">Example Page</a>.</p>
 					</section>
 					<section>
 						<h2>Install WET Manually (GCWeb)</h2>
-						<ol>
-							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html">WET Download Page</a></li>
-							<li>Click the "Download" button "Canada.ca (GCWeb).</li>
+						<ol style="width: 95%">
+							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html">WET Download Page</a> and click the "Download" button "Canada.ca (GCWeb).</li>
 							<li>In the Assets section: click on the wet-boew-<strong>dist</strong>-#.#.##-gcweb.zip.  This will download the zip file.</li>
 							<li>Copy and unzip the file somewhere handy on your computer.</li>
 							<li>This will create a new folder with a lot of files you may not need, including the WET website itself.  Here's what you may need.  Copy these files/directories to where you need them:
@@ -118,6 +116,7 @@
 							<li>Update the content to your own.</li>
 							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files from the unzipped WET directory to where they ought to be.</li>
 						</ol>
+						<p>See <a href="GCTest/bootstrap-3.html">Example Page</a>.</p>
 					</section>
 					<section>
 						<p>Find more detailed instructions on the <a href="https://wet-boew.github.io/GCWeb/docs/implementing-en.html">Quick implementation guide - GCWeb theme</a> page.</p>
@@ -131,6 +130,7 @@
 						<blockquote>The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.</blockquote>
 						<p>The CDTS hosts WET and theme files elsewhere. Site owners start with a page template with 2 or 3 <code>&lt;script&gt;</code> elements, some site/page-specific content in some pre-defined JSON variables; and the rest is taken care of for you.  You just have to deal with your content.</p>
 						<p>You can use a specific version, or the latest, ie: "run".</p>
+						<p>See <a href="GCTest/bootstrap-3-cdts.html">Example Page</a>.</p>
 					</section>
 					<section>
 						<h2>How to implement CDTS on your site</h2>
@@ -148,13 +148,13 @@
 &lt;script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/compiled/soyutils.js"&gt;&lt;/script&gt;
 &lt;script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/compiled/wet-en.js"&gt;&lt;/script&gt;
 </pre></code>
-							<li>Define the following sections in your template: Head, top, pre-footer, footer, footer file, and optionally a section menu.</li>
+							<li>Define the following sections in your template: Head, top, pre-Footer, footer, footer file, and optionally a section menu.</li>
 							<!-- <li>For the rest, start with the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html">CDTS Implementation Guide</a>.</li> -->
 						</ol>
 					</section>
 					<section>
 						<h2>The Outline of a Page</h2>
-						<img src="Cdts-page-template.png" alt="An empty GoC page showing the sections: head, top, content, pre-footer, footer, and footer files in that order.">
+						<img src="Cdts-page-template.png" alt="An empty GoC page showing the sections: head, top, content, pre-Footer, footer, and footer files in that order.">
 						<p>Specifics in each section are defined in JSON objects.
 					</section>
 					<section>
@@ -270,7 +270,7 @@
 					<section>
 						<h2>Optional Left-Nav Menu (continued)</h2>
 						<p>Example:</p>
-<pre><code>&lt;nav class="wb-sec col-md-3 col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec" role="navigation"&gt;
+<pre  style="height: 33em;"><code style="height: 100%;">&lt;nav class="wb-sec col-md-3 col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec" role="navigation"&gt;
 	&lt;!-- Write closure fall-back static file --&gt;
 	&lt;!-- /ROOT/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/static/secMenu-en.html --&gt;
 	&lt;!--#include virtual="/app/cls/WET/gcweb/v4_0_28/cdts/static/secMenu-en.html" --&gt;
@@ -335,6 +335,50 @@
 							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/session-timeout/session-timeout-en.html">Session Timeout Widget</a></li>
 							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/footnotes/footnotes-en.html">Footnotes</a></li>
 						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>WET Table Example (page 0)</h2>
+						<p>We'll now take a look at the process of taking an HTML <code>&lt;table&gt;</code> and appying WET styling to it to add functionality and styling to make it more accessible and usable with very little effort on our part.  You can follow along with the examples starting at <a href="GCTest/table-example-00.html">Table Example Page 0</a>.</p>
+					</section>
+					<section>
+						<h2>WET Table Example (page 1)</h2>
+						<p>Let's start with a basic table (taken from the <a href="https://wet-boew.github.io/v4.0-ci/demos/tables/tables-en.html">Tables - Working examples</a>.)  With no styling whatsoever:</p>
+						<img src="table_pics/table_pic_0.png" alt="A table showing various browsers with their versions, rendering engines and versions, operating systems, and CSS grade.  There are no lines dividing cells. The top row of text is bold, indicating table headers.">
+					</section>
+					<section>
+						<h2>WET Table Example (page 2)</h2>
+						<p>Now on a WET page:</p>
+						<img src="table_pics/table_pic_1.png" alt="Same table as previous slide except text is a little larger.">
+					</section>
+					<section>
+						<h2>WET Table Example (page 3)</h2>
+						<p>But it's still not a WET table.  To make it a proper WET table so you can take advantage of built-in features:</p>
+						<ol>
+							<li>If the top row are <code>&lt;th&gt;</code>s, then put that row inside a <code>&lt;thead&gt;</code>, and the main contents inside a <code>&lt;tbody&gt;</code></li>
+							<li>Add <code>class="table wb-tables"</code> to the <code>&lt;table&gt;</code> element</li>
+						</ol>
+						<img src="table_pics/table_pic_2.png" alt="Same table as previous slide except there are horizontal lines dividing each row, and each header has up and down arrows indicating that they are sortable, with the first column sharded indicating that it's sorted in ascending order.  There is also a list of links at the bottom of the table indicating pagination, and you're currently on page 1 of 6.">.</p>
+					</section>
+					<section>
+						<h2>WET Table Example (page 4)</h2>
+						<p>But <a href="https://www.w3.org/TR/WCAG21/#reflow">WCAG 2.1 Success Criterion 1.4.10 - Reflow</a> requires that pages only scroll in one direction at 1280px wide at 400% zoom - the equivalent to 100% zoom at 320px wide.  This would appear to present a problem for tables, which tend to be large.  But WCAG allows for certain exceptions, including tables, as long as only the exception itself scrolls in two-dimensions.</p>
+						<img src="table_pics/table_pic_3.png" alt="The same table as the previous slide in a viewport of 320 pixels wide, showing that the table is causing the page to have to scroll in two dimensions."></p>
+					</section>
+					<section>
+						<h2>WET Table Example (page 5)</h2>
+						<p>To make WET tables responsive, we go to the <a href="https://wet-boew.github.io/wet-boew-styleguide/design/tables-en.html#responsive">WET Style Guide - Tables page</a>.  There's a section on Responsive tables.  It tells us to wrap the <code>&lt;table&gt;</code> inside a <code>&lt;div class="table-responsive"&gt;</code>.</p>
+						<img src="table_pics/table_pic_4.png" alt="The same table as the previous slide in a viewport of 320 pixels wide, showing that the table is able to sroll left and right, while the page itself only scrolls up and down."></p>
+					</section>
+					<section>
+						<h2>WET Table Example (page 6)</h2>
+						<p>Okay, let's add zebra striping.  Simply add the class "<code>table-striped</code>" to the <code>&lt;table&gt;</code> element.</p>
+						<img src="table_pics/table_pic_5.png" alt="The same table as earlier, but every second row is shaded with a light grey to further indicate different rows."></p>
+					</section>
+					<section>
+						<h2>WET Table Example (page 7)</h2>
+						<p>There is lots more you can do with tables with WET. See the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a> and the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a> for more information.</p>
 					</section>
 				</section>
 				<section>
