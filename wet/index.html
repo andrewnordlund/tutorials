@@ -31,6 +31,9 @@
 			text-align: left; 
 			padding-left: 1em;
 		}
+		p.centre {
+			text-align: center;
+		}
 		.big {
 			font-size: 300%;
 			font-weight: 700;
@@ -46,19 +49,24 @@
 				<section class="nb-vslide">
 					<section class="nb-islide">
 						<h1>Intro to WET and the CDTS</h1>
-						<p>We'll learn about:</p>
+						<p class="centre">We'll learn about:</p>
 						<ol>
 							<li>WET</li>
 							<li>The CDTS</li>
 							<li>How to use them</li>
 							<li>How to check for them on a website</li>
 						</ol>
+						<div style="font-size: 50%; margin-top: 2em;">
+							<p>This tutorial uses <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
+							<p>Oh, and all images can be opened in another window or tab by clicking on them.</p>
+						</div>
+
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>WET</h2>
-						<p>From the <a href="https://wet-boew.github.io/wet-boew/index-en.html">WET (Web Experience Toolkit) website</a>:</p>
+						<p>From the <a href="https://wet-boew.github.io/wet-boew/index-en.html" target="_blank" rel="noopener noreferrer">WET (Web Experience Toolkit) website</a>:</p>
 						<ul>
 							<li>An award-winning front-end framework for building websites that are accessible, usable, interoperable, mobile friendly and multilingual</li>
 							<li>A collection of flexible and themeable templates and reusable components</li>
@@ -85,7 +93,7 @@
 					<section>
 						<h2>Install WET Manually (Non-GoC)</h2>
 						<ol>
-							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html">WET Download Page</a></li>
+							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html" target="_blank" rel="noopener noreferrer">WET Download Page</a></li>
 							<li>Click the "Download" button for "Web Experience Toolkit (WET)".</li>
 							<li>In the Assets section: click on the wet-boew-<strong>dist</strong>-#.#.##.zip. This will download the zip file.</li>
 							<li>Copy and unzip the file somewhere handy on your computer.</li>
@@ -97,12 +105,12 @@
 							<li>Copy appropriate template files from <code>/theme/</code>. If you want an English page with a section menu (ie: a left-nav menu) copy <code>content-secmenu-en.html</code> to your project folder and update the content to your own.</li>
 							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files from the unzipped WET directory to where they ought to be.</li>
 						</ol>
-						<p>See <a href="https://www.nordburg.ca/">Example Page</a>.</p>
+						<p>See <a href="https://www.nordburg.ca/" target="_blank" rel="noopener noreferrer">Example Page</a>.</p>
 					</section>
 					<section>
 						<h2>Install WET Manually (GCWeb)</h2>
 						<ol style="width: 95%">
-							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html">WET Download Page</a> and click the "Download" button "Canada.ca (GCWeb).</li>
+							<li>Go to <a href="https://wet-boew.github.io/wet-boew/docs/versions/dwnld-en.html" target="_blank" rel="noopener noreferrer">WET Download Page</a> and click the "Download" button "Canada.ca (GCWeb).</li>
 							<li>In the Assets section: click on the wet-boew-<strong>dist</strong>-#.#.##-gcweb.zip.  This will download the zip file.</li>
 							<li>Copy and unzip the file somewhere handy on your computer.</li>
 							<li>This will create a new folder with a lot of files you may not need, including the WET website itself.  Here's what you may need.  Copy these files/directories to where you need them:
@@ -116,21 +124,21 @@
 							<li>Update the content to your own.</li>
 							<li>If your site isn't displaying properly, check your browser's console to see if any WET components are being called, but not found.  Copy any missing files from the unzipped WET directory to where they ought to be.</li>
 						</ol>
-						<p>See <a href="GCTest/bootstrap-3.html">Example Page</a>.</p>
+						<p>See <a href="GCTest/bootstrap-3.html" target="_blank" rel="noopener noreferrer">Example Page</a>.</p>
 					</section>
 					<section>
-						<p>Find more detailed instructions on the <a href="https://wet-boew.github.io/GCWeb/docs/implementing-en.html">Quick implementation guide - GCWeb theme</a> page.</p>
+						<p>Find more detailed instructions on the <a href="https://wet-boew.github.io/GCWeb/docs/implementing-en.html" target="_blank" rel="noopener noreferrer">Quick implementation guide - GCWeb theme</a> page.</p>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>CDTS - Centrally Deployed Template Solutions</h2>
 						<p><strong>Only for Government of Canada websites.</strong></p>
-						<p>From the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/index-en.html">CDTS Website</a>:</p>
+						<p>From the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/index-en.html" target="_blank" rel="noopener noreferrer">CDTS Website</a>:</p>
 						<blockquote>The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.</blockquote>
 						<p>The CDTS hosts WET and theme files elsewhere. Site owners start with a page template with 2 or 3 <code>&lt;script&gt;</code> elements, some site/page-specific content in some pre-defined JSON variables; and the rest is taken care of for you.  You just have to deal with your content.</p>
 						<p>You can use a specific version, or the latest, ie: "run".</p>
-						<p>See <a href="GCTest/bootstrap-3-cdts.html">Example Page</a>.</p>
+						<p>See <a href="GCTest/bootstrap-3-cdts.html" target="_blank" rel="noopener noreferrer">Example Page</a>.</p>
 					</section>
 					<section>
 						<h2>How to implement CDTS on your site</h2>
@@ -149,12 +157,12 @@
 &lt;script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/compiled/wet-en.js"&gt;&lt;/script&gt;
 </pre></code>
 							<li>Define the following sections in your template: Head, top, pre-Footer, footer, footer file, and optionally a section menu.</li>
-							<!-- <li>For the rest, start with the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html">CDTS Implementation Guide</a>.</li> -->
+							<!-- <li>For the rest, start with the <a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html" target="_blank" rel="noopener noreferrer">CDTS Implementation Guide</a>.</li> -->
 						</ol>
 					</section>
 					<section>
 						<h2>The Outline of a Page</h2>
-						<img src="Cdts-page-template.png" alt="An empty GoC page showing the sections: head, top, content, pre-Footer, footer, and footer files in that order.">
+						<a href="images/Cdts-page-template.png" target="_blank" rel="noopenner noreferrer"><img src="images/Cdts-page-template.png" alt="An empty GoC page showing the sections: head, top, content, pre-Footer, footer, and footer files in that order."></a>
 						<p>Specifics in each section are defined in JSON objects.
 					</section>
 					<section>
@@ -305,8 +313,8 @@
 						<h2>How To Use WET Components</h2>
 						<p>There are two parts to this:</p>
 						<ol>
-							<li>The <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a> - mostly for how to get static content to look a certain way</li>
-							<li>The <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a> - mostly for how to get dynamic content to work a certain way</li>
+							<li>The <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html" target="_blank" rel="noopener noreferrer">WET Style Guide</a> - mostly for how to get static content to look a certain way</li>
+							<li>The <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html" target="_blank" rel="noopener noreferrer">WET Working Examples</a> - mostly for how to get dynamic content to work a certain way</li>
 						</ol>
 						<p>Bookmark those pages and refer to them often to see what WET offers, and how to use it.
 						<p>Most WET components are implemented by adding classes to HTML elements. A lot of the classes come from Bootstrap.</p>
@@ -319,38 +327,38 @@
 							<li>To make something look like an <code>&lt;h2&gt;</code> without altering its semantics, use <code>class="h2"</code> (ex: <code>&lt;div class="h2"&gt;</code> will be big and bold, but won't come up in a list of headings for screen reader users.</li>
 							<li>To expose text to screen readers, but hide it from sight, use <code>class="wb-inv"</code>.</li>
 						</ul>
-						<p>See the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a> for more information.</p>
+						<p>See the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html" target="_blank" rel="noopener noreferrer">WET Style Guide</a> for more information.</p>
 					</section>
 					<section>
 						<h2>Some WET Widget Examples</h2>
-						<p>A lot of WET widgets require more than one class and/or more than one element with more than one class; and maybe even some <code>data-*</code> attributes.  So, full examples won't be shown in this tutorial, but can be seen in the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a>.</p>
+						<p>A lot of WET widgets require more than one class and/or more than one element with more than one class; and maybe even some <code>data-*</code> attributes.  So, full examples won't be shown in this tutorial, but can be seen in the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html" target="_blank" rel="noopener noreferrer">WET Working Examples</a>.</p>
 						<ul>
-							<li>A very important one: <a href="https://wet-boew.github.io/v4.0-ci/demos/formvalid/formvalid-en.html">Form Validation</a>.
+							<li>A very important one: <a href="https://wet-boew.github.io/v4.0-ci/demos/formvalid/formvalid-en.html" target="_blank" rel="noopener noreferrer">Form Validation</a>.
 								<ul>
 									<li>Can be hard to get right for accessibility purposes; WET does a lot of the work for you.</li>
 									<li>Always do back-end form validation for security purposes</li>
 								</ul>
 							</li>
-							<li>For lists and tables: <a href="https://wet-boew.github.io/v4.0-ci/demos/filter/filter-en.html">Filters</a></li>
-							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/session-timeout/session-timeout-en.html">Session Timeout Widget</a></li>
-							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/footnotes/footnotes-en.html">Footnotes</a></li>
+							<li>For lists and tables: <a href="https://wet-boew.github.io/v4.0-ci/demos/filter/filter-en.html" target="_blank" rel="noopener noreferrer">Filters</a></li>
+							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/session-timeout/session-timeout-en.html" target="_blank" rel="noopener noreferrer">Session Timeout Widget</a></li>
+							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/footnotes/footnotes-en.html" target="_blank" rel="noopener noreferrer">Footnotes</a></li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>WET Table Example (page 0)</h2>
-						<p>We'll now take a look at the process of taking an HTML <code>&lt;table&gt;</code> and appying WET styling to it to add functionality and styling to make it more accessible and usable with very little effort on our part.  You can follow along with the examples starting at <a href="GCTest/table-example-00.html">Table Example Page 0</a>.</p>
+						<p>We'll now take a look at the process of taking an HTML <code>&lt;table&gt;</code> and appying WET styling to it to add functionality and styling to make it more accessible and usable with very little effort on our part.  You can follow along with the examples starting at <a href="GCTest/table-example-00.html" target="_blank" rel="noopener noreferrer">Table Example Page 0</a>.</p>
 					</section>
 					<section>
 						<h2>WET Table Example (page 1)</h2>
-						<p>Let's start with a basic table (taken from the <a href="https://wet-boew.github.io/v4.0-ci/demos/tables/tables-en.html">Tables - Working examples</a>.)  With no styling whatsoever:</p>
-						<img src="table_pics/table_pic_0.png" alt="A table showing various browsers with their versions, rendering engines and versions, operating systems, and CSS grade.  There are no lines dividing cells. The top row of text is bold, indicating table headers.">
+						<p>Let's start with a basic table (taken from the <a href="https://wet-boew.github.io/v4.0-ci/demos/tables/tables-en.html" target="_blank" rel="noopener noreferrer">Tables - Working examples</a>.)  With no styling whatsoever:</p>
+						<a href="table_pics/table_pic_0.png" target="_blank" rel="noopenner noreferrer"><img src="table_pics/table_pic_0.png" alt="A table showing various browsers with their versions, rendering engines and versions, operating systems, and CSS grade.  There are no lines dividing cells. The top row of text is bold, indicating table headers."></a>
 					</section>
 					<section>
 						<h2>WET Table Example (page 2)</h2>
 						<p>Now on a WET page:</p>
-						<img src="table_pics/table_pic_1.png" alt="Same table as previous slide except text is a little larger.">
+						<a href="table_pics/table_pic_1.png" target="_blank" rel="noopenner noreferrer"><img src="table_pics/table_pic_1.png" alt="Same table as previous slide except text is a little larger."></a>
 					</section>
 					<section>
 						<h2>WET Table Example (page 3)</h2>
@@ -359,51 +367,101 @@
 							<li>If the top row are <code>&lt;th&gt;</code>s, then put that row inside a <code>&lt;thead&gt;</code>, and the main contents inside a <code>&lt;tbody&gt;</code></li>
 							<li>Add <code>class="table wb-tables"</code> to the <code>&lt;table&gt;</code> element</li>
 						</ol>
-						<img src="table_pics/table_pic_2.png" alt="Same table as previous slide except there are horizontal lines dividing each row, and each header has up and down arrows indicating that they are sortable, with the first column sharded indicating that it's sorted in ascending order.  There is also a list of links at the bottom of the table indicating pagination, and you're currently on page 1 of 6.">.</p>
+						<a href="table_pics/table_pic_2.png" target="_blank" rel="noopenner noreferrer"><img src="table_pics/table_pic_2.png" alt="Same table as previous slide except there are horizontal lines dividing each row, and each header has up and down arrows indicating that they are sortable, with the first column sharded indicating that it's sorted in ascending order.  There is also a list of links at the bottom of the table indicating pagination, and you're currently on page 1 of 6."></a>.</p>
 					</section>
 					<section>
 						<h2>WET Table Example (page 4)</h2>
-						<p>But <a href="https://www.w3.org/TR/WCAG21/#reflow">WCAG 2.1 Success Criterion 1.4.10 - Reflow</a> requires that pages only scroll in one direction at 1280px wide at 400% zoom - the equivalent to 100% zoom at 320px wide.  This would appear to present a problem for tables, which tend to be large.  But WCAG allows for certain exceptions, including tables, as long as only the exception itself scrolls in two-dimensions.</p>
-						<img src="table_pics/table_pic_3.png" alt="The same table as the previous slide in a viewport of 320 pixels wide, showing that the table is causing the page to have to scroll in two dimensions."></p>
+						<p>But <a href="https://www.w3.org/TR/WCAG21/#reflow" target="_blank" rel="noopener noreferrer">WCAG 2.1 Success Criterion 1.4.10 - Reflow</a> requires that pages only scroll in one direction at 1280px wide at 400% zoom - the equivalent to 100% zoom at 320px wide.  This would appear to present a problem for tables, which tend to be large.  But WCAG allows for certain exceptions, including tables, as long as only the exception itself scrolls in two-dimensions.</p>
+						<a href="table_pics/table_pic_3.png" target="_blank" rel="noopenner noreferrer"><img src="table_pics/table_pic_3.png" alt="The same table as the previous slide in a viewport of 320 pixels wide, showing that the table is causing the page to have to scroll in two dimensions."></a></p>
 					</section>
 					<section>
 						<h2>WET Table Example (page 5)</h2>
-						<p>To make WET tables responsive, we go to the <a href="https://wet-boew.github.io/wet-boew-styleguide/design/tables-en.html#responsive">WET Style Guide - Tables page</a>.  There's a section on Responsive tables.  It tells us to wrap the <code>&lt;table&gt;</code> inside a <code>&lt;div class="table-responsive"&gt;</code>.</p>
-						<img src="table_pics/table_pic_4.png" alt="The same table as the previous slide in a viewport of 320 pixels wide, showing that the table is able to sroll left and right, while the page itself only scrolls up and down."></p>
+						<p>To make WET tables responsive, we go to the <a href="https://wet-boew.github.io/wet-boew-styleguide/design/tables-en.html#responsive" target="_blank" rel="noopener noreferrer">WET Style Guide - Tables page</a>.  There's a section on Responsive tables.  It tells us to wrap the <code>&lt;table&gt;</code> inside a <code>&lt;div class="table-responsive"&gt;</code>.</p>
+						<a href="table_pics/table_pic_4.png" target="_blank" rel="noopenner noreferrer"><img src="table_pics/table_pic_4.png" alt="The same table as the previous slide in a viewport of 320 pixels wide, showing that the table is able to sroll left and right, while the page itself only scrolls up and down."></a></p>
 					</section>
 					<section>
 						<h2>WET Table Example (page 6)</h2>
 						<p>Okay, let's add zebra striping.  Simply add the class "<code>table-striped</code>" to the <code>&lt;table&gt;</code> element.</p>
-						<img src="table_pics/table_pic_5.png" alt="The same table as earlier, but every second row is shaded with a light grey to further indicate different rows."></p>
+						<a href="table_pics/table_pic_5.png" target="_blank" rel="noopenner noreferrer"><img src="table_pics/table_pic_5.png" alt="The same table as earlier, but every second row is shaded with a light grey to further indicate different rows."></a></p>
 					</section>
 					<section>
 						<h2>WET Table Example (page 7)</h2>
-						<p>There is lots more you can do with tables with WET. See the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a> and the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a> for more information.</p>
+						<p>There is lots more you can do with tables with WET. See the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html" target="_blank" rel="noopener noreferrer">WET Working Examples</a> and the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html" target="_blank" rel="noopener noreferrer">WET Style Guide</a> for more information.</p>
 					</section>
 				</section>
 				<section>
-					<h2>How to Check For WET/CDTS</h2>
-					<ul>
-						<li>For WET, use the <a href="https://www.nordburg.ca/ext/home.php#wwvf-weSect">WET Widget Version Finder (WWVF)</a> Firefox Extension
-							<ul>
-								<li><a href="https://github.com/wet-boew/wetboew-version-finder-firefox-extension">GitHub Repo</a></li>
-							</ul>
-						</li>
-						<li>For CDTS, use the <a href="https://www.nordburg.ca/ext/home.php#cdtsVersionFinderSect">CDTS Version Finder</a> Firefox Extension (only on GoC network)
-							<ul>
-								<li><a href="https://gccode.ssc-spc.gc.ca/iitb-dgiit/nw-ws/cdts-version-finder">GCCode Repo</a></li>
-							</ul>
-						</li>
-						<li>These will tell you which version of WET/CDTS a site uses (if any).
-							<ul>
-								<li>(Note: Due to changes in how versions are dealt with, the WWVF may indicate WET 3.x is being used in some places, when WET 4 is being used.)</li>
-							</ul>
-						</li>
-						<li>When looking at a webpage, use View Source (not the Inspector) to see if CDTS sections are implemented properly, and WET classes are used properly.</li>
-						<li>WET classes start with <code>wb-</code> (for <b>W</b>ET-<b>B</b>OEW)</li>
-						<li>If you notice a bug in WET, check the <a href="https://wet-boew.github.io/wet-boew/docs/bugs-en.html">Filing a bug or an issue</a> page.</li>
-						<li>CDTS Issues can be filed on the <a href="https://github.com/wet-boew/cdts-sgdc/issues">CDTS issues GitHub repo</a></li>
-					</ul>
+					<section>
+						<h2>How to Check For WET/CDTS</h2>
+						<p>The tools to use:</p>
+						<ul>
+							<li>For WET, use the <a href="https://www.nordburg.ca/ext/home.php#wwvf-weSect" target="_blank" rel="noopener noreferrer">WET Widget Version Finder (WWVF)</a> Firefox Extension
+								<ul>
+									<li><a href="https://github.com/wet-boew/wetboew-version-finder-firefox-extension" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+								</ul>
+							</li>
+							<li>For CDTS, use the <a href="https://www.nordburg.ca/ext/home.php#cdtsVersionFinderSect" target="_blank" rel="noopener noreferrer">CDTS Version Finder</a> Firefox Extension (only on GoC network)
+								<ul>
+									<li><a href="https://gccode.ssc-spc.gc.ca/iitb-dgiit/nw-ws/cdts-version-finder" target="_blank" rel="noopener noreferrer">GCCode Repo</a></li>
+								</ul>
+							</li>
+							<li>These will tell you which version of WET/CDTS a site uses (if any).</li>
+						</ul>
+						<p class="centre">
+						<a href="images/extensions1.png" target="_blank" rel="noopenner noreferrer"><img src="images/extensions1.png" alt="A Firefox toolbar with extension icons including WWVF and CDTS Version Finder."></a>
+						</p>
+					</section>
+					<section>
+						<h2>How to check for the CDTS and version</h2>
+						<p class="centre">
+						<a href="images/extensions-cdts.png" target="_blank" rel="noopenner noreferrer"><img src="images/extensions-cdts.png" alt="A Firefox toolbar with an arrow pointing to the CDTS Version Finder extension icon."></a>
+						</p>
+						<ul>
+							<li>Use the CDTS Version Funder Firefox Extension.</li>
+							<li>It will tell you if the page you're looking at is using the CDTS, and if so, which version and which theme (GCWeb / GCIntranet)</li>
+							<li>You can see what the page may look like with another version or theme:
+								<ol>
+									<li>Select the desired theme</li>
+									<li>Select the version</li>
+									<li>Click "Apply"</li>
+									<li>Refresh the page in your browser</li>
+								</ol>
+							</li>
+							<li>A single page should only be using 1 version and 1 theme.</li>
+							<li>CDTS Issues can be filed on the <a href="https://github.com/wet-boew/cdts-sgdc/issues" target="_blank" rel="noopener noreferrer">CDTS issues GitHub repo</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>How to check for the CDTS and version</h2>
+						
+						<p class="centre">
+						<a href="images/cdts-version-finder_1.png" target="_blank" rel="noopenner noreferrer"><img src="images/cdts-version-finder_1.png" alt="The CDTS Version Finder popup window showing the version and theme of the CDTS the current page is using along with the latest version. Also some controls to select a different version and theme, and an Apply button. Also another button to scan a bunch of pages, but don't use that."></a>
+						</p>
+					</section>
+					<section>
+						<h2>How to Check WET Version and Components</h2>
+						<p class="centre">
+						<a href="images/extensions-wwvf.png" target="_blank" rel="noopenner noreferrer"><img src="images/extensions-wwvf.png" alt="A Firefox toolbar with an arrow pointing to the WET Widget Version Finder extension icon."></a>
+						</p>
+						<ul>
+							<li>Use the WWVF (WET Widget Version Finder) Firefox extension.
+								<ul>
+									<li>(Note: Due to changes in how versions are dealt with, the WWVF may indicate WET 3.x is being used in some places, when WET 4 is being used.)</li>
+								</ul>
+							</li>
+							<li>When looking at a webpage, use View Source (not the Inspector) to see if CDTS sections are implemented properly, and WET classes are used properly.</li>
+							<li>WET classes start with <code>wb-</code> (for <b>W</b>ET-<b>B</b>OEW)</li>
+							<li>WET is built on Bootstrap, so a lot of classes, such as <code>.text-center</code>, <code>.text-left</code>, and <code>.col-md-*</code>.</li>
+							<li>You <strong>need</strong> to compare usage to the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html" target="_blank" rel="noopener noreferrer">WET Working Examples</a> and the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html" target="_blank" rel="noopener noreferrer">WET Style Guide</a> to determine if it's being implemented correctly.</li>
+							<li>If you notice a bug in WET, check the <a href="https://wet-boew.github.io/wet-boew/docs/bugs-en.html" target="_blank" rel="noopener noreferrer">Filing a bug or an issue</a> page.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>How to Check WET Version and Components</h2>
+						<p class="centre">
+						<a href="images/WWVF.png" target="_blank" rel="noopenner noreferrer"><img src="images/WWVF.png" alt="The CDTS Version Finder popup window showing the version and theme of the CDTS the current page is using along with the latest version. Also some controls to select a different version and theme, and an Apply button. Also another button to scan a bunch of pages, but don't use that."></a>
+						</p>
+
+					</section>
 				</section>
 				<section>
 					<p class="big">Questions?</p>
@@ -413,13 +471,13 @@
 						<h2>Resources</h2>
 						<h3>WET</h3>
 						<ul>
-							<li><a href="https://wet-boew.github.io/wet-boew/index-en.html">WET (Web Experience Toolkit) website</a></li>
-							<li><a href="https://github.com/wet-boew/wet-boew/issues">Issues on WET GitHub repo</a></li>
-							<li><a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html">WET Style Guide</a></li>
-							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html">WET Working Examples</a></li>
-							<li><a href="https://www.nordburg.ca/ext/home.php#wwvf-weSect">WET Widget Version Finder (WWVF) Firefox Extension</a>
+							<li><a href="https://wet-boew.github.io/wet-boew/index-en.html" target="_blank" rel="noopener noreferrer">WET (Web Experience Toolkit) website</a></li>
+							<li><a href="https://github.com/wet-boew/wet-boew/issues" target="_blank" rel="noopener noreferrer">Issues on WET GitHub repo</a></li>
+							<li><a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html" target="_blank" rel="noopener noreferrer">WET Style Guide</a></li>
+							<li><a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html" target="_blank" rel="noopener noreferrer">WET Working Examples</a></li>
+							<li><a href="https://www.nordburg.ca/ext/home.php#wwvf-weSect" target="_blank" rel="noopener noreferrer">WET Widget Version Finder (WWVF) Firefox Extension</a>
 								<ul>
-									<li><a href="https://github.com/wet-boew/wetboew-version-finder-firefox-extension">GitHub Repo</a></li>
+									<li><a href="https://github.com/wet-boew/wetboew-version-finder-firefox-extension" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -428,16 +486,16 @@
 						<h2>Resources</h2>
 						<h3>CDTS</h3>
 						<ul>
-							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/index-en.html">CDTS Homepage</a></li>
-							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html">Internet Implementation Guide</a></li>
-							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/intranet-en.html">Intranet Implementation Guide</a></li>
-							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/templates-en.html">.NET / Java Templates</a></li>
-							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/faq-en.html">CDTS FAQs</a></li>
-							<li><a href="https://github.com/wet-boew/cdts-sgdc/">CDTS GitHub repo</a></li>
-							<li><a href="https://gccode.ssc-spc.gc.ca/GOCWebTemplates/DotNetTemplates">CDTS GCCode Repo</a> (On GC Network only)</li>
-							<li><a href="https://www.nordburg.ca/ext/home.php#cdtsVersionFinderSect">CDTS Version Finder Firefox Extension</a>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/index-en.html" target="_blank" rel="noopener noreferrer">CDTS Homepage</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html" target="_blank" rel="noopener noreferrer">Internet Implementation Guide</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/intranet-en.html" target="_blank" rel="noopener noreferrer">Intranet Implementation Guide</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/templates-en.html" target="_blank" rel="noopener noreferrer">.NET / Java Templates</a></li>
+							<li><a href="https://cenw-wscoe.github.io/sgdc-cdts/docs/faq-en.html" target="_blank" rel="noopener noreferrer">CDTS FAQs</a></li>
+							<li><a href="https://github.com/wet-boew/cdts-sgdc/" target="_blank" rel="noopener noreferrer">CDTS GitHub repo</a></li>
+							<li><a href="https://gccode.ssc-spc.gc.ca/GOCWebTemplates/DotNetTemplates" target="_blank" rel="noopener noreferrer">CDTS GCCode Repo</a> (On GC Network only)</li>
+							<li><a href="https://www.nordburg.ca/ext/home.php#cdtsVersionFinderSect" target="_blank" rel="noopener noreferrer">CDTS Version Finder Firefox Extension</a>
 								<ul>
-									<li><a href="https://gccode.ssc-spc.gc.ca/iitb-dgiit/nw-ws/cdts-version-finder">GCCode Repo</a></li>
+									<li><a href="https://gccode.ssc-spc.gc.ca/iitb-dgiit/nw-ws/cdts-version-finder" target="_blank" rel="noopener noreferrer">GCCode Repo</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -446,11 +504,11 @@
 						<h2>Resources</h2>
 						<h3>Canada.ca/GCWeb Theme</h3>
 						<ul>
-							<li><a href="https://design.canada.ca/style-guide/">Canada.ca Content Style Guide</a></li>
-							<li><a href="https://wet-boew.github.io/GCWeb/docs/implementing-en.html">GCWeb Theme Quick Implementation Guide</a></li>
-							<li><a href="https://design.canada.ca/">Canada.ca Design System</a></li>
-							<li><a href="https://design.canada.ca/architecture/canada-content-information-architecture-specification.html">Canada.ca Content and Information Architecture Specification (C&IA Spec)</a></li>
-							<li><a href="https://wet-boew.github.io/GCWeb/index-en.html">GCWeb, the WET-BOEW Canada.ca Theme</a></li>
+							<li><a href="https://design.canada.ca/style-guide/" target="_blank" rel="noopener noreferrer">Canada.ca Content Style Guide</a></li>
+							<li><a href="https://wet-boew.github.io/GCWeb/docs/implementing-en.html" target="_blank" rel="noopener noreferrer">GCWeb Theme Quick Implementation Guide</a></li>
+							<li><a href="https://design.canada.ca/" target="_blank" rel="noopener noreferrer">Canada.ca Design System</a></li>
+							<li><a href="https://design.canada.ca/architecture/canada-content-information-architecture-specification.html" target="_blank" rel="noopener noreferrer">Canada.ca Content and Information Architecture Specification (C&IA Spec)</a></li>
+							<li><a href="https://wet-boew.github.io/GCWeb/index-en.html" target="_blank" rel="noopener noreferrer">GCWeb, the WET-BOEW Canada.ca Theme</a></li>
 						</ul>
 					</section>
 				</section>
