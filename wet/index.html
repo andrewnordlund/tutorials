@@ -464,6 +464,36 @@
 					</section>
 				</section>
 				<section>
+					<section>
+						<h2>What to check for with WET</h2>
+						<p>Primarily: If you see a custom widget that could be better accomplished with a WET widget; suggest the WET widget.  Note that some sites have requirements that WET doesn't handle; example:  an advanced date-picker widget.</p>
+						<p>If you find an accessibility/WCAG issue on a WET widget:</p>
+						<ol>
+							<li>Ensure that it actually <em>is</em> an issue</li>
+							<li>Check the version of WET that's being used.  Older versions are more likely to have accessibility issues.
+								<ul>
+									<li>If a site is using a beta version of an initial release (ex: 3.1.0-b1), then plead with the site owners to upgrade to a more recent version.</li>
+								</ul>
+								Thre is no (known) requirement to use the latest version of WET, but if upgrading can fix issues, then it should be done if/when possible.
+							</li>
+							<li>Check with the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html" target="_blank" rel="noopener noreferrer">WET Working Examples</a> and the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html" target="_blank" rel="noopener noreferrer">WET Style Guide</a> to ensure it's being done "the WET way".</li>
+							<li>Check if the examples on either the <a href="https://wet-boew.github.io/v4.0-ci/demos/index-en.html" target="_blank" rel="noopener noreferrer">WET Working Examples</a> or the <a href="https://wet-boew.github.io/wet-boew-styleguide/index-en.html" target="_blank" rel="noopener noreferrer">WET Style Guide</a> have the same issue.</li>
+							<li>If the issue exists in the most current version, consider filing a <a href="https://wet-boew.github.io/wet-boew/docs/bugs-en.html" target="_blank" rel="noopener noreferrer">Filing a bug or an issue</a>.</li>
+						</ol>
+					</section>
+					<section>
+						<h2>What to check for with CDTS</h2>
+						<p>Note that the CDTS is only available for Government of Canada websites and webapps. A COTS product won't be using it.</p>
+						<ol>
+							<li>Check if a site is using CDTS, and if so, what version.</li>
+							<li>Only the current version, and two previous versions are officially supported.</li>
+							<li>Turn off Javascript and reload the page to see if the static fallback files are there.</li>
+							<li>View Source -&gt; and check for <code>wet.builder.refTop</code>, <code>wet.builder.top</code>, <code>wet.builder.preFooter</code>, <code>wet.builder.footer</code>, <code>wet.builder.refFooter</code>; and if the site uses a left-nav menu: <code>wet.builder.secMenu</code>.</li>
+							<li>If it's a splash page, check for: <code>wet.builder.splash</code> and <code>wet.builder.splashTop</code>.</li>
+						</ol>
+					</section>
+				</section>
+				<section>
 					<p class="big">Questions?</p>
 				</section>
 				<section>
