@@ -86,6 +86,13 @@
 			</section>
 			<section>
 				<section>
+					<h1>Before We Begin</h1>
+					<p>We're going to discuss a lot of theory.  If you don't want all the theory, then <a href="/tutorials/personalFinance/#/7">jump to the end for a step-by-step guide</a>.</p>
+					<p>For a more entertaining version of this, but with a slight American slant, read the inspiration for this tutorial on <a href="https://www.mrmoneymustache.com/2011/05/18/how-to-make-money-in-the-stock-market/">Mr. Money Mustache's Blog</a>; a blog that you should totally subscribe to, BTW.  He's a Canadian, currently living in Colorado, who retired in his 30s.</p>
+				</section>
+			</section>
+			<section>
+				<section>
 					<h1>Basic Theory - Corporations</h1>
 					<h2>Basic Principle 1: Corporations Exist to Make Profits</h2>
 					<p>As long as corporations make things, market them, and sell them, there will be profits.</p>
@@ -164,7 +171,7 @@
 				<section>
 					<h2>The Power of Index Funds</h2>
 					<p>Buying a fund that tracks "the index" (or several indexes) allows you to buy several stocks and/or bonds at once.</p>
-					<p>In the short term (less than 5 years) index funds are pretty risky.  But, the longer the time period, the safer index funds become.  On average, the S&mp;P 500 returns 5 to 7 percent after inflation per year.</p>
+					<p>In the short term (less than 5 years) index funds are pretty risky.  But, the longer the time period, the safer index funds become.  On average, the S&amp;P 500 returns 5 to 7 percent after inflation per year.</p>
 					<p>It's best to hold stocks from as many industries and geography's as possible.</p>
 				</section>
 				<section>
@@ -289,415 +296,81 @@
 						<li>If you're job comes with a defined benefit pension plan, you may want to de-prioritize investing in an RRSP, because you'll likely be in an impressive tax bracket when you retire.</li>
 						<li>But if your employer does RRSP contribution matching, then take full advantage!</li>
 						<li>There are tax advantages (beyond the scope of this tutorial) of holding foreign equities in an RRSP that don't exist for TFSAs</li>
-						<li>RRSP's are good if you're prone to use your long term investments for short term desires.
+						<li>RRSP's are good if you're prone to use your long term investments for short term desires because withdrawing is a pain.</li>
 					</ul>
+				</section>
 			</section>
 
-
-
-
-
-
-
-
-
-
-
+			<section>
 				<section>
-
-					<p>Can't I just buy the stocks that will go up?  Buy low, and sell high, and all that.</p>
-					<p>Sure!  If you have a crystal ball!  Fact is, very few people can consistently predict which stocks will go up, when the rise will stop; or when a stock will go down, and when the fall will stop. Statistically, you're more likely to get rich via the lottory than be able to do that. Furthermore, you can't tell who <em>can</em> consitently make those predictions.  And if you could, since there are precious few of them, you couldn't afford their services.</p>
-				</section>
-				<section>
-					<h2>Which Stocks Do I buy? - Part 3</h2>
-					<p>
-				</section>
-				</section>
-				<section>
-					<h2>How Do I Buy all The Stocks?</h2>
-				</section>
-			</section>
-						<section>
-					<h1>Basic Theory</h1>
-					<ul>
-						<li>Companies need money to make money.</li>
-						<li>Companies can borrow money by issuing bonds at a particular interest rate</li>
-						<li>Companies can sell small pieces, or shares, of themselves by selling stocks</li>
-					</ul>
-				</section>
-				<section>
-					<section>
-						<h1>Bonds</h1>
-						<ul>
-							<li>Bonds pay interest, which is taxed at your marginal rate</li>
-							<li>Over time the general value of bonds don't change much</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Old-School Repository Systems</h2>
-						<div class="imageHolder">
-							<a href="images/old-school.png" target="_blank" title="Click to open in a new window"><img src="images/old-school.png" alt="A diagram showing the decentralized nature of old-school repository systems particularely how each instance knew if it was a copy or the main instance."></a>
-						</div>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Git</h1>
-						<ul>
-							<li>Each copy could be either the main or a copy.</li>
-							<li>Each copy has references to "remotes", which are just other instances of that repository.</li>
-							<li>The main repository is agreed upon by convention; usually at GitHub, GitLab, etc.  But doesn't have to be.</li>
-							<li>Several people can work on the same file at the same time.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Git</h2>
-						<div class="imageHolder">
-							<a href="images/decentralized.svg" target="_blank" title="Click to open in a new window"><img src="images/decentralized.svg" alt="A diagram showing the decentralized nature of old-school repository systems particularely how each instance knew if it was a copy or the main instance."></a>
-						</div>
-						<aside class="notes">
-							<p>See, we have an organization with a repo.  Two people want to contribute: Jane and Joe Schmoe. Jane is in the organization.  Joe is not.</p>
-						</aside>
-					</section>
-				</section>
-				<section>
-					<h1>Commits</h1>
-					<ul>
-						<li>A commit represents a snapshot in time of a branch of a repo.</li>
-						<li>It's the changes in all the files since the last commit on that branch.</li>
-						<li>Each comes with a bunch of meta data about that commit, such as a note about the commit, and a hash representing that commit.</li>
-						<li>Commits are just a snapshot.  Making a commit doesn't upload it to GitHub, or merge it into another branch.</li>
-						<li>Committing is just telling Git "Okay, remember the state of all these files right.....<em><strong>now!</strong></em>"</li>
-						<li>Committing allows you to merge, or upload your changes to GitHub.</li>
-					</ul>
-				</section>
-				<section>
-					<section>
-						<h2>Branching</h2>
-						<ul>
-							<li>A Branch is an independent line of development.</li>
-							<li>A Branch is a series of commits.</li>
-							<li>Branching is done <em>within</em> an instance of a repo.</li>
-							<li>Everyone with access to <em>that</em> repo instance can see all its branches.</li>
-							<li>Branching creates a copy of all the tracked files at the time of branching.</li>
-							<li>As you edit files in the new branch, the files in the original branch remain unchanged from the time you created the new branch.</li>
-							<li>Anyone with access to that instance of that repo can create a new branch from the original (without your changes) or your new branch (with your changes up to the last commit on your branch); or edit the files in the original branch.</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Branching</h3>
-						<p>A repo starts out with a main branch: a set of files with a history of changes (ie: commits).</p>
-						<div class="imageHolder">
-							<a href="images/org-x-repo-a-1.svg" target="_blank" title="Click to open in a new window"><img src="images/org-x-repo-a-1.svg" alt="A main branch with a series of commits"></a>
-						</div>
-					</section>
-					<section>
-						<h3>Branching</h3>
-						<ul>
-							<li>Create a branch when you're going to start doing work (fixing a bug, adding a new feature).</li>
-							<li>Work should rarely, if ever, be done on the <code>main</code> branch.</li>
-							<li><code>$ git checkout -b branchName</code></li>
-						</ul>
-						<div class="imageHolder">
-							<a href="images/org-x-repo-a-2.svg" target="_blank" title="Click to open in a new window"><img src="images/org-x-repo-a-2.svg" alt="A new branch is created to fix a bug such as a typo."></a>
-						</div>
-					</section>
-					<section>
-						<h3>Branching</h3>
-						<ul>
-							<li>If you're part way through adding a feature, and need to fix a bug: create a branch from <code>main</code> that won't include any of the unfinished code in your new feature.</li>
-							<li>As long as the changes on the different branches aren't in the same spot in the same file, Git should be smart enough to merge them without issue.</li>
-							<li>If there are changes to the same spot in the same file, then a merge conflict will arise, and will needed to be sorted out manually.  That's beyond the scope of this tutorial.</li>
-							<li><code>$ git checkout main</code><br><em>then</em><br><code>$ git branch other_new_branch_name</code></li>
-						</ul>
-						<div class="imageHolder">
-							<a href="images/org-x-repo-a-3.svg" target="_blank" title="Click to open in a new window"><img src="images/org-x-repo-a-3.svg" alt="Another new branch is created from main to fix another typo."></a>
-						</div>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>Cloning</h2>
-						<ul>
-							<li>Cloning creates a copy of the repo on your computer.</li>
-							<li>Downloads all files in the <code>main</code> branch, including config files.</li>
-							<li>Sets the cloned-from repo as the <code>origin</code> remote.</li>
-							<li>Use this (ie: cloning) when you first want to contribute to a repo.</li>
-							<li>Only use once on each computer.  Once you've cloned, the repo is there.  You have it.  From then on, to get the latest code, use <code>git pull</code> or <code>git rebase</code>.</li>
-							<li><code>$ git clone [git address]</code></li>
-						</ul>
-						<aside class="notes">
-							<p>Let's see what happens when Jane clones Repo A</p>
-						</aside>
-					</section>
-					<section>
-						<h3>Cloning</h3>
-						<div class="imageHolder">
-							<a href="images/Jane-cloning.svg" target="_blank" title="Click to open in a new window"><img src="images/Jane-cloning.svg" alt="Cloning copies a repo from its source, ex GitHub, to your computer."></a>
-						</div>
-					</section>
-					<section>
-						<div class="imageHolder">
-							<a href="images/Jane-cloned.svg" target="_blank" title="Click to open in a new window"><img src="images/Jane-cloned.svg" alt="Cloning copies the main repo from its source, ex GitHub, to your computer."></a>
-						</div>
-					</section>
-
-				</section>
-				<section>
-					<section>
-						<h2>Forking</h2>
-						<ul>
-							<li>Forking a repo creates an instance of a repo (branches, commit history, etc.) on your own GitHub account.</li>
-							<li>When forking, your forked repo automagically sets the original repo as "Upstream" allowing you to easily get new changes.</li>
-						</ul>
-						<a href="images/fork_button.png" target="_blank" title="Click to open in a new window"><img src="images/fork_button.png" alt="Fork button on GitHub right after the the Watch/Unwatch, and Star buttons near the top of the page below the Github banner at the very top."></a>
-						<aside class="notes">
-							<p>Let's see what happens when Joe forks Repo A</p>
-							<p style="color: #AA0000;"><strong>Don't</strong> explain when to fork.  That happens next.</p>
-						</aside>
-					</section>
-					<section>
-						<h2>Forking</h2>
-						<div class="imageHolder">
-							<a href="images/forking.svg" target="_blank" title="Click to open in a new window"><img src="images/forking.svg" alt="Forking copies a repo to your account within a system such as GitHub."></a>
-						</div>
-
-					</section>
-					<section>
-						<h2>Forking</h2>
-						<div class="imageHolder">
-							<a href="images/post-forking.svg" target="_blank" title="Click to open in a new window"><img src="images/post-forking.svg" alt="Forking copies branches and commit history."></a>
-						</div>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Cloning, Branching, and Forking</h1>
-						<dl>
-							<dt>Cloning</dt>
-							<dd>Copies a repo (files and some configuration) from one computer to another</dd>
-							<dd>Used when starting to contribute to a project for the very first time on that computer.</dd>
-							<dt>Branching</dt>
-							<dd>Creates a copy of all files in a repo so they can be edited without affecting the original files</dd>
-							<dd>Used when adding a feature or fixing a bug</dd>
-							<dt>Forking</dt>
-							<dd>Creates a copy of a repo (on the same system as the original repo) to the forkers account</dd>
-							<dd>Used when either creating a brand new thing based on an old thing.  (Ex: Waterfox is a fork of Firefox.  Waterfox will never merge back into Firefox).</dd>
-							<dd>Also can be used where there are a lot of people on a project when "branch hell" and "commit history hell" is to be avoided.</dd>
-							<dd>Also can be used when you want to do some experimental things knowing you'll problably throw your copy away when you're done.</dd>
-						</dl>
-					</section>
-						<aside class="notes">
-							<p>Demo forking, cloning and branching.</p>
-						</aside>
-				</section>
-				<section>
-					<h1>Workflows</h1>
-					<p>There are two basic workflows when contributing to a project or repo:</p>
+					<h1>What now?</h1>
+					<h2>A Step-by-Step guide</h2>
 					<ol>
-						<li>When you have write access to the original repo;</li>
-						<li>When you don't have write access to the original repo;</li>
+						<li>Pick your ratio of equities to fixed income</li>
+						<li>Decide which equities and fixed income vehicles to get</li>
+						<li>Pick a brokerage service (TD, QTrade, QuesTrade, CI Direct)</li>
+						<li>Open TFSA, RRSP (if you want), and Unregistered/Margin/Cash accounts</li>
+						<li>Transfer money (make sure you have room in your TFSA and RRSP)</li>
+						<li>Purchase the your ETFs</li>
+						<li>Record the purchase in an accounting program you may use.</li>
+						<li>Sit back and get straight on with life</li>
 					</ol>
-					<p>The first is usually when you're part of a team that works on a project.  No forking is necessary; just cloning and branching.</p>
-					<p>The second is usually when you're not part of the organization, but want to contribute anyway.</p>
-					<p>For these examples, assume the repo has already been cloned.</p>
-				</ul>
 				</section>
 				<section>
-					<section>
-						<h2>Workflow With Write Access To Repo</h2>
-						<ul>
-							<li>For our example, Jane Schmoe is part of the organization.  She doesn't need to <code>clone</code> (because that was already done before when she first joined the org).</li>
-							<li>But she needs to <code>pull</code> before she gets started.</li>
-							<li>Pulling gets the latest commits from <em>elsehwere</em> and merges them <em>here</em>.</li>
-							<li>In this case, Jane pulls from the <code>origin</code> so she has everything on her computer.</li>
-						</ul>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-1.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-1.svg" alt="Pulling gets the current state of the branch from which you pull from the remote from which you pull."></a>
-						</div>
-						<aside class="notes">
-							<p style="color:#AA0000;"><strong>Do not</strong> explain the anatomy of your local repo.  That comes in a few slides.</p>
-						</aside>
-					</section>
-					<section>
-						<h3>Starting Work</h3>
-						<ul>
-							<li>After pulling, but before starting to work, she creates a new branch.  It's dangerous to work on the main branch.</li>
-						</ul>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-2.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-2.svg" alt="Pulling gets the current state of the branch from which you pull from the remote from which you pull."></a>
-						</div>
-					</section>
-					<section>
-						<h3>Working</h3>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-3.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-3.svg" alt="Pulling gets the current state of the branch from which you pull from the remote from which you pull."></a>
-						</div>
-					</section>
-					<section>
-						<h3>Your Local Repo</h3>
-						<p>At this point it's worth mentioning how your local repo works.</p>
-						<ul>
-							<li>Your local copy has three parts:  The <strong>Index</strong> or <strong>Working Directory</strong>, <strong>Staging</strong>, and the <strong>repo</strong> itself.</li>
-							<li>When you're editing files locally, simply saving them has no effect on the repo itself.</li>
-							<li>When you add a new file into your folder, it still isn't part of the repo.  It's not being tracked.</li>
-							<li>All your edits, additions, and removals are all part of the "Working Directory" or the "Index".</li>
-							<li>In order to get Git to start tracking new files and updated files you need to move them to "Staging".</li>
-							<li>Moving to staging can be done by <code>$ git add filename</code>, or to add all at once: <code>$ git add .</code> (inlcuding the ".").</li>
-							<li><strong><em>Then</em></strong>, once staged, files can be <em>committed</em> to the repo.</li>
-							<li>This can be done with: <code>$ git commit -m "Some notes about the commit here"</code>.</li>
-							<li>Once changes have been committed, a new commit (ie: a snapshot in time) is created.</li>
-							<li>This commit can now be merged into another local branch, or pushed to a remote.</li>
-						</ul>
-						<aside class="notes">
-							<p>Now, back to Jane.  She's added her feature and is ready to be staged and committed.</p>
-						</aside>
-					</section>
-					<section>
-						<h3>Add Changes to Staging</h3>
-						<p><code>$ git add .</code></p>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-4.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-4.svg" alt="Add changes from the Index or Working Directory to Staging."></a>
-						</div>
-					</section>
-					<section>
-						<h3>Commit Changes to Repo</h3>
-						<p><code>$ git commit -m "Added a feature"</code></p>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-5.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-5.svg" alt="Commiting changes moves them from Staging to the Repo, and creates a snapshot in time."></a>
-						</div>
-					</section>
-					<section>
-						<h3>Push Changes to Origin</h3>
-						<p><code>$ git push origin myNewFeature</code></p>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-6.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-6.svg" alt="Pushing the changes moves the commits to a remote."></a>
-						</div>
-					</section>
-					<section>
-						<h3>Pushed Changes to Origin</h3>
-						<p>Now GitHub has Jane's <code>myNewFeature</code> branch.</p>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-7.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-7.svg" alt="GitHub has a new branch which Jane just pushed"></a>
-						</div>
-					</section>
-					<section>
-						<h3>Merge Changes on Origin</h3>
-						<p>Create a Pull Request on GitHub and delete <code>myNewFeature</code> branch.</p>
-						<p>Note that <code>myNewFeature</code> branch still exists on Jane's local machine until she deletes it. (<code>$ git branch -D myNewBranch</code>)</p>
-						<div class="imageHolder">
-							<a href="images/org-local-workflow-8.svg" target="_blank" title="Click to open in a new window"><img src="images/org-local-workflow-8.svg" alt="Jane's new feature has been added to main, and the myNewBranch is deleted."></a>
-						</div>
-					</section>
+					<h2>Pick your ratio of equities to fixed income</h2>
+					<p>This is about risk tolerance. The lower your tolerance, the lower your equities should be.</p>
+					<p>A rule-rule-of-thumb is 110 - your age gives the percentage of your portfolio that should be in equities.  When you're younger, you have a longer time horizon.</p>
+					<p>Example, if you're 20 years old, then you have a long time to recover from any market downturns.  So, 90% of your portfolio should be equities (ie: a stock-holding Index ETF).</p>
+					<p>But when you're 60, you're getting close to traditional retirement age. You still want to take advantage of market gains, but you want that to be tempered by fixed income (bond ETF, GIC's, etc.).  So, a 50-50 ratio of equities and bonds would be fine.</p>
 				</section>
 				<section>
-					<section>
-						<h1>Workflow With A Forked Repo</h1>
-						<ul>
-							<li>For this example, Joe Schmoe is not part of the organization, but still wants to contribute.</li>
-							<li>To get started, he'll need to <code>fork</code> to create his own copy of the repo on GitHub.</li>
-						</ul>
-						<div class="imageHolder">
-							<a href="images/forked.svg" target="_blank" title="Click to open in a new window"><img src="images/forked.svg" alt="Repo-A with branches on Org X on GitHub, and Joe Schmoe's fork of the same thing on his GitHub account"></a>
-						</div>
-						<aside class="notes">
-							<p>Demo forking.</p>
-						</aside>
-
-					</section>
-					<section>
-						<h2>Workflow With A Forked Repo</h2>
-							<p>Then he'll <code>clone</code> to get a copy of the repo on his own computer.</p>
-						<div class="imageHolder">
-							<a href="images/cloned.svg" target="_blank" title="Click to open in a new window"><img src="images/cloned.svg" alt="Repo-A with branches on Org X on GitHub, Joe Schmoe's fork of the same thing on his GitHub account, and a copy on Joe's local computer"></a>
-						</div>
-						<aside class="notes">
-							<p>The next few steps are the same as for someone within the org.  They make their own branch and make changes, and commit.  It won't be shown in detail here.</p>
-							<p>Demo cloning, make a change, add, commit, but <strong>DO NOT PUSH</strong>.  Do that later.</p>
-						</aside>
-					</section>
-					<section>
-						<h2>Local Repo With Two Remotes</h2>
-							<p>Now Joe pulls from the <code>upstream</code> remote (organization's repo) and pushes to the <code>origin</code> remote (Joe's copy on his GitHub account).</p>
-						<div class="imageHolder">
-							<a href="images/remotes-2.svg" target="_blank" title="Click to open in a new window"><img src="images/remotes-2.svg" alt="Joe Schmoe's local repo with two remotes: origin on Joe's account on GitHub, and upstream, the original repo.  He'll pull from upstream, and push to origin."></a>
-						</div>
-					</section>
-					<section>
-						<h2>Basic Workflow With A Forked Repo</h2>
-						<p>After pushing changes, Joe submits a Pull Request (PR) to have his changes added to the main repo.</p>
-						<div class="imageHolder">
-							<a href="images/project-workflow.svg" target="_blank" title="Click to open in a new window"><img src="images/project-workflow.svg" alt="Joe Schmoe's local repo with two remotes: origin on Joe's account on GitHub, and upstream, the original repo.  He'll pull from upstream, and push to origin."></a>
-						</div>
-						<aside class="notes">
-							<p>Okay, now demo pushing and submit a pull request.</p>
-						</aside>
-
-					</section>
-					<section>
-						<h2>Full Workflow With A Forked Branch</h2>
-						<div class="imageHolder" style="height: 50%;">
-							<a href="images/local-workflow-8.svg" target="_blank" title="Click to open in a new window"><img src="images/local-workflow-8.svg" alt="Joe Schmoe's local repo with two remotes: origin on Joe's account on GitHub, and upstream, the original repo.  He'll pull from upstream, and push to origin."></a>
-						</div>
-					</section>
+					<h2>Decide which equities and fixed income vehicles to get</h2>
+					<p>Check out the <a href="https://canadiancouchpotato.com/model-portfolios/">Canadian Couch Potato Model Portfolios</a>. There are different ETFs for each risk level.</li>
 				</section>
 				<section>
-					<section>
-						<h1>Useful git Commands</h1>
-						<dl>
-							<dt><code>git status</code></dt>
-							<dd>Tells you what branch you're on, what files are in your working directory, but not staging; staging but not the repo.  Sometimes gives you hints as to what to do next.</dd>
-							<!--
-							<dt><code>git branch [branch_name]</code></dt>
-							<dd>Creates a branch called "branch_name" in your local working directory of your local repo.
-							<br>
-							Example: <code>$ git branch myNewFeature</code></dd>
-							-->
-							<dt><code>git checkout [branch_name]</code></dt>
-							<dd>Sets your current working directory to be in the branch called "branch_name".
-							<br>
-							Example: <code>$ git checkout myNewFeature</code> puts you into the <code>myNewFeature</code> branch.  Now all changes you make won't affect any other branch in your repo until you merge the changes into them.</dd>
-						</dl>
-					</section>
-					<section>
-						<h2>Useful git Commands (cont.)</h2>
-						<dl>
-							<dt><code>git pull [remote_name] [branch_name]</code></dt>
-							<dd>Fetches the branch called "branch_name" from the remote called ["remote_name"] into your local repo, and merges the changes into your Working Directory into whatever branch you have checked out at the moment.<br>
-							Example (continuing from above): <code>$ git pull origin main</code> pulls the <code>main</code> branch of the <code>origin</code> remote into your <code>myNewFeature</code> branch.</dd>
-							<dt><code>git add .</code></dt>
-							<dd>Get's all your changes ready for commiting by adding them from your Working Directory into your Staging Area.</dd>
-						</dl>
-					</section>
-					<section>
-						<h2>Useful git Commands (cont.)</h2>
-						<dl>
-							<dt><code>git commit -m "Commit notes go here"</code></dt>
-							<dd>Makes a snapshop in time; commits your changes to your local copy of the repo.  It's ready to be pushed.  Note:  You can add the <code>-a</code> option to skip the previous step if there are no <em>new</em> files added.<br>
-							Example: <code>$ git commit -a -m "Fixed a typo identified in Issue #34"</code><dd>
-							<dt><code>git push [remote_name] [branch_name]</code></dt>
-							<dd>Copies your latest commits to the branch called "branch_name" on the remote called "remote_name".  If <code>[branch_name]</code> doesn't exist on <code>[remote_name]</code>, then one will be created.<br>
-							Example (continuing from above): <code>$ git push origin myNewFeature</code> copies your changes in your <code>myNewFeature</code> branch to your repo on GitHub.</dd>
-						</dl>
-					</section>
+					<h2>Pick a brokerage service</h2>
+					<p>Globe and Mail's Rob Carrick does a good set of reviews for online brokerages every year.  <a href="https://www.google.com/search?q=rob+carrick+online+brokers">Google rob carrick online brokers</a> to find the latest.</p>
+					<p>Sometimes that one is paywalled.  Another is the <a href="https://money.ca/investing/ultimate-guide-to-canadas-discount-brokerages">Money.ca reviews</a>.
+					<p>Or just Google reviews and pick one. A number of brokerages commission-free ETF purchases.  (But selling ETFs is often treated like selling stocks, and will likely have fees.)</p>
+					<p>Watch out for things like ECN fees, or minimum balances if you're just starting out.</p>
 				</section>
 				<section>
-					<h1>In Conclusion</h1>
-					<ul>
-						<li>Git is a powerful system to allow multiple people to contribute to the same project, whether they'are part of the project group or not.</p>
-						<li>Git is daunting and overwhelming at first.  But once you learn it, you'll wonder how you ever lived without it.</li>
-						<li>If you get into trouble, check out <a href="https://dangitgit.com/en" target="_blank" rel="noreferrer noopener">Dangit, Git!?!</a>.</li>
-					</ul>
-					<p><a href=https://github.com/andrewnordlund/tutorials/" target="_blank" rel="noreferrer noopener">Contribute to this repo on GitHub</a></p>
-					<aside class="notes">
-						<p>If time permits:</p>
-						<ul>
-							<li>Demo forking, cloning, branching, committing, pushing, merge-requesting</li>
-							<li>Assign "Homework"</li>
-						</ul>
-					</aside>
-
+					<h2>Open TFSA, RRSP (if you want), and Unregistered/Margin/Cash accounts</h2>
+					<p>Once you've picked a brokerage, open relevant accounts:</p>
+					<ol>
+						<li>TFSA</li>
+						<li>RRSP if right for you</li>
+						<li>Unregisered/Margin account if applicable</li>
+					</ol>
 				</section>
+				<section>
+					<h2>Transfer money (make sure you have room in your TFSA and RRSP)</h2>
+					<p>If you already have an RRSP and/or TFSA in a "high" interest savings account that you'd like transferred, contact your brokerage.  They can transfer the money for either a small fee, or for free.</p>
+				</section>
+				<section>
+					<h2>Purchase the your ETFs</h2>
+					<p>How this is done will vary by brokerage.  Hopefully it'll be intuitive!</p>
+					<p>...put stuff in here about market/limit orders, and the buy/sell spread....</p>
+				</section>
+				<section>
+					<h2>Record the purchase in an accounting program you may use.</h2>
+					<p>You should do your own record keeping.  This is doubly important for money in an Unregistered account.</p>
+				</section>
+				<section>
+					<h2>Sit back and get straight on with life</h2>
+					<p>You really should check your progress occasionally (yearly, quarterly, monthly), but not too often. Really, investing should be boring. If you use separate ETFs for equities and bonds, you'll want to make sure they're at the correct ratio every year.</p>
+					<p>And activity (receiving dividends, selling ETF shares) in an unregistered account will need to be reported on your tax return.  You should receive a T3 and/or T5 for this.</p>
+				</section>
+			</section>
+			<section>
+				<h2>What about retirement</h2>
+				<p>That's way beyond the scope of this Intro. But here are a few things to keep in mind:</p>
+				<ol>
+					<li>As you get closer to retirement, your portfolio should have more fixed income than when you were younger.  If you use a single ETF to hold both stocks and bonds, then selling this in an unregistered account may trigger capital gains tax. So it may be wise to use two separate ETFs in an unregistered account.</li>
+					<li>A rule-of-thumb called "the 4% rule" states that most of the time, you can safely withdraw 4% of your investments per year over a 30 year time. So, to determine you desired portfolio size, multiply yearly expenses by 25.</li>
+					<li>Retirement starts as a never-ending vacation. But soon enough, you miss the work relationships and purpose work gave you.  Retirement planning isn't just about finances.  Make sure you have something to do in retirement to give you that sense of meaning and purpose.  Plan for it.</li>
+				</ol>
+			</section>
 			</div>
 		</div>
 
