@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Absolute Beginners Intro To Personal Finance</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+		<style>
+		div.slides > section {
+			/*border: thick blue solid;*/
+		}
+		div.slides > section > section {
+			/*border: thick red solid;*/
+			max-height: 98vh;
+			overflow: scroll;
+			-ms-overflow-style: none;  /* IE 10+ */
+			scrollbar-width: none;  /* Firefox */
+
+		}
+		div.slides > section > section::-webkit-scrollbar { 
+		    display: none;  /* Safari and Chrome */
+		}
+
+		.imageHolder{
+			max-height: 90%;
+			overflow: scroll;
+			-ms-overflow-style: none;  /* IE 10+ */
+			scrollbar-width: none;  /* Firefox */
+		}
+		.imageHolder::-webkit-scrollbar { 
+		    display: none;  /* Safari and Chrome */
+		}
+		p { 
+			text-align: left; 
+			padding-left: 1em;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="nb-vslide">
+					<section class="nb-islide">
+						<h1>Intro to Personal Finance</h1>
+						<p>This tutorial is meant to take you from being a total newbie to personal finance (for Canada) to get you started.</p>
+						<p>This tutorial is my first presentation done with <a href="https://revealjs.com/" target="_blank" rel="noreferrer noopener">RevealJS</a>.  It uses the <a href="https://revealjs.com/plugins/#built-in-plugins" target="_blank" rel="noreferrer noopener">Reveal Zoom</a> plugin, which allows you to zoom in on elements with <kbd>Alt+click</kbd> (<kbd>Ctrl+click</kbd> on Linux).  I also had to do some of my own hacking to allow you to zoom in with <kbd>Ctrl++</kbd> and scroll on images.</p>
+						<p>Oh, and all images can be opened in another window or tab by clicking on them.</p>
+						<p>Use right arrow key to move to the next major topic. Use down arrow key to move to the next minor topic.</p>
+					</section>
+					<section class="nb-islide">
+						<h2 class="myh2">What This Covers</h2>
+						<ul>
+							<li>Basic theory</li>
+							<li>Steps on how to get started</li>
+						</ul>
+					</section>
+					<section>
+						<h2>What This Doesn't Cover</h2>
+						<ul>
+							<li>Anything "advanced" like tax tips for people with spouses</li>
+						</ul>
+					</section>
+					<section>
+						<h2>What This Assumes</h2>
+						<ul>
+							<li>You live in Canada and subject to Canadian tax and finanice laws</li>
+						</ul>
+					</section>
+					<!--
+					<section>
+						<h2>What You'll Need</h2>
+						<ul>
+							<li>A computer with an Internet connection</li>
+							<li>A text editor (I use <a href="https://www.vim.org/" target="_blank" rel="noopener noreferrer">vim</a>, or <a href="https://github.com/macvim-dev/macvim" target="_blank" rel="noopener noreferrer">MacVim</a>.)
+							<li>A GitHub or GitLab account.  (This tutorial will assume GitHub.)</li>
+							<li>You'll need to know that "repo" is short for "repository"</li>
+						</ul>
+					</section>
+					-->
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Before We Begin</h1>
+					<p>We're going to discuss a lot of theory.  If you don't want all the theory, then <a href="/tutorials/personalFinance/#/7">jump to the end for a step-by-step guide</a>.</p>
+					<p>For a more entertaining version of this, but with a slight American slant, read the inspiration for this tutorial on <a href="https://www.mrmoneymustache.com/2011/05/18/how-to-make-money-in-the-stock-market/">Mr. Money Mustache's Blog</a>; a blog that you should totally subscribe to, BTW.  He's a Canadian, currently living in Colorado, who retired in his 30s.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Basic Theory - Corporations</h1>
+					<h2>Basic Principle 1: Corporations Exist to Make Profits</h2>
+					<p>As long as corporations make things, market them, and sell them, there will be profits.</p>
+				</section>
+				<section>
+					<h2>Basic Principle 2: It Takes Money To Make Money</h2>
+					<p>Corporations often need to acquire funds, apart from profits, to make profits.
+					<p>They can do this by borrowing money (by selling <b>bonds</b>), or sell pieces, or <b>shares</b>, of themselves (by selling <b>stocks</b>).</p>
+				</section>
+				<section>
+					<h3>Bonds</h3>
+					<p>Corporations and governments sell bonds, which pay interest.<p>
+					<p>If you buy a bond, you can sell it to someone else.  You can buy a bond from a government, corporation, or someone who owns a bond.</p>
+					<p>When interest rates go up, bonds sold at a lower interest rate become less valuable, and can be sold at a lower price than when it was bought.</p>
+					<p>When interest rates go down, bonds sold at a higher interest rate become more valuable, and can be sold at a higher price than when it was bought.</p>
+				</section>
+				<section>
+					<h3>Bonds - Part 2</h3>
+					<p>With bonds, if the company does really well, you still only get the interest that was stated when they issued the bond.</p>
+					<p>On the one hand, you really miss out if the company does well. On the other hand, you don't take a loss if the company doesn't do well - unless they default on their bonds, which is rare in a high-rated bond.<p>
+					<p>So, with bonds, you don't get the massive ups and downs you get with stocks. Instead you get stability and predictability.</p>
+					<p>Furthermore, interest income is taxed at a high rate compared with other investment income.</p>
+					<p>We'll return to bonds, and taxes, later.</p>
+				</section>
+				<section>
+					<h3>Stocks</h3>
+					<p>Corporations sell parts of themselves as shares, or stocks.</p>
+					<p>The price of a share is a combination of underlying value (the worth of all it's assets, including intellectual property), and speculation of to how well the company will do in the future.<p>
+					<p>If a company is expected to do well, a lot of people want to buy shares in it, and fewer want to sell; so the price of each share goes up.  Apple is expected to keep making large profits by selling lots of expensive electronics, and many more dongles. So their stock price is high.</p>
+					<p>But if Tim Cook announced tomorrow that they were switching their entire product line to garlic-flavoured mittens, it would be expected that there would be few profits. Suddenly, no one would want to own Apple stock. So they'd offer to sell. But no one would want to buy.  So they'd have to offer to sell at a lower price until someone wanted to buy at that low price. The price of stock would fall.<p>
+				</section>
+				<section>
+					<h3>Stocks - Part 2</h3>
+					<p>If the company does really well, so do you.  But if the company does really pooly, so do you.</p>
+					<p>Stocks are risky.  Imagine buying Apple stock in the mid 80s (like Forrest Gump), or even in 1997. If you sold that stock today, your working days would likely be over.</p>
+					<p>But imagine buying lots of BRE-X stock at its height in 1996.  A year later, you'd have lost your shirt.</p>
+					<p>In either of those cases, a rational person would sell Apple in 1997 (before Steve Jobs returned) to cut their losses.  And a rational person would buy BRE-X thinking they were sitting on a gold mine.</p>
+					<p>Bottom line: You can't predict the future. Stocks are high risk, which offer high rewards, or massive losses.</p>
+				</section>
+				<section>
+					<h2>Basic Theory - Corporations - Conclusion</h2>
+					<ul>
+						<li>Corporations need to raise money, either through lending money (bonds) selling pieces of themselves (stocks).</li>
+						<li>Stocks are high risk. Bonds are low risk.</li>
+						<li>Very few people can predict the future. You can't. And you can't pick who can.</li>
+						<li>Bonds fall under the umbrella of "fixed income".</li>
+						<li>Stocks fall under the umbrella of "equities".</li>
+					</ul>
+					<p>Next, we'll talk about which stocks to buy.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Which Stocks Do I buy?</h1>
+					<p>Apple, obviously.</p>
+					<p>But what if Apple <em>did</em> switch to only selling garlic-flavoured mittens? You'd lose your shirt.  But Samsung would sell a lot more phones. And Dell would sell more computers.  So buy Apple, and to hedge your bets, buy Dell, and Samsung.</p>
+					<p>"But what about banks and energy companies? Shouldn't I buy them too?"</p>
+					<p>Yes. Yes, you should.</p>
+					<p>"Which ones?"</p>
+					<p>All of them.  That way, when some go down, others go up, and you benefit.</p>
+				</section>
+				<section>
+					<h2>Which Stocks Do I buy? - Part 2</h2>
+					<p>"If I buy all of them, won't that be very expensive? Not to mention all the paperwork involving tracking all of them.  What a hassel!"</p>
+					<p>Yes. Those are very good points.</p>
+					<p>"So, what's the solution?  As Homer Simpson said: Can't someone else do it?"
+					<div class="imageHolder">
+							<a href="images/old-school.png" target="_blank" title="Click to open in a new window"><img src="someone_else.png" alt="Can't someone else do it?"></a>
+					</div>
+					<p>Absolutely! That's the best way to go! Let someone else buy a bunch of stocks, and you (and other people) buy shares of that large portfolio.  This is the basis of mutual funds and ETFs.<p>
+				</section>
+				<section>
+					<h2>Indexes</h2>
+					<p>An Index is a collection of stocks and/or bonds.  It could be every stock on a single exchange. Or a group of stocks in a region. Or a set of large company's stocks.</p>
+					<p>Common indexes include the S&amp;P 500, the Nasdaq-100, FTSE-100.</p>
+					<p>When you hear on the news "The TSX rose by half a percentage", that means that some of stocks that trade on the Toronto Stock Exchange (TSX) increased in value, and a bunch went down.  If you add up all the ups, and subtracted all the downs, it would the total change of the TSX that day.</p>
+					<p>An Index Fund that tracks the TSX, for example, would be a collection of stocks that trade on the TSX.  In our example, on that date, if you owned a share of that index fund, it's value would have been gone up by 0.5%.</p>
+				</section>
+				<section>
+					<h2>The Power of Index Funds</h2>
+					<p>Buying a fund that tracks "the index" (or several indexes) allows you to buy several stocks and/or bonds at once.</p>
+					<p>In the short term (less than 5 years) index funds are pretty risky.  But, the longer the time period, the safer index funds become.  On average, the S&amp;P 500 returns 5 to 7 percent after inflation per year.</p>
+					<p>It's best to hold stocks from as many industries and geography's as possible.</p>
+				</section>
+				<section>
+					<h2>What Stocks To Buy - Conclusion</h2>
+					<p>Buy all of the stocks, and bonds, by buying index funds.</p>
+					<p>Next, we'll talk about <em>how</em> to buy all of them.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Mutual Funds and ETFs</h1>
+					<p>Mutual funds and ETFs are both collections of stocks and/or bonds that can be bought in pieces, also called shares.</p>
+					<p>When you buy a share of an ETF or mutual fund, you get a small piece of that entire collection.</p>
+					<p>Mutual funds are often sold by banks, or financial advisors, or other institutions.  They can be bought and sold whenever those institutions are open for business.  Partial shares can often be purchased.</p>
+					<p>ETFs, or Exchange Traded Funds, are bought and sold directly on the stock market, and can only be bought and sold when the markets are open for trading.  Typically, only whole shares can be purchased.  (As of this writing, I believe Wealth Simple allows for partial purchases of ETFs.)</p>
+				</section>
+				<section>
+					<h2>Mutual Funds</h2>
+					<p>A big difference is that mutual funds are often actively managed.  This means that they are managed by people who think they can pick stocks that will go up, sell stocks before they go down, and/or time the market in general.<p>
+					<p>Problem is:  very, very, very few people can do that consistently over several years. See earlier slides.  But those who can, at least for a while, command large salaries. Those salaries have to be paid for. And they are, by fees, or MERs - Management Expense Ratios - a percentage of your shares are taken off the top and pay for the management.</p>
+					<p>Actively managed funds often times have high MERs; around 2.0 to 2.3% is common in Canada.  Over time these feeds add up.</p>
+					<p>Some mutual funds are passively managed, and tend to have lower MERs.</p>
+				</section>
+				<section>
+					<h2>ETFs</h2>
+					<p>ETFs are mostly (if not entirely) passively managed. They're holdings are often simply based on an algorithm.  As such, MERs tend to be much lower.  Generally below 0.5%.  Over the course of several years, the differences in those fees can make differences in the tens of thousands of dollars.</p>
+				</section>
+				<section>
+					<h2>Mutual Funds and ETFs - Conclusion</h2>
+					<ul>
+						<li>Instead of buying individual stocks and bonds that represent an index, let someone else do that, and buy a collection of them.</li>
+						<li>Index funds allow for effortless diversivication across industries and geographies.</li>
+						<li>The best way to do this is by buying ETFs.</li>
+					</ul>
+				</section>
+			</section>
+				<section class="nb-vslide">
+				<section>
+					<h1>Basic Theory - Taxes</h1>
+					<ul>
+						<li>Taxes are one of the two certainties in life</li>
+						<li>You pay tax on income.</li>
+						<li>How much tax you pay depends on several factors, including, but not limited to:
+							<ul>
+								<li>Your tax bracket</li>
+								<li>The amount of income</li>
+								<li>The type of income</l1>
+								<li>What type of account the money is made in.</li>
+							</ul></li>
+					</ul>
+					<p>We'll deal with each of these in turn.</p>
+				</section>
+				<section>
+					<h2>Tax Brackets</h2>
+					<p>Myth: "I got a raise, and now I'm in the next tax bracket and my take-home is smaller."</p>
+					<p>This never happens. That's not how tax brackets work.  You only pay the tax rate on income in each bracket.</p>
+					<p>As of this writing, the lowest tax bracket (for Canada), is 15% from $0 up to $&nbsp;55&nbsp;875.99.  The next tax bracket is 20.5% up to $&nbsp;111&nbsp;772.99.</p>
+					<p>So if your salary was $&nbsp;55&nbsp;870, you would pay 15% on all of that (or $&nbsp;8380.50), leaving you with $&nbsp;47&nbsp;489.50. Then, if you got a raise taking you up to $&nbsp;55&nbsp;880, then you would still pay 15% on the first $&nbsp;55&nbsp;875.99, then then 20.5% on the $&nbsp;5 in the second tax bracket (or $&nbsp;0.82).<p>
+					<p>So, before the raise, you would have taken home $&nbsp;47&nbsp;489.50.  After the raise you'd take home $&nbsp;47&nbsp;497.78.</p>
+					<p>Now, your <strong>marginal tax rate</strong> is 20.5%.</p>
+				</section>
+				<section>
+					<h2>Tax Brackets continued</h2>
+					<div class="imageHolder">
+							<a href="images/old-school.png" target="_blank" title="Click to open in a new window"><img src="taxbrackets.jpg" alt="If your income is $55880, $55876 is taxed at 15%, and $5 is taxed at 20%."></a>
+					</div>
+				</section>
+				<section>
+					<h2>The Type of Income</h2>
+					<p>For our purposes there are three types of income:</p>
+					<ol>
+						<li>Capital gains</li>
+						<li>Dividend income</l1>
+						<li>Regular income</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Capital gains</h3>
+					<p>When you sell an equity (rental property, stock, bond, ETF, mutual fund, etc.), if the amount you sold it for is higher than the amount you paid for it, the difference is the Capital Gain.</p>
+					<p>As of this writing, you pay your marginal tax rate on 50% of the capital gain.  (There is an exception if the capital gain is over $&nbsp;250&nbsp;000, but if you're reading this, then that probably doesn't apply to you.)</p>
+					<p>For example, if you're in the second tax bracket if you buy some stocks for $&nbsp;100, and sell later for $&nsp;180. The capital gain is $&nbsp;80.  Divide that by 2, to get $&nbsp;40.  You marginal tax rate is 20.5%, so you pay 20.5% on that $&nbsp;40; or $&nbsp;8.20.  So you keep $&nbsp;171.80 ($&nbsp;180 - $&nbsp;8.20).</p>
+				</section>
+				<section>
+					<h3>Dividends</h3>
+					<p>When a corporation makes a profit, they generally re-invest the profits to grow the company (which generally makes the stock price rise), or they distribute to the profits to shareholders.  These distributions are dividends.</p>
+					<p>Furthermore, the corporation has, at this point, paid corporate tax on those profits.  Then, shareholders pay the difference between the corporate taxes and personal tax rates through a "gross up" procedure, which is beyond the scope of this tutorial.  But, ultimately it's less that what you would pay if it were regular income.</p>
+				</section>
+				<section>
+					<h3>Regular Income</h3>
+					<p>This would include employment income, rental income, interest income, etc.  You pay your marginal tax rate on this income.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Minimizing Taxes</h1>
+					<p>The government allows you to minimize your income tax by placing your investments in different types of accounts:</p>
+					<ul>
+						<li>RRSP</li>
+						<li>TFSA</li>
+						<li>Unregistered account</li>
+					</ul>
+					<p>We'll deal with each in turn.</p>
+				</section>
+				<section>
+					<h2>RRSP</h2>
+					<p>When you contribute to your RRSP, the amount you contribute is taken off your taxable income for the year. So you pay less income tax at your marginal rate.</p>
+					<p>When income is generated in an RRSP (interest, dividends, capital gains, etc.) it's not taxed at all as long as it's in the RRSP.</p>
+					<p>When money is taken out of the RRSP (either directly, or through an RRIF - Registered Retirement Income Fund), it's treated as regular income - regardless if it was income generated by interest, capital gain, or dividend.  However, in retirement, you're marginal tax rate may be lower, so you'll ultimately pay less tax.</p>
+					<p>When you do withdraw from your RRSP, that contribution room is gone.</p>
+				</section>
+				<section>
+					<h2>TFSA</h2>
+					<p>When you contribute to a TFSA, there is no change to your taxable income for the year.</p>
+					<p>Income generated within a TFSA (interest, dividends, capital gains, etc.) are not taxed.</p>
+					<p>When you withdraw from your TFSA, it's still not taxed.</p>
+					<p>When you do withdraw, you can re-contribute that amount at the start of the next year - on top of the regular allowable contribution amount.</p>
+				</section>
+				<section>
+					<h2>Unregistered Account</h2>
+					<p>All income is taxed as described in the tax section.</p>
+					<p>But there no contribution limits to an unregistered account.</p>
+				</section>
+				<section>
+					<h2>Where you should put your money</h2>
+					<p>There are too many variables to consider to answer that here.  But here are some rules of thumb:</p>
+					<ul>
+						<li>It's never a bad idea to max out your TFSA if possible</li>
+						<li>If you're job comes with a defined benefit pension plan, you may want to de-prioritize investing in an RRSP, because you'll likely be in an impressive tax bracket when you retire.</li>
+						<li>But if your employer does RRSP contribution matching, then take full advantage!</li>
+						<li>There are tax advantages (beyond the scope of this tutorial) of holding foreign equities in an RRSP that don't exist for TFSAs</li>
+						<li>RRSP's are good if you're prone to use your long term investments for short term desires because withdrawing is a pain.</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>What now?</h1>
+					<h2>A Step-by-Step guide</h2>
+					<ol>
+						<li>Pick your ratio of equities to fixed income</li>
+						<li>Decide which equities and fixed income vehicles to get</li>
+						<li>Pick a brokerage service (TD, QTrade, QuesTrade, CI Direct)</li>
+						<li>Open TFSA, RRSP (if you want), and Unregistered/Margin/Cash accounts</li>
+						<li>Transfer money (make sure you have room in your TFSA and RRSP)</li>
+						<li>Purchase the your ETFs</li>
+						<li>Record the purchase in an accounting program you may use.</li>
+						<li>Sit back and get straight on with life</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Pick your ratio of equities to fixed income</h2>
+					<p>This is about risk tolerance. The lower your tolerance, the lower your equities should be.</p>
+					<p>A rule-rule-of-thumb is 110 - your age gives the percentage of your portfolio that should be in equities.  When you're younger, you have a longer time horizon.</p>
+					<p>Example, if you're 20 years old, then you have a long time to recover from any market downturns.  So, 90% of your portfolio should be equities (ie: a stock-holding Index ETF).</p>
+					<p>But when you're 60, you're getting close to traditional retirement age. You still want to take advantage of market gains, but you want that to be tempered by fixed income (bond ETF, GIC's, etc.).  So, a 50-50 ratio of equities and bonds would be fine.</p>
+				</section>
+				<section>
+					<h2>Decide which equities and fixed income vehicles to get</h2>
+					<p>Check out the <a href="https://canadiancouchpotato.com/model-portfolios/">Canadian Couch Potato Model Portfolios</a>. There are different ETFs for each risk level.</li>
+				</section>
+				<section>
+					<h2>Pick a brokerage service</h2>
+					<p>Globe and Mail's Rob Carrick does a good set of reviews for online brokerages every year.  <a href="https://www.google.com/search?q=rob+carrick+online+brokers">Google rob carrick online brokers</a> to find the latest.</p>
+					<p>Sometimes that one is paywalled.  Another is the <a href="https://money.ca/investing/ultimate-guide-to-canadas-discount-brokerages">Money.ca reviews</a>.
+					<p>Or just Google reviews and pick one. A number of brokerages commission-free ETF purchases.  (But selling ETFs is often treated like selling stocks, and will likely have fees.)</p>
+					<p>Watch out for things like ECN fees, or minimum balances if you're just starting out.</p>
+				</section>
+				<section>
+					<h2>Open TFSA, RRSP (if you want), and Unregistered/Margin/Cash accounts</h2>
+					<p>Once you've picked a brokerage, open relevant accounts:</p>
+					<ol>
+						<li>TFSA</li>
+						<li>RRSP if right for you</li>
+						<li>Unregisered/Margin account if applicable</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Transfer money (make sure you have room in your TFSA and RRSP)</h2>
+					<p>If you already have an RRSP and/or TFSA in a "high" interest savings account that you'd like transferred, contact your brokerage.  They can transfer the money for either a small fee, or for free.</p>
+				</section>
+				<section>
+					<h2>Purchase the your ETFs</h2>
+					<p>How this is done will vary by brokerage.  Hopefully it'll be intuitive!</p>
+					<p>Maybe read <a href="https://canadiancouchpotato.com/2014/12/15/the-limits-of-limit-orders/">The Limits of Limit Orders on Canadian Couch Potato</a> to understand limit orders, market orders, ask and bid prices.</p>
+				</section>
+				<section>
+					<h2>Record the purchase in an accounting program you may use.</h2>
+					<p>You should do your own record keeping.  This is doubly important for money in an Unregistered account.</p>
+				</section>
+				<section>
+					<h2>Sit back and get straight on with life</h2>
+					<p>You really should check your progress occasionally (yearly, quarterly, monthly), but not too often. Really, investing should be boring. If you use separate ETFs for equities and bonds, you'll want to make sure they're at the correct ratio every year.</p>
+					<p>And activity (receiving dividends, selling ETF shares) in an unregistered account will need to be reported on your tax return.  You should receive a T3 and/or T5 for this.</p>
+				</section>
+			</section>
+			<section>
+				<h2>What about retirement</h2>
+				<p>That's way beyond the scope of this Intro. But here are a few things to keep in mind:</p>
+				<ol>
+					<li>As you get closer to retirement, your portfolio should have more fixed income than when you were younger.  If you use a single ETF to hold both stocks and bonds, then selling this in an unregistered account may trigger capital gains tax. So it may be wise to use two separate ETFs in an unregistered account.</li>
+					<li>A rule-of-thumb called "the 4% rule" states that most of the time, you can safely withdraw 4% of your investments per year over a 30 year time. So, to determine you desired portfolio size, multiply yearly expenses by 25.</li>
+					<li>Retirement starts as a never-ending vacation. But soon enough, you miss the work relationships and purpose work gave you.  Retirement planning isn't just about finances.  Make sure you have something to do in retirement to give you that sense of meaning and purpose.  Plan for it.</li>
+				</ol>
+			</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/zoom/zoom.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+			Reveal.configure({disableLayout: true});
+		</script>
+	</body>
+</html>
